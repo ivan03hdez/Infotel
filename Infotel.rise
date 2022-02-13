@@ -1894,6 +1894,78 @@ Cada hotel estará formado por diferentes habitaciones.</rise:text>
       <rise:text>Hostal, Pensión, Fonda, Albergue, Alojamiento, Parador</rise:text>
       <rise:entityName>Hotel</rise:entityName>
     </rise:text>
+    <rise:text>
+      <rise:textID>abe9eaed-12ca-4807-b056-41f6cadbd927</rise:textID>
+      <rise:title>DESCRIPCIÓN</rise:title>
+      <rise:text>Esta clase de entidad alberga los empleados que tiene la empresa infotel</rise:text>
+      <rise:entityName>Empleado</rise:entityName>
+    </rise:text>
+    <rise:text>
+      <rise:textID>17348a1a-e4ec-4902-8454-9e871dd23772</rise:textID>
+      <rise:title>OCURRENCIA</rise:title>
+      <rise:text>Para poder dar de alta a cada empleado se tendrá en cuenta su identificación que se le asignará y además se le tendrá en cuenta campos como el nombre, apellidos y dni, como su correo, teléfono, su fecha de nacimiento y nacionalidad, dirección y código postal así ocmo su ciudad y país de residencia además, también será necesario saber el puesto de trabajo, su sueldo bruto, la retención del IRPF y su cuota patronal</rise:text>
+      <rise:entityName>Empleado</rise:entityName>
+    </rise:text>
+    <rise:text>
+      <rise:textID>1cbd8e45-dda3-4bbd-a51d-9a19b32062b1</rise:textID>
+      <rise:title>SINÓNIMOS</rise:title>
+      <rise:text>Trabajador, dependiente, asalariado, auxiliar</rise:text>
+      <rise:entityName>Empleado</rise:entityName>
+    </rise:text>
+    <rise:text>
+      <rise:textID>2bca74e0-297d-42a5-a226-f016f33ddcc9</rise:textID>
+      <rise:title>DESCRIPCIÓN</rise:title>
+      <rise:text>Esta clase de entidad albergarás las distintas ofertas que se podrán realizar desde la empresa Infotel a sus clientes o empleados</rise:text>
+      <rise:entityName>Oferta</rise:entityName>
+    </rise:text>
+    <rise:text>
+      <rise:textID>c9f455c8-03ef-4dbd-8a67-0f675ba7e19d</rise:textID>
+      <rise:title>OCURRENCIA</rise:title>
+      <rise:text>Cada oferta tendrá un id dieferente para cada reserva con un pocentaje de decuento diferente</rise:text>
+      <rise:entityName>Oferta</rise:entityName>
+    </rise:text>
+    <rise:text>
+      <rise:textID>4a521929-1085-43e1-94da-e9650126ad0c</rise:textID>
+      <rise:title>SINÓNIMOS</rise:title>
+      <rise:text>Descuento,propuesta</rise:text>
+      <rise:entityName>Oferta</rise:entityName>
+    </rise:text>
+    <rise:text>
+      <rise:textID>39441a6c-5b44-4584-a2fc-c93d3f74154e</rise:textID>
+      <rise:title>DESCRIPCIÓN</rise:title>
+      <rise:text>Esta clase de entidad alberga las reservas que realizan los clientes en la empresa de Infotel</rise:text>
+      <rise:entityName>Reserva</rise:entityName>
+    </rise:text>
+    <rise:text>
+      <rise:textID>3b8827f0-368f-44a2-818b-12131dfd8e99</rise:textID>
+      <rise:title>OCURRENCIA</rise:title>
+      <rise:text>Para poder dar de alta una reserva en la empresa Infotel, un cliente o un empleado deberán hacerla, una vez hecho esto, se creará un numero de reserva con una fecha de inicio y fin, su status y si está o no pagada</rise:text>
+      <rise:entityName>Reserva</rise:entityName>
+    </rise:text>
+    <rise:text>
+      <rise:textID>b6ccdd6a-b8de-431f-ba0a-4f227bf14bac</rise:textID>
+      <rise:title>SINÓNIMOS</rise:title>
+      <rise:text>Guardar, provisión de habitación</rise:text>
+      <rise:entityName>Reserva</rise:entityName>
+    </rise:text>
+    <rise:text>
+      <rise:textID>bc7c616c-2956-4700-b71f-320fe46bbbac</rise:textID>
+      <rise:title>DESCRIPCIÓN</rise:title>
+      <rise:text>Esta clase de entidad alberga las reservas de sercicios que pueden realizar los clientes en la empresa Infotel</rise:text>
+      <rise:entityName>ReservaServicio</rise:entityName>
+    </rise:text>
+    <rise:text>
+      <rise:textID>e79817e4-1ebe-4c0f-a1bb-1692aaf4d31d</rise:textID>
+      <rise:title>OCURRENCIA</rise:title>
+      <rise:text>Un cliente podrá solicitar una reserva de servicio a un empleado quedando resgistrado por su id</rise:text>
+      <rise:entityName>ReservaServicio</rise:entityName>
+    </rise:text>
+    <rise:text>
+      <rise:textID>412ca986-fb9a-4e9c-a532-e1a373091c11</rise:textID>
+      <rise:title>SINÓNIMOS</rise:title>
+      <rise:text>Guardar un servicio</rise:text>
+      <rise:entityName>ReservaServicio</rise:entityName>
+    </rise:text>
   </rise:documentation>
   <rise:applications />
 </rise:model>
