@@ -1688,6 +1688,1193 @@
         <rise:maxID>0</rise:maxID>
       </rise:entity>
     </rise:newAttribute>
+    <rise:editAttribute>
+      <rise:sequenceNumber>96</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-14T10:19:00</rise:timeStamp>
+      <rise:entity>
+        <rise:name>Reserva</rise:name>
+        <rise:attribute>
+          <rise:name>pk</rise:name>
+          <rise:dataTypeAlias />
+          <rise:dataType>int</rise:dataType>
+          <rise:mustBeUnique>True</rise:mustBeUnique>
+          <rise:mustExist>False</rise:mustExist>
+          <rise:description>Identificador de cada registro de la tabla</rise:description>
+        </rise:attribute>
+        <rise:maxID>0</rise:maxID>
+      </rise:entity>
+    </rise:editAttribute>
+    <rise:renameAttribute>
+      <rise:sequenceNumber>97</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-14T10:19:00</rise:timeStamp>
+      <rise:entityName>Reserva</rise:entityName>
+      <rise:attributeName>pk</rise:attributeName>
+      <rise:newAttributeName>id</rise:newAttributeName>
+    </rise:renameAttribute>
+    <rise:editAttribute>
+      <rise:sequenceNumber>98</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-14T10:19:35</rise:timeStamp>
+      <rise:entity>
+        <rise:name>Reserva</rise:name>
+        <rise:attribute>
+          <rise:name>id</rise:name>
+          <rise:dataTypeAlias />
+          <rise:dataType>int</rise:dataType>
+          <rise:mustBeUnique>True</rise:mustBeUnique>
+          <rise:mustExist>True</rise:mustExist>
+          <rise:description>Identificador de cada registro de la tabla</rise:description>
+        </rise:attribute>
+        <rise:maxID>0</rise:maxID>
+      </rise:entity>
+    </rise:editAttribute>
+    <rise:editAttribute>
+      <rise:sequenceNumber>99</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-14T10:19:41</rise:timeStamp>
+      <rise:entity>
+        <rise:name>Reserva</rise:name>
+        <rise:attribute>
+          <rise:name>numero_reserva</rise:name>
+          <rise:dataTypeAlias />
+          <rise:dataType>string</rise:dataType>
+          <rise:dataSize>50</rise:dataSize>
+          <rise:mustBeUnique>False</rise:mustBeUnique>
+          <rise:mustExist>True</rise:mustExist>
+          <rise:description>Número de reserva sobre el que se realiza una acción.</rise:description>
+        </rise:attribute>
+        <rise:maxID>0</rise:maxID>
+      </rise:entity>
+    </rise:editAttribute>
+    <rise:editAttribute>
+      <rise:sequenceNumber>100</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-14T10:19:45</rise:timeStamp>
+      <rise:entity>
+        <rise:name>Reserva</rise:name>
+        <rise:attribute>
+          <rise:name>numero_reserva</rise:name>
+          <rise:dataTypeAlias />
+          <rise:dataType>string</rise:dataType>
+          <rise:dataSize>8</rise:dataSize>
+          <rise:mustBeUnique>False</rise:mustBeUnique>
+          <rise:mustExist>True</rise:mustExist>
+          <rise:description>Número de reserva sobre el que se realiza una acción.</rise:description>
+        </rise:attribute>
+        <rise:maxID>0</rise:maxID>
+      </rise:entity>
+    </rise:editAttribute>
+    <rise:newEntity>
+      <rise:sequenceNumber>101</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-14T10:20:46</rise:timeStamp>
+      <rise:entity>
+        <rise:name>Entity1</rise:name>
+        <rise:maxID>0</rise:maxID>
+      </rise:entity>
+    </rise:newEntity>
+    <rise:newAttribute>
+      <rise:sequenceNumber>102</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-14T10:21:01</rise:timeStamp>
+      <rise:entity>
+        <rise:name>Entity1</rise:name>
+        <rise:attribute>
+          <rise:name>Tipo</rise:name>
+          <rise:dataTypeAlias />
+          <rise:dataType>string</rise:dataType>
+          <rise:dataSize>50</rise:dataSize>
+          <rise:mustBeUnique>False</rise:mustBeUnique>
+          <rise:mustExist>False</rise:mustExist>
+          <rise:description />
+        </rise:attribute>
+        <rise:maxID>0</rise:maxID>
+      </rise:entity>
+    </rise:newAttribute>
+    <rise:renameEntity>
+      <rise:sequenceNumber>103</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-14T10:21:06</rise:timeStamp>
+      <rise:entityName>Entity1</rise:entityName>
+      <rise:newEntityName>Tipo</rise:newEntityName>
+    </rise:renameEntity>
+    <rise:newAttribute>
+      <rise:sequenceNumber>104</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-14T10:21:09</rise:timeStamp>
+      <rise:entity>
+        <rise:name>Tipo</rise:name>
+        <rise:attribute>
+          <rise:name>id</rise:name>
+          <rise:dataTypeAlias />
+          <rise:dataType>string</rise:dataType>
+          <rise:dataSize>50</rise:dataSize>
+          <rise:mustBeUnique>False</rise:mustBeUnique>
+          <rise:mustExist>False</rise:mustExist>
+          <rise:description />
+        </rise:attribute>
+        <rise:maxID>0</rise:maxID>
+      </rise:entity>
+    </rise:newAttribute>
+    <rise:deleteAttribute>
+      <rise:sequenceNumber>105</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-14T10:21:41</rise:timeStamp>
+      <rise:entityName>Tipo</rise:entityName>
+      <rise:attributeName>Tipo</rise:attributeName>
+    </rise:deleteAttribute>
+    <rise:newAttribute>
+      <rise:sequenceNumber>106</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-14T10:22:56</rise:timeStamp>
+      <rise:entity>
+        <rise:name>Tipo</rise:name>
+        <rise:attribute>
+          <rise:name>precioBase</rise:name>
+          <rise:dataTypeAlias />
+          <rise:dataType>string</rise:dataType>
+          <rise:dataSize>50</rise:dataSize>
+          <rise:mustBeUnique>False</rise:mustBeUnique>
+          <rise:mustExist>False</rise:mustExist>
+          <rise:description />
+        </rise:attribute>
+        <rise:maxID>0</rise:maxID>
+      </rise:entity>
+    </rise:newAttribute>
+    <rise:deleteAttribute>
+      <rise:sequenceNumber>107</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-14T10:23:57</rise:timeStamp>
+      <rise:entityName>Habitación</rise:entityName>
+      <rise:attributeName>tipo</rise:attributeName>
+    </rise:deleteAttribute>
+    <rise:deleteAttribute>
+      <rise:sequenceNumber>108</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-14T10:24:09</rise:timeStamp>
+      <rise:entityName>Habitación</rise:entityName>
+      <rise:attributeName>precio_base</rise:attributeName>
+    </rise:deleteAttribute>
+    <rise:renameAttribute>
+      <rise:sequenceNumber>109</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-14T10:24:37</rise:timeStamp>
+      <rise:entityName>Tipo</rise:entityName>
+      <rise:attributeName>id</rise:attributeName>
+      <rise:newAttributeName>tipoHabitacion</rise:newAttributeName>
+    </rise:renameAttribute>
+    <rise:renameAttribute>
+      <rise:sequenceNumber>110</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-14T10:25:00</rise:timeStamp>
+      <rise:entityName>Tipo</rise:entityName>
+      <rise:attributeName>tipoHabitacion</rise:attributeName>
+      <rise:newAttributeName>id</rise:newAttributeName>
+    </rise:renameAttribute>
+    <rise:editAttribute>
+      <rise:sequenceNumber>111</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-14T10:25:03</rise:timeStamp>
+      <rise:entity>
+        <rise:name>Tipo</rise:name>
+        <rise:attribute>
+          <rise:name>id</rise:name>
+          <rise:dataTypeAlias />
+          <rise:dataType>int</rise:dataType>
+        </rise:attribute>
+        <rise:maxID>0</rise:maxID>
+      </rise:entity>
+    </rise:editAttribute>
+    <rise:newAttribute>
+      <rise:sequenceNumber>112</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-14T10:25:16</rise:timeStamp>
+      <rise:entity>
+        <rise:name>Tipo</rise:name>
+        <rise:attribute>
+          <rise:name>tipoHabitacion</rise:name>
+          <rise:dataTypeAlias />
+          <rise:dataType>string</rise:dataType>
+          <rise:dataSize>50</rise:dataSize>
+          <rise:mustBeUnique>False</rise:mustBeUnique>
+          <rise:mustExist>False</rise:mustExist>
+          <rise:description />
+        </rise:attribute>
+        <rise:maxID>0</rise:maxID>
+      </rise:entity>
+    </rise:newAttribute>
+    <rise:editAttribute>
+      <rise:sequenceNumber>113</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-14T10:25:31</rise:timeStamp>
+      <rise:entity>
+        <rise:name>Tipo</rise:name>
+        <rise:attribute>
+          <rise:name>id</rise:name>
+          <rise:dataTypeAlias />
+          <rise:dataType>int</rise:dataType>
+          <rise:mustBeUnique>True</rise:mustBeUnique>
+          <rise:mustExist>True</rise:mustExist>
+        </rise:attribute>
+        <rise:maxID>0</rise:maxID>
+      </rise:entity>
+    </rise:editAttribute>
+    <rise:editAttribute>
+      <rise:sequenceNumber>114</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-14T10:25:31</rise:timeStamp>
+      <rise:entity>
+        <rise:name>Tipo</rise:name>
+        <rise:attribute>
+          <rise:name>tipoHabitacion</rise:name>
+          <rise:dataTypeAlias />
+          <rise:dataType>string</rise:dataType>
+          <rise:dataSize>50</rise:dataSize>
+          <rise:mustBeUnique>False</rise:mustBeUnique>
+          <rise:mustExist>True</rise:mustExist>
+        </rise:attribute>
+        <rise:maxID>0</rise:maxID>
+      </rise:entity>
+    </rise:editAttribute>
+    <rise:editAttribute>
+      <rise:sequenceNumber>115</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-14T10:26:26</rise:timeStamp>
+      <rise:entity>
+        <rise:name>Tipo</rise:name>
+        <rise:attribute>
+          <rise:name>precioBase</rise:name>
+          <rise:dataTypeAlias />
+          <rise:dataType>string</rise:dataType>
+          <rise:dataSize>50</rise:dataSize>
+          <rise:mustBeUnique>False</rise:mustBeUnique>
+          <rise:mustExist>True</rise:mustExist>
+        </rise:attribute>
+        <rise:maxID>0</rise:maxID>
+      </rise:entity>
+    </rise:editAttribute>
+    <rise:newRelation>
+      <rise:sequenceNumber>116</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-14T10:26:50</rise:timeStamp>
+      <rise:relation>
+        <rise:name>TipoHabitación</rise:name>
+        <rise:node>
+          <rise:name>Tipo</rise:name>
+          <rise:entityName>Tipo</rise:entityName>
+          <rise:cardinality>1</rise:cardinality>
+        </rise:node>
+        <rise:node>
+          <rise:name>Habitación</rise:name>
+          <rise:entityName>Habitación</rise:entityName>
+          <rise:cardinality>0toN</rise:cardinality>
+        </rise:node>
+        <rise:maxID>0</rise:maxID>
+      </rise:relation>
+    </rise:newRelation>
+    <rise:newAttribute>
+      <rise:sequenceNumber>117</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-14T10:36:47</rise:timeStamp>
+      <rise:entity>
+        <rise:name>Habitación</rise:name>
+        <rise:attribute>
+          <rise:name>vistas</rise:name>
+          <rise:dataTypeAlias />
+          <rise:dataType>string</rise:dataType>
+          <rise:dataSize>50</rise:dataSize>
+          <rise:mustBeUnique>False</rise:mustBeUnique>
+          <rise:mustExist>False</rise:mustExist>
+          <rise:description />
+        </rise:attribute>
+        <rise:maxID>0</rise:maxID>
+      </rise:entity>
+    </rise:newAttribute>
+    <rise:newAttribute>
+      <rise:sequenceNumber>118</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-15T11:31:59</rise:timeStamp>
+      <rise:entity>
+        <rise:name>Tipo</rise:name>
+        <rise:attribute>
+          <rise:name>tamaño</rise:name>
+          <rise:dataTypeAlias />
+          <rise:dataType>string</rise:dataType>
+          <rise:dataSize>50</rise:dataSize>
+          <rise:mustBeUnique>False</rise:mustBeUnique>
+          <rise:mustExist>False</rise:mustExist>
+        </rise:attribute>
+        <rise:maxID>0</rise:maxID>
+      </rise:entity>
+    </rise:newAttribute>
+    <rise:editAttribute>
+      <rise:sequenceNumber>119</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-15T11:32:11</rise:timeStamp>
+      <rise:entity>
+        <rise:name>Tipo</rise:name>
+        <rise:attribute>
+          <rise:name>tamaño</rise:name>
+          <rise:dataTypeAlias />
+          <rise:dataType>int</rise:dataType>
+          <rise:dataSize>50</rise:dataSize>
+          <rise:mustBeUnique>False</rise:mustBeUnique>
+          <rise:mustExist>True</rise:mustExist>
+        </rise:attribute>
+        <rise:maxID>0</rise:maxID>
+      </rise:entity>
+    </rise:editAttribute>
+    <rise:editAttribute>
+      <rise:sequenceNumber>120</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-15T11:32:11</rise:timeStamp>
+      <rise:entity>
+        <rise:name>Tipo</rise:name>
+        <rise:attribute>
+          <rise:name>tamaño</rise:name>
+          <rise:dataTypeAlias />
+          <rise:dataType>int</rise:dataType>
+          <rise:mustBeUnique>False</rise:mustBeUnique>
+          <rise:mustExist>True</rise:mustExist>
+        </rise:attribute>
+        <rise:maxID>0</rise:maxID>
+      </rise:entity>
+    </rise:editAttribute>
+    <rise:deleteAttribute>
+      <rise:sequenceNumber>121</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-15T11:32:32</rise:timeStamp>
+      <rise:entityName>Habitación</rise:entityName>
+      <rise:attributeName>tamaño</rise:attributeName>
+    </rise:deleteAttribute>
+    <rise:editAttribute>
+      <rise:sequenceNumber>122</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-15T11:32:47</rise:timeStamp>
+      <rise:entity>
+        <rise:name>Habitación</rise:name>
+        <rise:attribute>
+          <rise:name>vistas</rise:name>
+          <rise:dataTypeAlias />
+          <rise:dataType>bool</rise:dataType>
+          <rise:mustBeUnique>False</rise:mustBeUnique>
+          <rise:mustExist>True</rise:mustExist>
+        </rise:attribute>
+        <rise:maxID>0</rise:maxID>
+      </rise:entity>
+    </rise:editAttribute>
+    <rise:newAttribute>
+      <rise:sequenceNumber>123</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-15T11:35:01</rise:timeStamp>
+      <rise:entity>
+        <rise:name>Habitación</rise:name>
+        <rise:attribute>
+          <rise:name>estaLimpio</rise:name>
+          <rise:dataTypeAlias />
+          <rise:dataType>string</rise:dataType>
+          <rise:dataSize>50</rise:dataSize>
+          <rise:mustBeUnique>False</rise:mustBeUnique>
+          <rise:mustExist>False</rise:mustExist>
+        </rise:attribute>
+        <rise:maxID>0</rise:maxID>
+      </rise:entity>
+    </rise:newAttribute>
+    <rise:editAttribute>
+      <rise:sequenceNumber>124</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-15T11:35:10</rise:timeStamp>
+      <rise:entity>
+        <rise:name>Habitación</rise:name>
+        <rise:attribute>
+          <rise:name>estaLimpio</rise:name>
+          <rise:dataTypeAlias />
+          <rise:dataType>bool</rise:dataType>
+          <rise:mustBeUnique>False</rise:mustBeUnique>
+          <rise:mustExist>True</rise:mustExist>
+        </rise:attribute>
+        <rise:maxID>0</rise:maxID>
+      </rise:entity>
+    </rise:editAttribute>
+    <rise:newAttribute>
+      <rise:sequenceNumber>125</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-15T11:37:28</rise:timeStamp>
+      <rise:entity>
+        <rise:name>Habitación</rise:name>
+        <rise:attribute>
+          <rise:name>estaOcupado</rise:name>
+          <rise:dataTypeAlias />
+          <rise:dataType>string</rise:dataType>
+          <rise:dataSize>50</rise:dataSize>
+          <rise:mustBeUnique>False</rise:mustBeUnique>
+          <rise:mustExist>False</rise:mustExist>
+        </rise:attribute>
+        <rise:maxID>0</rise:maxID>
+      </rise:entity>
+    </rise:newAttribute>
+    <rise:editAttribute>
+      <rise:sequenceNumber>126</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-15T11:37:40</rise:timeStamp>
+      <rise:entity>
+        <rise:name>Habitación</rise:name>
+        <rise:attribute>
+          <rise:name>estaOcupado</rise:name>
+          <rise:dataTypeAlias />
+          <rise:dataType>bool</rise:dataType>
+          <rise:mustBeUnique>False</rise:mustBeUnique>
+          <rise:mustExist>False</rise:mustExist>
+        </rise:attribute>
+        <rise:maxID>0</rise:maxID>
+      </rise:entity>
+    </rise:editAttribute>
+    <rise:renameAttribute>
+      <rise:sequenceNumber>127</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-15T11:37:40</rise:timeStamp>
+      <rise:entityName>Habitación</rise:entityName>
+      <rise:attributeName>estaOcupado</rise:attributeName>
+      <rise:newAttributeName>estaOcupada</rise:newAttributeName>
+    </rise:renameAttribute>
+    <rise:renameAttribute>
+      <rise:sequenceNumber>128</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-15T11:37:47</rise:timeStamp>
+      <rise:entityName>Habitación</rise:entityName>
+      <rise:attributeName>estaLimpio</rise:attributeName>
+      <rise:newAttributeName>estaLimpia</rise:newAttributeName>
+    </rise:renameAttribute>
+    <rise:editAttribute>
+      <rise:sequenceNumber>129</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-15T11:38:11</rise:timeStamp>
+      <rise:entity>
+        <rise:name>Habitación</rise:name>
+        <rise:attribute>
+          <rise:name>estaOcupada</rise:name>
+          <rise:dataTypeAlias />
+          <rise:dataType>bool</rise:dataType>
+          <rise:mustBeUnique>False</rise:mustBeUnique>
+          <rise:mustExist>True</rise:mustExist>
+        </rise:attribute>
+        <rise:maxID>0</rise:maxID>
+      </rise:entity>
+    </rise:editAttribute>
+    <rise:newAttribute>
+      <rise:sequenceNumber>130</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-15T11:44:39</rise:timeStamp>
+      <rise:entity>
+        <rise:name>Reserva</rise:name>
+        <rise:attribute>
+          <rise:name>nPersonas</rise:name>
+          <rise:dataTypeAlias />
+          <rise:dataType>string</rise:dataType>
+          <rise:dataSize>50</rise:dataSize>
+          <rise:mustBeUnique>False</rise:mustBeUnique>
+          <rise:mustExist>False</rise:mustExist>
+        </rise:attribute>
+        <rise:maxID>0</rise:maxID>
+      </rise:entity>
+    </rise:newAttribute>
+    <rise:editAttribute>
+      <rise:sequenceNumber>131</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-15T11:44:47</rise:timeStamp>
+      <rise:entity>
+        <rise:name>Reserva</rise:name>
+        <rise:attribute>
+          <rise:name>nPersonas</rise:name>
+          <rise:dataTypeAlias />
+          <rise:dataType>int</rise:dataType>
+          <rise:mustBeUnique>False</rise:mustBeUnique>
+          <rise:mustExist>False</rise:mustExist>
+        </rise:attribute>
+        <rise:maxID>0</rise:maxID>
+      </rise:entity>
+    </rise:editAttribute>
+    <rise:editAttribute>
+      <rise:sequenceNumber>132</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-15T11:44:50</rise:timeStamp>
+      <rise:entity>
+        <rise:name>Reserva</rise:name>
+        <rise:attribute>
+          <rise:name>pagada</rise:name>
+          <rise:dataTypeAlias />
+          <rise:dataType>bool</rise:dataType>
+          <rise:mustBeUnique>False</rise:mustBeUnique>
+          <rise:mustExist>False</rise:mustExist>
+          <rise:description>Estado de pago.</rise:description>
+        </rise:attribute>
+        <rise:maxID>0</rise:maxID>
+      </rise:entity>
+    </rise:editAttribute>
+    <rise:newEntity>
+      <rise:sequenceNumber>133</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-15T11:45:36</rise:timeStamp>
+      <rise:entity>
+        <rise:name>Entity1</rise:name>
+        <rise:maxID>0</rise:maxID>
+      </rise:entity>
+    </rise:newEntity>
+    <rise:renameEntity>
+      <rise:sequenceNumber>134</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-15T11:45:44</rise:timeStamp>
+      <rise:entityName>Entity1</rise:entityName>
+      <rise:newEntityName>Temporada</rise:newEntityName>
+    </rise:renameEntity>
+    <rise:newAttribute>
+      <rise:sequenceNumber>135</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-15T11:45:49</rise:timeStamp>
+      <rise:entity>
+        <rise:name>Temporada</rise:name>
+        <rise:attribute>
+          <rise:name>id</rise:name>
+          <rise:dataTypeAlias />
+          <rise:dataType>string</rise:dataType>
+          <rise:dataSize>50</rise:dataSize>
+          <rise:mustBeUnique>False</rise:mustBeUnique>
+          <rise:mustExist>False</rise:mustExist>
+        </rise:attribute>
+        <rise:maxID>0</rise:maxID>
+      </rise:entity>
+    </rise:newAttribute>
+    <rise:newAttribute>
+      <rise:sequenceNumber>136</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-15T11:45:54</rise:timeStamp>
+      <rise:entity>
+        <rise:name>Temporada</rise:name>
+        <rise:attribute>
+          <rise:name>precioBase</rise:name>
+          <rise:dataTypeAlias />
+          <rise:dataType>string</rise:dataType>
+          <rise:dataSize>50</rise:dataSize>
+          <rise:mustBeUnique>False</rise:mustBeUnique>
+          <rise:mustExist>False</rise:mustExist>
+        </rise:attribute>
+        <rise:maxID>0</rise:maxID>
+      </rise:entity>
+    </rise:newAttribute>
+    <rise:newAttribute>
+      <rise:sequenceNumber>137</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-15T11:45:59</rise:timeStamp>
+      <rise:entity>
+        <rise:name>Temporada</rise:name>
+        <rise:attribute>
+          <rise:name>Nombre</rise:name>
+          <rise:dataTypeAlias />
+          <rise:dataType>string</rise:dataType>
+          <rise:dataSize>50</rise:dataSize>
+          <rise:mustBeUnique>False</rise:mustBeUnique>
+          <rise:mustExist>False</rise:mustExist>
+        </rise:attribute>
+        <rise:maxID>0</rise:maxID>
+      </rise:entity>
+    </rise:newAttribute>
+    <rise:newAttribute>
+      <rise:sequenceNumber>138</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-15T11:46:25</rise:timeStamp>
+      <rise:entity>
+        <rise:name>Temporada</rise:name>
+        <rise:attribute>
+          <rise:name>FechaInicio</rise:name>
+          <rise:dataTypeAlias />
+          <rise:dataType>string</rise:dataType>
+          <rise:dataSize>50</rise:dataSize>
+          <rise:mustBeUnique>False</rise:mustBeUnique>
+          <rise:mustExist>False</rise:mustExist>
+        </rise:attribute>
+        <rise:maxID>0</rise:maxID>
+      </rise:entity>
+    </rise:newAttribute>
+    <rise:newAttribute>
+      <rise:sequenceNumber>139</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-15T11:46:43</rise:timeStamp>
+      <rise:entity>
+        <rise:name>Temporada</rise:name>
+        <rise:attribute>
+          <rise:name>FechaFin</rise:name>
+          <rise:dataTypeAlias />
+          <rise:dataType>string</rise:dataType>
+          <rise:dataSize>50</rise:dataSize>
+          <rise:mustBeUnique>False</rise:mustBeUnique>
+          <rise:mustExist>False</rise:mustExist>
+        </rise:attribute>
+        <rise:maxID>0</rise:maxID>
+      </rise:entity>
+    </rise:newAttribute>
+    <rise:editAttribute>
+      <rise:sequenceNumber>140</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-15T11:46:48</rise:timeStamp>
+      <rise:entity>
+        <rise:name>Temporada</rise:name>
+        <rise:attribute>
+          <rise:name>FechaFin</rise:name>
+          <rise:dataTypeAlias />
+          <rise:dataType>datetime</rise:dataType>
+          <rise:dataSize>50</rise:dataSize>
+          <rise:mustBeUnique>False</rise:mustBeUnique>
+          <rise:mustExist>False</rise:mustExist>
+        </rise:attribute>
+        <rise:maxID>0</rise:maxID>
+      </rise:entity>
+    </rise:editAttribute>
+    <rise:editAttribute>
+      <rise:sequenceNumber>141</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-15T11:46:51</rise:timeStamp>
+      <rise:entity>
+        <rise:name>Temporada</rise:name>
+        <rise:attribute>
+          <rise:name>FechaInicio</rise:name>
+          <rise:dataTypeAlias />
+          <rise:dataType>datetime</rise:dataType>
+          <rise:dataSize>50</rise:dataSize>
+          <rise:mustBeUnique>False</rise:mustBeUnique>
+          <rise:mustExist>False</rise:mustExist>
+        </rise:attribute>
+        <rise:maxID>0</rise:maxID>
+      </rise:entity>
+    </rise:editAttribute>
+    <rise:editAttribute>
+      <rise:sequenceNumber>142</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-15T11:46:51</rise:timeStamp>
+      <rise:entity>
+        <rise:name>Temporada</rise:name>
+        <rise:attribute>
+          <rise:name>FechaInicio</rise:name>
+          <rise:dataTypeAlias />
+          <rise:dataType>datetime</rise:dataType>
+          <rise:mustBeUnique>False</rise:mustBeUnique>
+          <rise:mustExist>False</rise:mustExist>
+        </rise:attribute>
+        <rise:maxID>0</rise:maxID>
+      </rise:entity>
+    </rise:editAttribute>
+    <rise:editAttribute>
+      <rise:sequenceNumber>143</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-15T11:48:31</rise:timeStamp>
+      <rise:entity>
+        <rise:name>Temporada</rise:name>
+        <rise:attribute>
+          <rise:name>id</rise:name>
+          <rise:dataTypeAlias />
+          <rise:dataType>int</rise:dataType>
+          <rise:dataSize>50</rise:dataSize>
+          <rise:mustBeUnique>False</rise:mustBeUnique>
+          <rise:mustExist>False</rise:mustExist>
+        </rise:attribute>
+        <rise:maxID>0</rise:maxID>
+      </rise:entity>
+    </rise:editAttribute>
+    <rise:editAttribute>
+      <rise:sequenceNumber>144</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-15T11:48:31</rise:timeStamp>
+      <rise:entity>
+        <rise:name>Temporada</rise:name>
+        <rise:attribute>
+          <rise:name>id</rise:name>
+          <rise:dataTypeAlias />
+          <rise:dataType>int</rise:dataType>
+          <rise:mustBeUnique>False</rise:mustBeUnique>
+          <rise:mustExist>False</rise:mustExist>
+        </rise:attribute>
+        <rise:maxID>0</rise:maxID>
+      </rise:entity>
+    </rise:editAttribute>
+    <rise:newRelation>
+      <rise:sequenceNumber>145</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-15T11:50:09</rise:timeStamp>
+      <rise:relation>
+        <rise:name>TemporadaReserva</rise:name>
+        <rise:node>
+          <rise:name>Temporada</rise:name>
+          <rise:entityName>Temporada</rise:entityName>
+          <rise:cardinality>1</rise:cardinality>
+        </rise:node>
+        <rise:node>
+          <rise:name>Reserva</rise:name>
+          <rise:entityName>Reserva</rise:entityName>
+          <rise:cardinality>0toN</rise:cardinality>
+        </rise:node>
+        <rise:maxID>0</rise:maxID>
+      </rise:relation>
+    </rise:newRelation>
+    <rise:renameAttribute>
+      <rise:sequenceNumber>146</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-15T11:53:11</rise:timeStamp>
+      <rise:entityName>Temporada</rise:entityName>
+      <rise:attributeName>precioBase</rise:attributeName>
+      <rise:newAttributeName>multiplicador</rise:newAttributeName>
+    </rise:renameAttribute>
+    <rise:renameAttribute>
+      <rise:sequenceNumber>147</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-15T11:53:17</rise:timeStamp>
+      <rise:entityName>Temporada</rise:entityName>
+      <rise:attributeName>multiplicador</rise:attributeName>
+      <rise:newAttributeName>Multiplicador</rise:newAttributeName>
+    </rise:renameAttribute>
+    <rise:renameAttribute>
+      <rise:sequenceNumber>148</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-15T11:53:25</rise:timeStamp>
+      <rise:entityName>Temporada</rise:entityName>
+      <rise:attributeName>Multiplicador</rise:attributeName>
+      <rise:newAttributeName>multiplicador</rise:newAttributeName>
+    </rise:renameAttribute>
+    <rise:renameAttribute>
+      <rise:sequenceNumber>149</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-15T11:53:28</rise:timeStamp>
+      <rise:entityName>Temporada</rise:entityName>
+      <rise:attributeName>Nombre</rise:attributeName>
+      <rise:newAttributeName>nombre</rise:newAttributeName>
+    </rise:renameAttribute>
+    <rise:renameAttribute>
+      <rise:sequenceNumber>150</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-15T11:53:34</rise:timeStamp>
+      <rise:entityName>Temporada</rise:entityName>
+      <rise:attributeName>FechaInicio</rise:attributeName>
+      <rise:newAttributeName>fechaInicio</rise:newAttributeName>
+    </rise:renameAttribute>
+    <rise:editAttribute>
+      <rise:sequenceNumber>151</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-15T11:53:37</rise:timeStamp>
+      <rise:entity>
+        <rise:name>Temporada</rise:name>
+        <rise:attribute>
+          <rise:name>FechaFin</rise:name>
+          <rise:dataTypeAlias />
+          <rise:dataType>datetime</rise:dataType>
+          <rise:mustBeUnique>False</rise:mustBeUnique>
+          <rise:mustExist>False</rise:mustExist>
+        </rise:attribute>
+        <rise:maxID>0</rise:maxID>
+      </rise:entity>
+    </rise:editAttribute>
+    <rise:renameAttribute>
+      <rise:sequenceNumber>152</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-15T11:53:37</rise:timeStamp>
+      <rise:entityName>Temporada</rise:entityName>
+      <rise:attributeName>FechaFin</rise:attributeName>
+      <rise:newAttributeName>fechaFin</rise:newAttributeName>
+    </rise:renameAttribute>
+    <rise:renameAttribute>
+      <rise:sequenceNumber>153</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-15T11:54:10</rise:timeStamp>
+      <rise:entityName>Temporada</rise:entityName>
+      <rise:attributeName>fechaInicio</rise:attributeName>
+      <rise:newAttributeName>fecha</rise:newAttributeName>
+    </rise:renameAttribute>
+    <rise:editAttribute>
+      <rise:sequenceNumber>154</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-15T11:54:15</rise:timeStamp>
+      <rise:entity>
+        <rise:name>Temporada</rise:name>
+        <rise:attribute>
+          <rise:name>fecha</rise:name>
+          <rise:dataTypeAlias />
+          <rise:dataType>datetime</rise:dataType>
+          <rise:mustBeUnique>False</rise:mustBeUnique>
+          <rise:mustExist>True</rise:mustExist>
+        </rise:attribute>
+        <rise:maxID>0</rise:maxID>
+      </rise:entity>
+    </rise:editAttribute>
+    <rise:editAttribute>
+      <rise:sequenceNumber>155</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-15T11:54:36</rise:timeStamp>
+      <rise:entity>
+        <rise:name>Temporada</rise:name>
+        <rise:attribute>
+          <rise:name>fecha</rise:name>
+          <rise:dataTypeAlias />
+          <rise:dataType>datetime</rise:dataType>
+          <rise:mustBeUnique>True</rise:mustBeUnique>
+          <rise:mustExist>True</rise:mustExist>
+        </rise:attribute>
+        <rise:maxID>0</rise:maxID>
+      </rise:entity>
+    </rise:editAttribute>
+    <rise:deleteAttribute>
+      <rise:sequenceNumber>156</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-15T11:55:04</rise:timeStamp>
+      <rise:entityName>Temporada</rise:entityName>
+      <rise:attributeName>fechaFin</rise:attributeName>
+    </rise:deleteAttribute>
+    <rise:newEntity>
+      <rise:sequenceNumber>157</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-15T12:00:04</rise:timeStamp>
+      <rise:entity>
+        <rise:name>Entity1</rise:name>
+        <rise:maxID>0</rise:maxID>
+      </rise:entity>
+    </rise:newEntity>
+    <rise:renameEntity>
+      <rise:sequenceNumber>158</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-15T12:00:29</rise:timeStamp>
+      <rise:entityName>Temporada</rise:entityName>
+      <rise:newEntityName>Calendario</rise:newEntityName>
+    </rise:renameEntity>
+    <rise:renameAttribute>
+      <rise:sequenceNumber>159</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-15T12:00:46</rise:timeStamp>
+      <rise:entityName>Calendario</rise:entityName>
+      <rise:attributeName>id</rise:attributeName>
+      <rise:newAttributeName>fecha1</rise:newAttributeName>
+    </rise:renameAttribute>
+    <rise:renameAttribute>
+      <rise:sequenceNumber>160</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-15T12:01:06</rise:timeStamp>
+      <rise:entityName>Calendario</rise:entityName>
+      <rise:attributeName>fecha1</rise:attributeName>
+      <rise:newAttributeName>fecha2</rise:newAttributeName>
+    </rise:renameAttribute>
+    <rise:renameAttribute>
+      <rise:sequenceNumber>161</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-15T12:01:13</rise:timeStamp>
+      <rise:entityName>Calendario</rise:entityName>
+      <rise:attributeName>fecha2</rise:attributeName>
+      <rise:newAttributeName>fecha1</rise:newAttributeName>
+    </rise:renameAttribute>
+    <rise:deleteAttribute>
+      <rise:sequenceNumber>162</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-15T12:02:03</rise:timeStamp>
+      <rise:entityName>Calendario</rise:entityName>
+      <rise:attributeName>fecha1</rise:attributeName>
+    </rise:deleteAttribute>
+    <rise:deleteAttribute>
+      <rise:sequenceNumber>163</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-15T12:02:06</rise:timeStamp>
+      <rise:entityName>Calendario</rise:entityName>
+      <rise:attributeName>multiplicador</rise:attributeName>
+    </rise:deleteAttribute>
+    <rise:deleteAttribute>
+      <rise:sequenceNumber>164</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-15T12:02:10</rise:timeStamp>
+      <rise:entityName>Calendario</rise:entityName>
+      <rise:attributeName>nombre</rise:attributeName>
+    </rise:deleteAttribute>
+    <rise:newAttribute>
+      <rise:sequenceNumber>165</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-15T12:04:17</rise:timeStamp>
+      <rise:entity>
+        <rise:name>Entity1</rise:name>
+        <rise:attribute>
+          <rise:name>Temporada</rise:name>
+          <rise:dataTypeAlias />
+          <rise:dataType>string</rise:dataType>
+          <rise:dataSize>50</rise:dataSize>
+          <rise:mustBeUnique>False</rise:mustBeUnique>
+          <rise:mustExist>False</rise:mustExist>
+          <rise:description />
+        </rise:attribute>
+        <rise:maxID>0</rise:maxID>
+      </rise:entity>
+    </rise:newAttribute>
+    <rise:renameEntity>
+      <rise:sequenceNumber>166</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-15T12:04:26</rise:timeStamp>
+      <rise:entityName>Entity1</rise:entityName>
+      <rise:newEntityName>Temporada</rise:newEntityName>
+    </rise:renameEntity>
+    <rise:renameAttribute>
+      <rise:sequenceNumber>167</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-15T12:04:36</rise:timeStamp>
+      <rise:entityName>Temporada</rise:entityName>
+      <rise:attributeName>Temporada</rise:attributeName>
+      <rise:newAttributeName>Nombre</rise:newAttributeName>
+    </rise:renameAttribute>
+    <rise:newAttribute>
+      <rise:sequenceNumber>168</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-15T12:04:41</rise:timeStamp>
+      <rise:entity>
+        <rise:name>Temporada</rise:name>
+        <rise:attribute>
+          <rise:name>Multiplicador</rise:name>
+          <rise:dataTypeAlias />
+          <rise:dataType>string</rise:dataType>
+          <rise:dataSize>50</rise:dataSize>
+          <rise:mustBeUnique>False</rise:mustBeUnique>
+          <rise:mustExist>False</rise:mustExist>
+        </rise:attribute>
+        <rise:maxID>0</rise:maxID>
+      </rise:entity>
+    </rise:newAttribute>
+    <rise:editAttribute>
+      <rise:sequenceNumber>169</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-15T12:04:59</rise:timeStamp>
+      <rise:entity>
+        <rise:name>Temporada</rise:name>
+        <rise:attribute>
+          <rise:name>Multiplicador</rise:name>
+          <rise:dataTypeAlias />
+          <rise:dataType>float</rise:dataType>
+          <rise:mustBeUnique>False</rise:mustBeUnique>
+          <rise:mustExist>True</rise:mustExist>
+        </rise:attribute>
+        <rise:maxID>0</rise:maxID>
+      </rise:entity>
+    </rise:editAttribute>
+    <rise:editAttribute>
+      <rise:sequenceNumber>170</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-15T12:05:03</rise:timeStamp>
+      <rise:entity>
+        <rise:name>Temporada</rise:name>
+        <rise:attribute>
+          <rise:name>Nombre</rise:name>
+          <rise:dataTypeAlias />
+          <rise:dataType>string</rise:dataType>
+          <rise:dataSize>50</rise:dataSize>
+          <rise:mustBeUnique>True</rise:mustBeUnique>
+          <rise:mustExist>False</rise:mustExist>
+        </rise:attribute>
+        <rise:maxID>0</rise:maxID>
+      </rise:entity>
+    </rise:editAttribute>
+    <rise:newAttribute>
+      <rise:sequenceNumber>171</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-15T12:06:16</rise:timeStamp>
+      <rise:entity>
+        <rise:name>Temporada</rise:name>
+        <rise:attribute>
+          <rise:name>Attribute</rise:name>
+          <rise:dataTypeAlias />
+          <rise:dataType>string</rise:dataType>
+          <rise:dataSize>50</rise:dataSize>
+          <rise:mustBeUnique>False</rise:mustBeUnique>
+          <rise:mustExist>False</rise:mustExist>
+        </rise:attribute>
+        <rise:maxID>0</rise:maxID>
+      </rise:entity>
+    </rise:newAttribute>
+    <rise:newRelation>
+      <rise:sequenceNumber>172</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-15T12:09:35</rise:timeStamp>
+      <rise:relation>
+        <rise:name>CalendarioTemporada</rise:name>
+        <rise:node>
+          <rise:name>Calendario</rise:name>
+          <rise:entityName>Calendario</rise:entityName>
+          <rise:cardinality>1</rise:cardinality>
+        </rise:node>
+        <rise:node>
+          <rise:name>Temporada</rise:name>
+          <rise:entityName>Temporada</rise:entityName>
+          <rise:cardinality>0toN</rise:cardinality>
+        </rise:node>
+        <rise:maxID>0</rise:maxID>
+      </rise:relation>
+    </rise:newRelation>
+    <rise:deleteRelation>
+      <rise:sequenceNumber>173</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-15T12:10:36</rise:timeStamp>
+      <rise:relationName>CalendarioTemporada</rise:relationName>
+    </rise:deleteRelation>
+    <rise:newRelation>
+      <rise:sequenceNumber>174</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-15T12:10:45</rise:timeStamp>
+      <rise:relation>
+        <rise:name>CalendarioTemporada</rise:name>
+        <rise:node>
+          <rise:name>Calendario</rise:name>
+          <rise:entityName>Calendario</rise:entityName>
+          <rise:cardinality>1</rise:cardinality>
+        </rise:node>
+        <rise:node>
+          <rise:name>Temporada</rise:name>
+          <rise:entityName>Temporada</rise:entityName>
+          <rise:cardinality>0toN</rise:cardinality>
+        </rise:node>
+        <rise:maxID>0</rise:maxID>
+      </rise:relation>
+    </rise:newRelation>
+    <rise:deleteRelation>
+      <rise:sequenceNumber>175</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-15T12:10:56</rise:timeStamp>
+      <rise:relationName>CalendarioTemporada</rise:relationName>
+    </rise:deleteRelation>
+    <rise:newRelation>
+      <rise:sequenceNumber>176</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-15T12:11:04</rise:timeStamp>
+      <rise:relation>
+        <rise:name>TemporadaCalendario</rise:name>
+        <rise:node>
+          <rise:name>Temporada</rise:name>
+          <rise:entityName>Temporada</rise:entityName>
+          <rise:cardinality>1</rise:cardinality>
+        </rise:node>
+        <rise:node>
+          <rise:name>Calendario</rise:name>
+          <rise:entityName>Calendario</rise:entityName>
+          <rise:cardinality>0toN</rise:cardinality>
+        </rise:node>
+        <rise:maxID>0</rise:maxID>
+      </rise:relation>
+    </rise:newRelation>
+    <rise:renameAttribute>
+      <rise:sequenceNumber>177</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-15T12:11:41</rise:timeStamp>
+      <rise:entityName>Temporada</rise:entityName>
+      <rise:attributeName>Multiplicador</rise:attributeName>
+      <rise:newAttributeName>año</rise:newAttributeName>
+    </rise:renameAttribute>
+    <rise:renameAttribute>
+      <rise:sequenceNumber>178</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-15T12:11:49</rise:timeStamp>
+      <rise:entityName>Temporada</rise:entityName>
+      <rise:attributeName>Attribute</rise:attributeName>
+      <rise:newAttributeName>multiplicador</rise:newAttributeName>
+    </rise:renameAttribute>
+    <rise:editAttribute>
+      <rise:sequenceNumber>179</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-15T12:12:09</rise:timeStamp>
+      <rise:entity>
+        <rise:name>Temporada</rise:name>
+        <rise:attribute>
+          <rise:name>año</rise:name>
+          <rise:dataTypeAlias />
+          <rise:dataType>int</rise:dataType>
+          <rise:mustBeUnique>True</rise:mustBeUnique>
+          <rise:mustExist>True</rise:mustExist>
+          <rise:description>Clave altern</rise:description>
+        </rise:attribute>
+        <rise:maxID>0</rise:maxID>
+      </rise:entity>
+    </rise:editAttribute>
+    <rise:editAttribute>
+      <rise:sequenceNumber>180</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-15T12:12:14</rise:timeStamp>
+      <rise:entity>
+        <rise:name>Temporada</rise:name>
+        <rise:attribute>
+          <rise:name>Nombre</rise:name>
+          <rise:dataTypeAlias />
+          <rise:dataType>string</rise:dataType>
+          <rise:dataSize>50</rise:dataSize>
+          <rise:mustBeUnique>True</rise:mustBeUnique>
+          <rise:mustExist>False</rise:mustExist>
+          <rise:description>Clave primaria compuesta</rise:description>
+        </rise:attribute>
+        <rise:maxID>0</rise:maxID>
+      </rise:entity>
+    </rise:editAttribute>
+    <rise:editAttribute>
+      <rise:sequenceNumber>181</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-15T12:12:25</rise:timeStamp>
+      <rise:entity>
+        <rise:name>Temporada</rise:name>
+        <rise:attribute>
+          <rise:name>año</rise:name>
+          <rise:dataTypeAlias />
+          <rise:dataType>int</rise:dataType>
+          <rise:mustBeUnique>True</rise:mustBeUnique>
+          <rise:mustExist>True</rise:mustExist>
+          <rise:description>Clave primaria compuesta</rise:description>
+        </rise:attribute>
+        <rise:maxID>0</rise:maxID>
+      </rise:entity>
+    </rise:editAttribute>
+    <rise:editAttribute>
+      <rise:sequenceNumber>182</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-15T12:12:44</rise:timeStamp>
+      <rise:entity>
+        <rise:name>Temporada</rise:name>
+        <rise:attribute>
+          <rise:name>multiplicador</rise:name>
+          <rise:dataTypeAlias />
+          <rise:dataType>string</rise:dataType>
+          <rise:dataSize>50</rise:dataSize>
+          <rise:mustBeUnique>False</rise:mustBeUnique>
+          <rise:mustExist>False</rise:mustExist>
+          <rise:description>Multiplicador del precio</rise:description>
+        </rise:attribute>
+        <rise:maxID>0</rise:maxID>
+      </rise:entity>
+    </rise:editAttribute>
+    <rise:editAttribute>
+      <rise:sequenceNumber>183</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-15T12:13:04</rise:timeStamp>
+      <rise:entity>
+        <rise:name>Calendario</rise:name>
+        <rise:attribute>
+          <rise:name>fecha</rise:name>
+          <rise:dataTypeAlias />
+          <rise:dataType>datetime</rise:dataType>
+          <rise:mustBeUnique>True</rise:mustBeUnique>
+          <rise:mustExist>True</rise:mustExist>
+          <rise:description>Dia, mes y año</rise:description>
+        </rise:attribute>
+        <rise:maxID>0</rise:maxID>
+      </rise:entity>
+    </rise:editAttribute>
+    <rise:editAttribute>
+      <rise:sequenceNumber>184</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-15T12:13:27</rise:timeStamp>
+      <rise:entity>
+        <rise:name>Temporada</rise:name>
+        <rise:attribute>
+          <rise:name>multiplicador</rise:name>
+          <rise:dataTypeAlias />
+          <rise:dataType>string</rise:dataType>
+          <rise:dataSize>50</rise:dataSize>
+          <rise:mustBeUnique>False</rise:mustBeUnique>
+          <rise:mustExist>True</rise:mustExist>
+          <rise:description>Multiplicador del precio</rise:description>
+        </rise:attribute>
+        <rise:maxID>0</rise:maxID>
+      </rise:entity>
+    </rise:editAttribute>
+    <rise:editAttribute>
+      <rise:sequenceNumber>185</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-15T12:13:28</rise:timeStamp>
+      <rise:entity>
+        <rise:name>Temporada</rise:name>
+        <rise:attribute>
+          <rise:name>Nombre</rise:name>
+          <rise:dataTypeAlias />
+          <rise:dataType>string</rise:dataType>
+          <rise:dataSize>50</rise:dataSize>
+          <rise:mustBeUnique>True</rise:mustBeUnique>
+          <rise:mustExist>True</rise:mustExist>
+          <rise:description>Clave primaria compuesta</rise:description>
+        </rise:attribute>
+        <rise:maxID>0</rise:maxID>
+      </rise:entity>
+    </rise:editAttribute>
+    <rise:editAttribute>
+      <rise:sequenceNumber>186</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-15T12:15:48</rise:timeStamp>
+      <rise:entity>
+        <rise:name>Cliente</rise:name>
+        <rise:attribute>
+          <rise:name>nif</rise:name>
+          <rise:dataTypeAlias />
+          <rise:dataType>string</rise:dataType>
+          <rise:dataSize>50</rise:dataSize>
+          <rise:mustBeUnique>True</rise:mustBeUnique>
+          <rise:mustExist>True</rise:mustExist>
+          <rise:description>Identificador del cliente</rise:description>
+        </rise:attribute>
+        <rise:maxID>0</rise:maxID>
+      </rise:entity>
+    </rise:editAttribute>
+    <rise:deleteEntity>
+      <rise:sequenceNumber>187</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-15T12:17:01</rise:timeStamp>
+      <rise:entityName>Entity</rise:entityName>
+    </rise:deleteEntity>
+    <rise:newAttribute>
+      <rise:sequenceNumber>188</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-15T12:24:13</rise:timeStamp>
+      <rise:entity>
+        <rise:name>Oferta</rise:name>
+        <rise:attribute>
+          <rise:name>descuento</rise:name>
+          <rise:dataTypeAlias />
+          <rise:dataType>string</rise:dataType>
+          <rise:dataSize>50</rise:dataSize>
+          <rise:mustBeUnique>False</rise:mustBeUnique>
+          <rise:mustExist>False</rise:mustExist>
+        </rise:attribute>
+        <rise:maxID>0</rise:maxID>
+      </rise:entity>
+    </rise:newAttribute>
+    <rise:editAttribute>
+      <rise:sequenceNumber>189</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-15T12:24:25</rise:timeStamp>
+      <rise:entity>
+        <rise:name>Oferta</rise:name>
+        <rise:attribute>
+          <rise:name>descuento</rise:name>
+          <rise:dataTypeAlias />
+          <rise:dataType>float</rise:dataType>
+          <rise:dataSize>50</rise:dataSize>
+          <rise:mustBeUnique>False</rise:mustBeUnique>
+          <rise:mustExist>False</rise:mustExist>
+        </rise:attribute>
+        <rise:maxID>0</rise:maxID>
+      </rise:entity>
+    </rise:editAttribute>
+    <rise:editAttribute>
+      <rise:sequenceNumber>190</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-15T12:24:25</rise:timeStamp>
+      <rise:entity>
+        <rise:name>Oferta</rise:name>
+        <rise:attribute>
+          <rise:name>descuento</rise:name>
+          <rise:dataTypeAlias />
+          <rise:dataType>float</rise:dataType>
+          <rise:mustBeUnique>False</rise:mustBeUnique>
+          <rise:mustExist>False</rise:mustExist>
+        </rise:attribute>
+        <rise:maxID>0</rise:maxID>
+      </rise:entity>
+    </rise:editAttribute>
   </rise:evolution>
   <rise:publish />
   <rise:presentation>
@@ -1698,8 +2885,8 @@
         <rise:showAttributeDetails>False</rise:showAttributeDetails>
         <rise:showIndexes>False</rise:showIndexes>
         <rise:boundingBox>
-          <rise:x>574</rise:x>
-          <rise:y>44</rise:y>
+          <rise:x>580</rise:x>
+          <rise:y>37</rise:y>
           <rise:sizeX>100</rise:sizeX>
           <rise:sizeY>150</rise:sizeY>
         </rise:boundingBox>
@@ -1758,8 +2945,8 @@
         <rise:showAttributeDetails>False</rise:showAttributeDetails>
         <rise:showIndexes>False</rise:showIndexes>
         <rise:boundingBox>
-          <rise:x>287</rise:x>
-          <rise:y>546</rise:y>
+          <rise:x>360</rise:x>
+          <rise:y>533</rise:y>
           <rise:sizeX>100</rise:sizeX>
           <rise:sizeY>150</rise:sizeY>
         </rise:boundingBox>
@@ -1773,8 +2960,8 @@
         <rise:showAttributeDetails>False</rise:showAttributeDetails>
         <rise:showIndexes>False</rise:showIndexes>
         <rise:boundingBox>
-          <rise:x>810</rise:x>
-          <rise:y>304</rise:y>
+          <rise:x>857</rise:x>
+          <rise:y>308</rise:y>
           <rise:sizeX>100</rise:sizeX>
           <rise:sizeY>150</rise:sizeY>
         </rise:boundingBox>
@@ -1788,8 +2975,8 @@
         <rise:showAttributeDetails>False</rise:showAttributeDetails>
         <rise:showIndexes>False</rise:showIndexes>
         <rise:boundingBox>
-          <rise:x>582</rise:x>
-          <rise:y>615</rise:y>
+          <rise:x>593</rise:x>
+          <rise:y>550</rise:y>
           <rise:sizeX>126</rise:sizeX>
           <rise:sizeY>150</rise:sizeY>
         </rise:boundingBox>
@@ -1803,10 +2990,55 @@
         <rise:showAttributeDetails>False</rise:showAttributeDetails>
         <rise:showIndexes>False</rise:showIndexes>
         <rise:boundingBox>
-          <rise:x>569</rise:x>
-          <rise:y>256</rise:y>
+          <rise:x>575</rise:x>
+          <rise:y>239</rise:y>
           <rise:sizeX>111</rise:sizeX>
           <rise:sizeY>252</rise:sizeY>
+        </rise:boundingBox>
+        <rise:color>
+          <rise:bgColor>255;176;224;230;PowderBlue</rise:bgColor>
+          <rise:textColor>255;0;0;0;Black</rise:textColor>
+        </rise:color>
+      </rise:drawEntity>
+      <rise:drawEntity>
+        <rise:entityName>Tipo</rise:entityName>
+        <rise:showAttributeDetails>False</rise:showAttributeDetails>
+        <rise:showIndexes>False</rise:showIndexes>
+        <rise:boundingBox>
+          <rise:x>82</rise:x>
+          <rise:y>44</rise:y>
+          <rise:sizeX>100</rise:sizeX>
+          <rise:sizeY>150</rise:sizeY>
+        </rise:boundingBox>
+        <rise:color>
+          <rise:bgColor>255;176;224;230;PowderBlue</rise:bgColor>
+          <rise:textColor>255;0;0;0;Black</rise:textColor>
+        </rise:color>
+      </rise:drawEntity>
+      <rise:drawEntity>
+        <rise:entityName>Calendario</rise:entityName>
+        <rise:showAttributeDetails>False</rise:showAttributeDetails>
+        <rise:showIndexes>False</rise:showIndexes>
+        <rise:boundingBox>
+          <rise:x>235</rise:x>
+          <rise:y>530</rise:y>
+          <rise:sizeX>100</rise:sizeX>
+          <rise:sizeY>150</rise:sizeY>
+        </rise:boundingBox>
+        <rise:color>
+          <rise:bgColor>255;176;224;230;PowderBlue</rise:bgColor>
+          <rise:textColor>255;0;0;0;Black</rise:textColor>
+        </rise:color>
+      </rise:drawEntity>
+      <rise:drawEntity>
+        <rise:entityName>Temporada</rise:entityName>
+        <rise:showAttributeDetails>False</rise:showAttributeDetails>
+        <rise:showIndexes>False</rise:showIndexes>
+        <rise:boundingBox>
+          <rise:x>43</rise:x>
+          <rise:y>530</rise:y>
+          <rise:sizeX>100</rise:sizeX>
+          <rise:sizeY>150</rise:sizeY>
         </rise:boundingBox>
         <rise:color>
           <rise:bgColor>255;176;224;230;PowderBlue</rise:bgColor>
@@ -1844,7 +3076,9 @@
     <rise:text>
       <rise:textID>02cf297f-9d8e-4710-9b3f-2214d0c00e20</rise:textID>
       <rise:title>Ocurrencia</rise:title>
-      <rise:text>Para dar de alta una habitación tendrá que haber un hotel dado de alta y a la cual pertenezca la habitación y cada habitación tendrá un identificador (que se generará automáticamente al darla de alta), número, tipo, precio base y un tamaño</rise:text>
+      <rise:text>Para dar de alta una habitación tendrá que haber un hotel dado de alta y al cual pertenezca la habitación y cada habitación tendrá un identificador (que se generará automáticamente al darla de alta), número (numeración dentro del hotel), un atributo vistas y un tamaño.
+
+El atributo vistas puede contener uno de estos tres valores: buenas, malas o normales.</rise:text>
       <rise:entityName>Habitación</rise:entityName>
     </rise:text>
     <rise:text>
@@ -1869,7 +3103,7 @@ Algunos servicios como el de restauración el precio variará en función del co
     <rise:text>
       <rise:textID>09159513-ea39-41d7-82cc-aa52ba671d99</rise:textID>
       <rise:title>Sinónimos</rise:title>
-      <rise:text>Pretación, instalaciones, comodidades</rise:text>
+      <rise:text>Prestación, instalaciones, comodidades</rise:text>
       <rise:entityName>Servicio</rise:entityName>
     </rise:text>
     <rise:text>
@@ -1881,9 +3115,9 @@ Algunos servicios como el de restauración el precio variará en función del co
     <rise:text>
       <rise:textID>ae6e45e8-8001-4710-a6da-24ed1e7e6446</rise:textID>
       <rise:title>Ocurrencia</rise:title>
-      <rise:text>Para poder dar de alta un hotel se creará un identificador automático, también tendrá un nombre.dirección, código postal (calculado a partir de la dirección, cuidad,país y el número de estrellas .
+      <rise:text>Para poder dar de alta un hotel se creará un identificador automático, también tendrá un nombre.dirección, código postal, cuidad, país y el número de estrellas.
 
-El número de estrellas de un hotel irá de 0 a 5 y nunca estará en nulo
+El número de estrellas de un hotel irá de 0 a 5 y nunca estará en nulo.
 
 Cada hotel estará formado por diferentes habitaciones.</rise:text>
       <rise:entityName>Hotel</rise:entityName>
@@ -1921,7 +3155,7 @@ Cada hotel estará formado por diferentes habitaciones.</rise:text>
     <rise:text>
       <rise:textID>c9f455c8-03ef-4dbd-8a67-0f675ba7e19d</rise:textID>
       <rise:title>OCURRENCIA</rise:title>
-      <rise:text>Cada oferta tendrá un id dieferente para cada reserva con un pocentaje de decuento diferente</rise:text>
+      <rise:text>Cada oferta tendrá un id diferente que podrá aplicarse a una o más reservas, siendo la única restriccion la de utilizar un código de descuento por reserva. Cada oferta tendra un atributo entero que indicara el porcentaje de descuento.</rise:text>
       <rise:entityName>Oferta</rise:entityName>
     </rise:text>
     <rise:text>
@@ -1945,7 +3179,7 @@ Cada hotel estará formado por diferentes habitaciones.</rise:text>
     <rise:text>
       <rise:textID>b6ccdd6a-b8de-431f-ba0a-4f227bf14bac</rise:textID>
       <rise:title>SINÓNIMOS</rise:title>
-      <rise:text>Guardar, provisión de habitación</rise:text>
+      <rise:text />
       <rise:entityName>Reserva</rise:entityName>
     </rise:text>
     <rise:text>
@@ -1963,8 +3197,67 @@ Cada hotel estará formado por diferentes habitaciones.</rise:text>
     <rise:text>
       <rise:textID>412ca986-fb9a-4e9c-a532-e1a373091c11</rise:textID>
       <rise:title>SINÓNIMOS</rise:title>
-      <rise:text>Guardar un servicio</rise:text>
+      <rise:text>Contratar un servicio</rise:text>
       <rise:entityName>ReservaServicio</rise:entityName>
+    </rise:text>
+    <rise:text>
+      <rise:textID>8dfe2481-744a-457f-8db1-4e9fea10e741</rise:textID>
+      <rise:title>Descripción</rise:title>
+      <rise:text>Esta tabla contiene los tipos de habitaciones existentes en la emrpesa Infotel, con su precio base.</rise:text>
+      <rise:entityName>Tipo</rise:entityName>
+    </rise:text>
+    <rise:text>
+      <rise:textID>0ee5051d-14a9-44aa-8d39-c713c52a1643</rise:textID>
+      <rise:title>Ocurrencia</rise:title>
+      <rise:text>Se darán de alta los tipos de habitaciones con su precio base</rise:text>
+      <rise:entityName>Tipo</rise:entityName>
+    </rise:text>
+    <rise:text>
+      <rise:textID>7296b4be-33a9-47d6-bf59-d692436a9e75</rise:textID>
+      <rise:title>Sinónimos</rise:title>
+      <rise:text>Clase</rise:text>
+      <rise:entityName>Tipo</rise:entityName>
+    </rise:text>
+    <rise:text>
+      <rise:textID>65cb83fb-df95-4b3b-bc1d-e5121af57e21</rise:textID>
+      <rise:title>Descripción</rise:title>
+      <rise:text>En esta tabla aparecerán registros para los diferentes días del año.</rise:text>
+      <rise:entityName>Calendario</rise:entityName>
+    </rise:text>
+    <rise:text>
+      <rise:textID>f9ceb3e9-1b3b-42c8-9e64-f70e17289844</rise:textID>
+      <rise:title>Ocurrencia</rise:title>
+      <rise:text>En la tabla temporada cada día del año tendrá un registro en base de datos de manera que después se pueda relacionar con el tipo de temporada y su multiplicador</rise:text>
+      <rise:entityName>Calendario</rise:entityName>
+    </rise:text>
+    <rise:text>
+      <rise:textID>6ba114f8-0757-43f8-b593-30a24b1b3bac</rise:textID>
+      <rise:title>Sinónimos</rise:title>
+      <rise:text>día, fecha</rise:text>
+      <rise:entityName>Calendario</rise:entityName>
+    </rise:text>
+    <rise:text>
+      <rise:textID>6f871627-a687-4d25-89e3-0f9c718047e8</rise:textID>
+      <rise:title>Descripción</rise:title>
+      <rise:text>En esta tabla aparecerán las temporadas de cada año y su multiplicador de precio asociado, ya que hemos acordado que cada temporada tendrá un mutliplicador estandar dependiendo del año.</rise:text>
+      <rise:entityName>Temporada</rise:entityName>
+    </rise:text>
+    <rise:text>
+      <rise:textID>c7a55948-0416-4a0e-a94e-1172f49570ec</rise:textID>
+      <rise:title>Ocurrencia</rise:title>
+      <rise:text>En la tabla temporada aparecerán 365 registros cada año de manera que el administrador pueda elegir que días del año son temporada media/baja/alta</rise:text>
+      <rise:entityName>Temporada</rise:entityName>
+    </rise:text>
+    <rise:text>
+      <rise:textID>79016004-463f-498a-8e72-a998f764b5a6</rise:textID>
+      <rise:title>Sinonimos</rise:title>
+      <rise:text />
+    </rise:text>
+    <rise:text>
+      <rise:textID>0b305373-acb1-4357-bbe7-a88d5540f7ed</rise:textID>
+      <rise:title>Sinónimos</rise:title>
+      <rise:text>época, estación</rise:text>
+      <rise:entityName>Temporada</rise:entityName>
     </rise:text>
   </rise:documentation>
   <rise:applications />
