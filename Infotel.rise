@@ -3644,6 +3644,424 @@
       <rise:timeStamp>2022-02-22T12:38:45</rise:timeStamp>
       <rise:relationName>CalendarioReserva</rise:relationName>
     </rise:deleteRelation>
+    <rise:editAttribute>
+      <rise:sequenceNumber>261</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-22T22:45:24</rise:timeStamp>
+      <rise:entity>
+        <rise:name>ReservaServicio</rise:name>
+        <rise:attribute>
+          <rise:name>fecha</rise:name>
+          <rise:dataTypeAlias />
+          <rise:dataType>datetime</rise:dataType>
+          <rise:mustBeUnique>False</rise:mustBeUnique>
+          <rise:mustExist>False</rise:mustExist>
+        </rise:attribute>
+        <rise:maxID>0</rise:maxID>
+      </rise:entity>
+    </rise:editAttribute>
+    <rise:renameAttribute>
+      <rise:sequenceNumber>262</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-22T22:45:24</rise:timeStamp>
+      <rise:entityName>ReservaServicio</rise:entityName>
+      <rise:attributeName>fecha</rise:attributeName>
+      <rise:newAttributeName>fechaInicio</rise:newAttributeName>
+    </rise:renameAttribute>
+    <rise:newAttribute>
+      <rise:sequenceNumber>263</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-22T22:45:28</rise:timeStamp>
+      <rise:entity>
+        <rise:name>ReservaServicio</rise:name>
+        <rise:attribute>
+          <rise:name>fechaFin</rise:name>
+          <rise:dataTypeAlias />
+          <rise:dataType>string</rise:dataType>
+          <rise:dataSize>50</rise:dataSize>
+          <rise:mustBeUnique>False</rise:mustBeUnique>
+          <rise:mustExist>False</rise:mustExist>
+        </rise:attribute>
+        <rise:maxID>0</rise:maxID>
+      </rise:entity>
+    </rise:newAttribute>
+    <rise:deleteAttribute>
+      <rise:sequenceNumber>264</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-22T23:04:13</rise:timeStamp>
+      <rise:entityName>Persona</rise:entityName>
+      <rise:attributeName>id</rise:attributeName>
+    </rise:deleteAttribute>
+    <rise:editAttribute>
+      <rise:sequenceNumber>265</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-22T23:04:41</rise:timeStamp>
+      <rise:entity>
+        <rise:name>Persona</rise:name>
+        <rise:attribute>
+          <rise:name>email</rise:name>
+          <rise:dataTypeAlias />
+          <rise:dataType>string</rise:dataType>
+          <rise:dataSize>50</rise:dataSize>
+          <rise:mustBeUnique>False</rise:mustBeUnique>
+          <rise:mustExist>True</rise:mustExist>
+          <rise:description>Correo electrónico del cliente</rise:description>
+        </rise:attribute>
+        <rise:maxID>0</rise:maxID>
+      </rise:entity>
+    </rise:editAttribute>
+    <rise:renameAttribute>
+      <rise:sequenceNumber>266</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-22T23:04:46</rise:timeStamp>
+      <rise:entityName>Persona</rise:entityName>
+      <rise:attributeName>nombre</rise:attributeName>
+      <rise:newAttributeName>nif1</rise:newAttributeName>
+    </rise:renameAttribute>
+    <rise:renameAttribute>
+      <rise:sequenceNumber>267</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-22T23:04:51</rise:timeStamp>
+      <rise:entityName>Persona</rise:entityName>
+      <rise:attributeName>apellidos</rise:attributeName>
+      <rise:newAttributeName>nombre</rise:newAttributeName>
+    </rise:renameAttribute>
+    <rise:renameAttribute>
+      <rise:sequenceNumber>268</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-22T23:05:22</rise:timeStamp>
+      <rise:entityName>Persona</rise:entityName>
+      <rise:attributeName>nif</rise:attributeName>
+      <rise:newAttributeName>Hernandez</rise:newAttributeName>
+    </rise:renameAttribute>
+    <rise:renameAttribute>
+      <rise:sequenceNumber>269</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-22T23:05:27</rise:timeStamp>
+      <rise:entityName>Persona</rise:entityName>
+      <rise:attributeName>Hernandez</rise:attributeName>
+      <rise:newAttributeName>apellidos</rise:newAttributeName>
+    </rise:renameAttribute>
+    <rise:renameAttribute>
+      <rise:sequenceNumber>270</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-22T23:05:31</rise:timeStamp>
+      <rise:entityName>Persona</rise:entityName>
+      <rise:attributeName>nif1</rise:attributeName>
+      <rise:newAttributeName>nif</rise:newAttributeName>
+    </rise:renameAttribute>
+    <rise:newAttribute>
+      <rise:sequenceNumber>271</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-22T23:06:48</rise:timeStamp>
+      <rise:entity>
+        <rise:name>CodigoReserva</rise:name>
+        <rise:attribute>
+          <rise:name>fechaInicio</rise:name>
+          <rise:dataTypeAlias />
+          <rise:dataType>string</rise:dataType>
+          <rise:dataSize>50</rise:dataSize>
+          <rise:mustBeUnique>False</rise:mustBeUnique>
+          <rise:mustExist>False</rise:mustExist>
+        </rise:attribute>
+        <rise:maxID>0</rise:maxID>
+      </rise:entity>
+    </rise:newAttribute>
+    <rise:newAttribute>
+      <rise:sequenceNumber>272</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-22T23:06:50</rise:timeStamp>
+      <rise:entity>
+        <rise:name>CodigoReserva</rise:name>
+        <rise:attribute>
+          <rise:name>fechaFin</rise:name>
+          <rise:dataTypeAlias />
+          <rise:dataType>string</rise:dataType>
+          <rise:dataSize>50</rise:dataSize>
+          <rise:mustBeUnique>False</rise:mustBeUnique>
+          <rise:mustExist>False</rise:mustExist>
+        </rise:attribute>
+        <rise:maxID>0</rise:maxID>
+      </rise:entity>
+    </rise:newAttribute>
+    <rise:newAttribute>
+      <rise:sequenceNumber>273</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-22T23:06:52</rise:timeStamp>
+      <rise:entity>
+        <rise:name>CodigoReserva</rise:name>
+        <rise:attribute>
+          <rise:name>precioTotal</rise:name>
+          <rise:dataTypeAlias />
+          <rise:dataType>string</rise:dataType>
+          <rise:dataSize>50</rise:dataSize>
+          <rise:mustBeUnique>False</rise:mustBeUnique>
+          <rise:mustExist>False</rise:mustExist>
+        </rise:attribute>
+        <rise:maxID>0</rise:maxID>
+      </rise:entity>
+    </rise:newAttribute>
+    <rise:editAttribute>
+      <rise:sequenceNumber>274</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-22T23:07:01</rise:timeStamp>
+      <rise:entity>
+        <rise:name>CodigoReserva</rise:name>
+        <rise:attribute>
+          <rise:name>precioTotal</rise:name>
+          <rise:dataTypeAlias />
+          <rise:dataType>float</rise:dataType>
+          <rise:dataSize>50</rise:dataSize>
+          <rise:mustBeUnique>False</rise:mustBeUnique>
+          <rise:mustExist>False</rise:mustExist>
+        </rise:attribute>
+        <rise:maxID>0</rise:maxID>
+      </rise:entity>
+    </rise:editAttribute>
+    <rise:editAttribute>
+      <rise:sequenceNumber>275</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-22T23:07:06</rise:timeStamp>
+      <rise:entity>
+        <rise:name>CodigoReserva</rise:name>
+        <rise:attribute>
+          <rise:name>fechaInicio</rise:name>
+          <rise:dataTypeAlias />
+          <rise:dataType>datetime</rise:dataType>
+          <rise:dataSize>50</rise:dataSize>
+          <rise:mustBeUnique>False</rise:mustBeUnique>
+          <rise:mustExist>False</rise:mustExist>
+        </rise:attribute>
+        <rise:maxID>0</rise:maxID>
+      </rise:entity>
+    </rise:editAttribute>
+    <rise:editAttribute>
+      <rise:sequenceNumber>276</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-22T23:07:17</rise:timeStamp>
+      <rise:entity>
+        <rise:name>CodigoReserva</rise:name>
+        <rise:attribute>
+          <rise:name>fechaFin</rise:name>
+          <rise:dataTypeAlias />
+          <rise:dataType>datetime</rise:dataType>
+          <rise:dataSize>50</rise:dataSize>
+          <rise:mustBeUnique>False</rise:mustBeUnique>
+          <rise:mustExist>False</rise:mustExist>
+        </rise:attribute>
+        <rise:maxID>0</rise:maxID>
+      </rise:entity>
+    </rise:editAttribute>
+    <rise:editAttribute>
+      <rise:sequenceNumber>277</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-22T23:07:17</rise:timeStamp>
+      <rise:entity>
+        <rise:name>CodigoReserva</rise:name>
+        <rise:attribute>
+          <rise:name>fechaFin</rise:name>
+          <rise:dataTypeAlias />
+          <rise:dataType>datetime</rise:dataType>
+          <rise:mustBeUnique>False</rise:mustBeUnique>
+          <rise:mustExist>False</rise:mustExist>
+        </rise:attribute>
+        <rise:maxID>0</rise:maxID>
+      </rise:entity>
+    </rise:editAttribute>
+    <rise:renameEntity>
+      <rise:sequenceNumber>278</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-22T23:08:27</rise:timeStamp>
+      <rise:entityName>Reserva</rise:entityName>
+      <rise:newEntityName>ReservaHist</rise:newEntityName>
+    </rise:renameEntity>
+    <rise:deleteAttribute>
+      <rise:sequenceNumber>279</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-22T23:08:38</rise:timeStamp>
+      <rise:entityName>ReservaHist</rise:entityName>
+      <rise:attributeName>fecha_inicio</rise:attributeName>
+    </rise:deleteAttribute>
+    <rise:deleteAttribute>
+      <rise:sequenceNumber>280</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-22T23:08:40</rise:timeStamp>
+      <rise:entityName>ReservaHist</rise:entityName>
+      <rise:attributeName>fecha_fin</rise:attributeName>
+    </rise:deleteAttribute>
+    <rise:editAttribute>
+      <rise:sequenceNumber>281</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-22T23:11:21</rise:timeStamp>
+      <rise:entity>
+        <rise:name>ReservaHist</rise:name>
+        <rise:attribute>
+          <rise:name>nPersonas</rise:name>
+          <rise:dataTypeAlias />
+          <rise:dataType>int</rise:dataType>
+          <rise:mustBeUnique>False</rise:mustBeUnique>
+          <rise:mustExist>False</rise:mustExist>
+          <rise:description>Numero de personas.</rise:description>
+        </rise:attribute>
+        <rise:maxID>0</rise:maxID>
+      </rise:entity>
+    </rise:editAttribute>
+    <rise:newAttribute>
+      <rise:sequenceNumber>282</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-22T23:11:44</rise:timeStamp>
+      <rise:entity>
+        <rise:name>Habitación</rise:name>
+        <rise:attribute>
+          <rise:name>isCovidFree</rise:name>
+          <rise:dataTypeAlias />
+          <rise:dataType>string</rise:dataType>
+          <rise:dataSize>50</rise:dataSize>
+          <rise:mustBeUnique>False</rise:mustBeUnique>
+          <rise:mustExist>False</rise:mustExist>
+        </rise:attribute>
+        <rise:maxID>0</rise:maxID>
+      </rise:entity>
+    </rise:newAttribute>
+    <rise:renameAttribute>
+      <rise:sequenceNumber>283</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-22T23:11:53</rise:timeStamp>
+      <rise:entityName>Habitación</rise:entityName>
+      <rise:attributeName>isCovidFree</rise:attributeName>
+      <rise:newAttributeName>Attribute</rise:newAttributeName>
+    </rise:renameAttribute>
+    <rise:deleteAttribute>
+      <rise:sequenceNumber>284</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-22T23:12:00</rise:timeStamp>
+      <rise:entityName>Habitación</rise:entityName>
+      <rise:attributeName>Attribute</rise:attributeName>
+    </rise:deleteAttribute>
+    <rise:newAttribute>
+      <rise:sequenceNumber>285</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-22T23:12:51</rise:timeStamp>
+      <rise:entity>
+        <rise:name>Persona</rise:name>
+        <rise:attribute>
+          <rise:name>estaVacunado</rise:name>
+          <rise:dataTypeAlias />
+          <rise:dataType>string</rise:dataType>
+          <rise:dataSize>50</rise:dataSize>
+          <rise:mustBeUnique>False</rise:mustBeUnique>
+          <rise:mustExist>False</rise:mustExist>
+        </rise:attribute>
+        <rise:maxID>0</rise:maxID>
+      </rise:entity>
+    </rise:newAttribute>
+    <rise:editAttribute>
+      <rise:sequenceNumber>286</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-22T23:12:55</rise:timeStamp>
+      <rise:entity>
+        <rise:name>Persona</rise:name>
+        <rise:attribute>
+          <rise:name>estaVacunado</rise:name>
+          <rise:dataTypeAlias />
+          <rise:dataType>bool</rise:dataType>
+          <rise:dataSize>50</rise:dataSize>
+          <rise:mustBeUnique>False</rise:mustBeUnique>
+          <rise:mustExist>False</rise:mustExist>
+        </rise:attribute>
+        <rise:maxID>0</rise:maxID>
+      </rise:entity>
+    </rise:editAttribute>
+    <rise:editAttribute>
+      <rise:sequenceNumber>287</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-22T23:12:55</rise:timeStamp>
+      <rise:entity>
+        <rise:name>Persona</rise:name>
+        <rise:attribute>
+          <rise:name>estaVacunado</rise:name>
+          <rise:dataTypeAlias />
+          <rise:dataType>bool</rise:dataType>
+          <rise:mustBeUnique>False</rise:mustBeUnique>
+          <rise:mustExist>False</rise:mustExist>
+        </rise:attribute>
+        <rise:maxID>0</rise:maxID>
+      </rise:entity>
+    </rise:editAttribute>
+    <rise:newAttribute>
+      <rise:sequenceNumber>288</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-22T23:13:57</rise:timeStamp>
+      <rise:entity>
+        <rise:name>Cliente</rise:name>
+        <rise:attribute>
+          <rise:name>estaVacunado</rise:name>
+          <rise:dataTypeAlias />
+          <rise:dataType>string</rise:dataType>
+          <rise:dataSize>50</rise:dataSize>
+          <rise:mustBeUnique>False</rise:mustBeUnique>
+          <rise:mustExist>False</rise:mustExist>
+        </rise:attribute>
+        <rise:maxID>0</rise:maxID>
+      </rise:entity>
+    </rise:newAttribute>
+    <rise:editAttribute>
+      <rise:sequenceNumber>289</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-22T23:14:00</rise:timeStamp>
+      <rise:entity>
+        <rise:name>Cliente</rise:name>
+        <rise:attribute>
+          <rise:name>estaVacunado</rise:name>
+          <rise:dataTypeAlias />
+          <rise:dataType>bool</rise:dataType>
+          <rise:dataSize>50</rise:dataSize>
+          <rise:mustBeUnique>False</rise:mustBeUnique>
+          <rise:mustExist>False</rise:mustExist>
+        </rise:attribute>
+        <rise:maxID>0</rise:maxID>
+      </rise:entity>
+    </rise:editAttribute>
+    <rise:editAttribute>
+      <rise:sequenceNumber>290</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-22T23:14:00</rise:timeStamp>
+      <rise:entity>
+        <rise:name>Cliente</rise:name>
+        <rise:attribute>
+          <rise:name>estaVacunado</rise:name>
+          <rise:dataTypeAlias />
+          <rise:dataType>bool</rise:dataType>
+          <rise:mustBeUnique>False</rise:mustBeUnique>
+          <rise:mustExist>False</rise:mustExist>
+        </rise:attribute>
+        <rise:maxID>0</rise:maxID>
+      </rise:entity>
+    </rise:editAttribute>
+    <rise:deleteAttribute>
+      <rise:sequenceNumber>291</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-22T23:14:06</rise:timeStamp>
+      <rise:entityName>Persona</rise:entityName>
+      <rise:attributeName>estaVacunado</rise:attributeName>
+    </rise:deleteAttribute>
+    <rise:newAttribute>
+      <rise:sequenceNumber>292</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-22T23:15:41</rise:timeStamp>
+      <rise:entity>
+        <rise:name>ReservaHist</rise:name>
+        <rise:attribute>
+          <rise:name>precio</rise:name>
+          <rise:dataTypeAlias />
+          <rise:dataType>string</rise:dataType>
+          <rise:dataSize>50</rise:dataSize>
+          <rise:mustBeUnique>False</rise:mustBeUnique>
+          <rise:mustExist>False</rise:mustExist>
+        </rise:attribute>
+        <rise:maxID>0</rise:maxID>
+      </rise:entity>
+    </rise:newAttribute>
+    <rise:editAttribute>
+      <rise:sequenceNumber>293</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-22T23:15:44</rise:timeStamp>
+      <rise:entity>
+        <rise:name>ReservaHist</rise:name>
+        <rise:attribute>
+          <rise:name>precio</rise:name>
+          <rise:dataTypeAlias />
+          <rise:dataType>decimal</rise:dataType>
+          <rise:dataSize>50</rise:dataSize>
+          <rise:mustBeUnique>False</rise:mustBeUnique>
+          <rise:mustExist>False</rise:mustExist>
+        </rise:attribute>
+        <rise:maxID>0</rise:maxID>
+      </rise:entity>
+    </rise:editAttribute>
+    <rise:editAttribute>
+      <rise:sequenceNumber>294</rise:sequenceNumber>
+      <rise:timeStamp>2022-02-22T23:15:44</rise:timeStamp>
+      <rise:entity>
+        <rise:name>ReservaHist</rise:name>
+        <rise:attribute>
+          <rise:name>precio</rise:name>
+          <rise:dataTypeAlias />
+          <rise:dataType>decimal</rise:dataType>
+          <rise:dataSize>12,2</rise:dataSize>
+          <rise:mustBeUnique>False</rise:mustBeUnique>
+          <rise:mustExist>False</rise:mustExist>
+        </rise:attribute>
+        <rise:maxID>0</rise:maxID>
+      </rise:entity>
+    </rise:editAttribute>
   </rise:evolution>
   <rise:publish />
   <rise:presentation>
@@ -3655,7 +4073,7 @@
         <rise:showIndexes>False</rise:showIndexes>
         <rise:boundingBox>
           <rise:x>352</rise:x>
-          <rise:y>206</rise:y>
+          <rise:y>205</rise:y>
           <rise:sizeX>293</rise:sizeX>
           <rise:sizeY>323</rise:sizeY>
         </rise:boundingBox>
@@ -3695,14 +4113,14 @@
         </rise:color>
       </rise:drawEntity>
       <rise:drawEntity>
-        <rise:entityName>Reserva</rise:entityName>
+        <rise:entityName>ReservaHist</rise:entityName>
         <rise:showAttributeDetails>False</rise:showAttributeDetails>
         <rise:showIndexes>False</rise:showIndexes>
         <rise:boundingBox>
-          <rise:x>842</rise:x>
-          <rise:y>294</rise:y>
-          <rise:sizeX>100</rise:sizeX>
-          <rise:sizeY>150</rise:sizeY>
+          <rise:x>835</rise:x>
+          <rise:y>291</rise:y>
+          <rise:sizeX>112</rise:sizeX>
+          <rise:sizeY>152</rise:sizeY>
         </rise:boundingBox>
         <rise:color>
           <rise:bgColor>255;176;224;230;PowderBlue</rise:bgColor>
@@ -3745,7 +4163,7 @@
         <rise:showIndexes>False</rise:showIndexes>
         <rise:boundingBox>
           <rise:x>931</rise:x>
-          <rise:y>573</rise:y>
+          <rise:y>572</rise:y>
           <rise:sizeX>126</rise:sizeX>
           <rise:sizeY>150</rise:sizeY>
         </rise:boundingBox>
@@ -3818,7 +4236,7 @@
         <rise:showAttributeDetails>False</rise:showAttributeDetails>
         <rise:showIndexes>False</rise:showIndexes>
         <rise:boundingBox>
-          <rise:x>519</rise:x>
+          <rise:x>520</rise:x>
           <rise:y>381</rise:y>
           <rise:sizeX>124</rise:sizeX>
           <rise:sizeY>142</rise:sizeY>
@@ -3833,8 +4251,8 @@
         <rise:showAttributeDetails>False</rise:showAttributeDetails>
         <rise:showIndexes>False</rise:showIndexes>
         <rise:boundingBox>
-          <rise:x>521</rise:x>
-          <rise:y>236</rise:y>
+          <rise:x>518</rise:x>
+          <rise:y>240</rise:y>
           <rise:sizeX>123</rise:sizeX>
           <rise:sizeY>128</rise:sizeY>
         </rise:boundingBox>
@@ -3848,10 +4266,10 @@
         <rise:showAttributeDetails>False</rise:showAttributeDetails>
         <rise:showIndexes>False</rise:showIndexes>
         <rise:boundingBox>
-          <rise:x>1055</rise:x>
-          <rise:y>404</rise:y>
-          <rise:sizeX>100</rise:sizeX>
-          <rise:sizeY>150</rise:sizeY>
+          <rise:x>1031</rise:x>
+          <rise:y>402</rise:y>
+          <rise:sizeX>129</rise:sizeX>
+          <rise:sizeY>145</rise:sizeY>
         </rise:boundingBox>
         <rise:color>
           <rise:bgColor>255;176;224;230;PowderBlue</rise:bgColor>
@@ -3876,8 +4294,8 @@
         <rise:textRef>f789bdeb-e0ee-4d36-9e37-444d51b85a4a</rise:textRef>
         <rise:display>TitleAndText</rise:display>
         <rise:boundingBox>
-          <rise:x>112</rise:x>
-          <rise:y>532</rise:y>
+          <rise:x>110</rise:x>
+          <rise:y>551</rise:y>
           <rise:sizeX>248</rise:sizeX>
           <rise:sizeY>154</rise:sizeY>
         </rise:boundingBox>
@@ -4008,19 +4426,19 @@ Cada hotel estará formado por diferentes habitaciones.</rise:text>
       <rise:textID>39441a6c-5b44-4584-a2fc-c93d3f74154e</rise:textID>
       <rise:title>DESCRIPCIÓN</rise:title>
       <rise:text>Esta clase de entidad alberga las reservas que realizan los clientes en la empresa de Infotel</rise:text>
-      <rise:entityName>Reserva</rise:entityName>
+      <rise:entityName>ReservaHist</rise:entityName>
     </rise:text>
     <rise:text>
       <rise:textID>3b8827f0-368f-44a2-818b-12131dfd8e99</rise:textID>
       <rise:title>OCURRENCIA</rise:title>
       <rise:text>Para poder dar de alta una reserva en la empresa Infotel, un cliente o un empleado deberán hacerla, una vez hecho esto, se creará un numero de reserva con una fecha de inicio y fin, su status y si está o no pagada</rise:text>
-      <rise:entityName>Reserva</rise:entityName>
+      <rise:entityName>ReservaHist</rise:entityName>
     </rise:text>
     <rise:text>
       <rise:textID>b6ccdd6a-b8de-431f-ba0a-4f227bf14bac</rise:textID>
       <rise:title>SINÓNIMOS</rise:title>
       <rise:text />
-      <rise:entityName>Reserva</rise:entityName>
+      <rise:entityName>ReservaHist</rise:entityName>
     </rise:text>
     <rise:text>
       <rise:textID>bc7c616c-2956-4700-b71f-320fe46bbbac</rise:textID>
