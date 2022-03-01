@@ -4062,6 +4062,112 @@
         <rise:maxID>0</rise:maxID>
       </rise:entity>
     </rise:editAttribute>
+    <rise:newAttribute>
+      <rise:sequenceNumber>295</rise:sequenceNumber>
+      <rise:timeStamp>2022-03-01T11:53:37</rise:timeStamp>
+      <rise:entity>
+        <rise:name>ReservaServicio</rise:name>
+        <rise:attribute>
+          <rise:name>Attribute</rise:name>
+          <rise:dataTypeAlias />
+          <rise:dataType>float</rise:dataType>
+          <rise:dataSize>50</rise:dataSize>
+          <rise:mustBeUnique>False</rise:mustBeUnique>
+          <rise:mustExist>False</rise:mustExist>
+        </rise:attribute>
+        <rise:maxID>0</rise:maxID>
+      </rise:entity>
+    </rise:newAttribute>
+    <rise:editAttribute>
+      <rise:sequenceNumber>296</rise:sequenceNumber>
+      <rise:timeStamp>2022-03-01T11:53:45</rise:timeStamp>
+      <rise:entity>
+        <rise:name>ReservaServicio</rise:name>
+        <rise:attribute>
+          <rise:name>Attribute</rise:name>
+          <rise:dataTypeAlias />
+          <rise:dataType>float</rise:dataType>
+          <rise:mustBeUnique>False</rise:mustBeUnique>
+          <rise:mustExist>False</rise:mustExist>
+        </rise:attribute>
+        <rise:maxID>0</rise:maxID>
+      </rise:entity>
+    </rise:editAttribute>
+    <rise:renameAttribute>
+      <rise:sequenceNumber>297</rise:sequenceNumber>
+      <rise:timeStamp>2022-03-01T11:53:45</rise:timeStamp>
+      <rise:entityName>ReservaServicio</rise:entityName>
+      <rise:attributeName>Attribute</rise:attributeName>
+      <rise:newAttributeName>precio</rise:newAttributeName>
+    </rise:renameAttribute>
+    <rise:editAttribute>
+      <rise:sequenceNumber>298</rise:sequenceNumber>
+      <rise:timeStamp>2022-03-01T11:54:08</rise:timeStamp>
+      <rise:entity>
+        <rise:name>ReservaServicio</rise:name>
+        <rise:attribute>
+          <rise:name>precio</rise:name>
+          <rise:dataTypeAlias />
+          <rise:dataType>decimal</rise:dataType>
+          <rise:dataSize>12,2</rise:dataSize>
+          <rise:mustBeUnique>False</rise:mustBeUnique>
+          <rise:mustExist>False</rise:mustExist>
+        </rise:attribute>
+        <rise:maxID>0</rise:maxID>
+      </rise:entity>
+    </rise:editAttribute>
+    <rise:deleteRelation>
+      <rise:sequenceNumber>299</rise:sequenceNumber>
+      <rise:timeStamp>2022-03-01T11:56:17</rise:timeStamp>
+      <rise:relationName>ReservaHistReservaServicio</rise:relationName>
+    </rise:deleteRelation>
+    <rise:newRelation>
+      <rise:sequenceNumber>300</rise:sequenceNumber>
+      <rise:timeStamp>2022-03-01T11:58:39</rise:timeStamp>
+      <rise:relation>
+        <rise:name>CodigoReservaReservaServicio</rise:name>
+        <rise:node>
+          <rise:name>CodigoReserva</rise:name>
+          <rise:entityName>CodigoReserva</rise:entityName>
+          <rise:cardinality>1</rise:cardinality>
+        </rise:node>
+        <rise:node>
+          <rise:name>ReservaServicio</rise:name>
+          <rise:entityName>ReservaServicio</rise:entityName>
+          <rise:cardinality>1toN</rise:cardinality>
+        </rise:node>
+        <rise:maxID>0</rise:maxID>
+      </rise:relation>
+    </rise:newRelation>
+    <rise:deleteRelation>
+      <rise:sequenceNumber>301</rise:sequenceNumber>
+      <rise:timeStamp>2022-03-01T11:59:34</rise:timeStamp>
+      <rise:relationName>CodigoReservaReservaServicio</rise:relationName>
+    </rise:deleteRelation>
+    <rise:newRelation>
+      <rise:sequenceNumber>302</rise:sequenceNumber>
+      <rise:timeStamp>2022-03-01T12:00:10</rise:timeStamp>
+      <rise:relation>
+        <rise:name>CodigoReservaReservaServicio</rise:name>
+        <rise:node>
+          <rise:name>CodigoReserva</rise:name>
+          <rise:entityName>CodigoReserva</rise:entityName>
+          <rise:cardinality>1</rise:cardinality>
+        </rise:node>
+        <rise:node>
+          <rise:name>ReservaServicio</rise:name>
+          <rise:entityName>ReservaServicio</rise:entityName>
+          <rise:cardinality>0toN</rise:cardinality>
+        </rise:node>
+        <rise:maxID>0</rise:maxID>
+      </rise:relation>
+    </rise:newRelation>
+    <rise:renameEntity>
+      <rise:sequenceNumber>303</rise:sequenceNumber>
+      <rise:timeStamp>2022-03-01T12:01:25</rise:timeStamp>
+      <rise:entityName>CodigoReserva</rise:entityName>
+      <rise:newEntityName>Reserva</rise:newEntityName>
+    </rise:renameEntity>
   </rise:evolution>
   <rise:publish />
   <rise:presentation>
@@ -4162,8 +4268,8 @@
         <rise:showAttributeDetails>False</rise:showAttributeDetails>
         <rise:showIndexes>False</rise:showIndexes>
         <rise:boundingBox>
-          <rise:x>931</rise:x>
-          <rise:y>572</rise:y>
+          <rise:x>929</rise:x>
+          <rise:y>611</rise:y>
           <rise:sizeX>126</rise:sizeX>
           <rise:sizeY>150</rise:sizeY>
         </rise:boundingBox>
@@ -4262,7 +4368,7 @@
         </rise:color>
       </rise:drawEntity>
       <rise:drawEntity>
-        <rise:entityName>CodigoReserva</rise:entityName>
+        <rise:entityName>Reserva</rise:entityName>
         <rise:showAttributeDetails>False</rise:showAttributeDetails>
         <rise:showIndexes>False</rise:showIndexes>
         <rise:boundingBox>
@@ -4531,13 +4637,13 @@ Cada hotel estará formado por diferentes habitaciones.</rise:text>
       <rise:textID>8b9b7113-c053-4485-b82e-5b5b912645bb</rise:textID>
       <rise:title>Descripción</rise:title>
       <rise:text>Esta tabla contendra los codigos de reserva.</rise:text>
-      <rise:entityName>CodigoReserva</rise:entityName>
+      <rise:entityName>Reserva</rise:entityName>
     </rise:text>
     <rise:text>
       <rise:textID>6c121edc-2a13-4fc0-81b4-3f9b8d45b922</rise:textID>
       <rise:title>Ocurrencia</rise:title>
       <rise:text>Esta tabla contendra los codigos de reserva de cada conjunto de reservas de servicios/habitaciones.</rise:text>
-      <rise:entityName>CodigoReserva</rise:entityName>
+      <rise:entityName>Reserva</rise:entityName>
     </rise:text>
     <rise:text>
       <rise:textID>3177579e-3554-4cc1-af62-2620139ddad7</rise:textID>
