@@ -67,11 +67,36 @@ CREATE TABLE IF NOT EXISTS reserva (
     precioTotal decimal(6,2)
 );
 
-/*      CALCULO DEL PRECIO_TOTAL DE LA RESERVA
-CREATE TRIGGER percioTotal_insert after INSERT ON reservaHist
+/*      CALCULO DEL MULTIPLICADOR TOTAL DE LA RESERVA
+CREATE FUNCTION precio_servicioTotal after INSERT ON reservaHist
 BEGIN
-    
-    UPDATE FROM reserva reserva.precioTotal = reserva.precioTotal + new where codigo = new.cod
+    aplicar un bucle para las fechas y que devuelva el multiplicador total que se hará
+    por ejemplo, si reservas del 26-30 y el 26 es temporada baja y los demás días son alta, sacarlo
+END;
+*/
+
+/*      CALCULO DEL SERVICIO DE LA RESERVA
+CREATE FUNCTION precio_ServicioTotal after INSERT ON reservaHist
+BEGIN
+    aplicar un procedure que devuelve el precio del servicio, uno de las habitaciones y uno del precio total
+    UPDATE FROM reservareserva reserva.precioTotal = reserva.precioTotal + new where codigo = new.cod
+END;
+*/
+
+/*      CALCULO DE LA HABITACIÓN DE LA RESERVA
+CREATE FUNCTION precio_HabitacionTotal after INSERT ON reservaHist
+BEGIN
+    aplicar un procedure que devuelve el precio del servicio, uno de las habitaciones y uno del precio total
+    UPDATE FROM reservareserva reserva.precioTotal = reserva.precioTotal + new where codigo = new.cod
+END;
+*/
+
+/*      CALCULO DEL PRECIO_TOTAL DE LA RESERVA
+CREATE PROCEDURE precioTotal_insert after INSERT ON reservaHist
+BEGIN
+    aplicar un procedure que devuelve el precio del servicio, uno de las habitaciones y uno del precio total
+    Cada función relacionar el precio base con el multiplicador
+    UPDATE FROM reservareserva reserva.precioTotal = reserva.precioTotal + new where codigo = new.cod
 END;
 */
 
@@ -134,8 +159,8 @@ CREATE TABLE IF NOT EXISTS reservaServicio (
     fecha DATE,
     idServicio BIGINT UNSIGNED NOT NULL REFERENCES servicio(id) ON UPDATE CASCADE ON DELETE CASCADE,
     idReserva BIGINT UNSIGNED NOT NULL REFERENCES reservaHist(id) ON UPDATE CASCADE ON DELETE CASCADE,
-    idEmpleado BIGINT UNSIGNED NOT NULL REFERENCES empleado(id) ON UPDATE CASCADE ON DELETE CASCADE,
-    precio decimal(6,2)
+    idEmpleado BIGINT UNSIGNED NOT NULL REFERENCES empleado(id) ON UPDATE CASCADE ON DELETE CASCADE
+   -- precio decimal(6,2)
 );
 
 CREATE TABLE IF NOT EXISTS servicio (
