@@ -35,7 +35,7 @@ CREATE TABLE IF NOT EXISTS cliente (
     apellidos varchar(30),
     nif varchar(9),
     email varchar(30),
-    teléfono varchar(30),
+    telefono varchar(30),
     fechaNac DATE,
     nacionalidad varchar(30),
     direccion varchar(30),
@@ -69,8 +69,7 @@ CREATE TABLE IF NOT EXISTS reserva (
 
 /*      CALCULO DEL PRECIO_TOTAL DE LA RESERVA
 CREATE TRIGGER percioTotal_insert after INSERT ON reservaHist
-BEGIN
-    
+BEGIN 
     UPDATE FROM reserva reserva.precioTotal = reserva.precioTotal + new where codigo = new.cod
 END;
 */
@@ -84,9 +83,10 @@ CREATE TABLE IF NOT EXISTS reservaHist (
     numReserva int(10),
     fechaInicio DATE,
     fechaFin DATE,
+    precio decimal(6,2),
     status boolean,
     pagada boolean,
-    nPersonas int(3)   
+    nPersonas int(3)
 );
 
 CREATE TABLE IF NOT EXISTS temporada (
@@ -133,7 +133,7 @@ END;
 CREATE TABLE IF NOT EXISTS reservaServicio (
     fecha DATE,
     idServicio BIGINT UNSIGNED NOT NULL REFERENCES servicio(id) ON UPDATE CASCADE ON DELETE CASCADE,
-    idReserva BIGINT UNSIGNED NOT NULL REFERENCES reservaHist(id) ON UPDATE CASCADE ON DELETE CASCADE,
+    codReserva BIGINT UNSIGNED NOT NULL REFERENCES reserva(codigo) ON UPDATE CASCADE ON DELETE CASCADE,
     idEmpleado BIGINT UNSIGNED NOT NULL REFERENCES empleado(id) ON UPDATE CASCADE ON DELETE CASCADE,
     precio decimal(6,2)
 );
