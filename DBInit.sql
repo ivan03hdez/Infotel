@@ -1,5 +1,6 @@
-/* SERIAL is the alias for BIGINT UNSIGNED NOT NULL AUTO_INCREMENT UNIQUE.*/
+/* DROP TABLE IF EXISTS reservaServicio, reservaHist, habitacion, servicio, tipo, oferta, empleado, hotel, reserva, cliente, calendario, temporada; */
 
+/* SERIAL is the alias for BIGINT UNSIGNED NOT NULL AUTO_INCREMENT UNIQUE.*/
 CREATE TABLE IF NOT EXISTS hotel (
     id SERIAL PRIMARY KEY,
     nombre varchar(30) NOT NULL,
@@ -15,14 +16,14 @@ CREATE TABLE IF NOT EXISTS tipo (
     id SERIAL PRIMARY KEY,
     tipo varchar(30) NOT NULL,
     imagen BLOB,
-    precioBase decimal(6,2) NOT NULL,
-    tamanyo int(3) NOT NULL
+    precioBase decimal(6,2),
+    tamanyo int(3)
 );
 
 CREATE TABLE IF NOT EXISTS habitacion (
     id SERIAL PRIMARY KEY,
-    idHotel int(10) NOT NULL REFERENCES hotel(id) ON UPDATE CASCADE ON DELETE CASCADE,
-    idTipo int(10) NOT NULL REFERENCES tipo(nombre) ON UPDATE CASCADE ON DELETE CASCADE,
+    idHotel BIGINT UNSIGNED NOT NULL, CONSTRAINT fkHabHotel  FOREIGN KEY (idHotel)   REFERENCES hotel(id) ON UPDATE CASCADE ON DELETE CASCADE,
+    idTipo BIGINT UNSIGNED NOT NULL, CONSTRAINT fkHabTIpo  FOREIGN KEY (idTipo)   REFERENCES tipo(id) ON UPDATE CASCADE ON DELETE CASCADE,
     numero int(3),
     vistas varchar(30),
     estaLimpia boolean,
@@ -33,8 +34,8 @@ CREATE TABLE IF NOT EXISTS cliente (
     id SERIAL PRIMARY KEY,
     nombre varchar(30),
     apellidos varchar(30),
-    nif varchar(9),
-    email varchar(30),
+    nif varchar(30) UNIQUE/* CHECK((LEN(nif) = 9))*/,
+    email varchar(30) UNIQUE,
     telefono varchar(30),
     fechaNac DATE,
     nacionalidad varchar(30),
@@ -54,7 +55,7 @@ END;
 
 CREATE TABLE IF NOT EXISTS oferta (
     id SERIAL PRIMARY KEY,
-    codigo varchar(30),
+    codigo varchar(30) NOT NULL,
     descuento decimal(6,2),
     titulo varchar(30),
     descripcion varchar(30)
@@ -62,8 +63,8 @@ CREATE TABLE IF NOT EXISTS oferta (
 
 CREATE TABLE IF NOT EXISTS reserva (
     codigo SERIAL PRIMARY KEY,
-    fechaInicio DATE,
-    fechaFin DATE,
+    fechaInicio DATE NOT NULL,
+    fechaFin DATE NOT NULL,
     precioTotal decimal(6,2)
 );
 
@@ -92,21 +93,21 @@ END;
 */
 
 /*      CALCULO DEL PRECIO_TOTAL DE LA RESERVA
-CREATE PROCEDURE precioTotal_insert after INSERT ON reservaHist
+CREATE TRIGGER percioTotal_insert after INSERT ON reservaHist
 BEGIN
     aplicar un procedure que devuelve el precio del servicio, uno de las habitaciones y uno del precio total
     Cada función relacionar el precio base con el multiplicador
-    UPDATE FROM reservareserva reserva.precioTotal = reserva.precioTotal + new where codigo = new.cod
+    UPDATE FROM reserva reserva.precioTotal = reserva.precioTotal + new where codigo = new.cod
+
 END;
 */
 
 CREATE TABLE IF NOT EXISTS reservaHist (
     id SERIAL PRIMARY KEY,
-    idCodReserva BIGINT UNSIGNED NOT NULL REFERENCES reserva(codigo) ON UPDATE CASCADE ON DELETE CASCADE,
-    idOferta BIGINT UNSIGNED NOT NULL REFERENCES oferta(id) ON UPDATE CASCADE ON DELETE CASCADE,
-    idCliente BIGINT UNSIGNED NOT NULL REFERENCES cliente(id) ON UPDATE CASCADE ON DELETE CASCADE,
-    idHabitacion BIGINT UNSIGNED NOT NULL REFERENCES habitacion(id) ON UPDATE CASCADE ON DELETE CASCADE,
-    numReserva int(10),
+    CodReserva BIGINT UNSIGNED  NOT NULL, CONSTRAINT fkResCod FOREIGN KEY (CodReserva) REFERENCES reserva(codigo) ON UPDATE CASCADE ON DELETE CASCADE,
+    idOferta BIGINT UNSIGNED, CONSTRAINT fkResOferta FOREIGN KEY (idOferta) REFERENCES oferta(id) ON UPDATE CASCADE ON DELETE CASCADE,
+    idCliente BIGINT UNSIGNED NOT NULL, CONSTRAINT fkResCliente FOREIGN KEY (idCliente) REFERENCES cliente(id) ON UPDATE CASCADE ON DELETE CASCADE,
+    idHabitacion BIGINT UNSIGNED NOT NULL, CONSTRAINT fkResHabitacion FOREIGN KEY (idHabitacion) REFERENCES habitacion(id) ON UPDATE CASCADE ON DELETE CASCADE,
     fechaInicio DATE,
     fechaFin DATE,
     precio decimal(6,2),
@@ -132,11 +133,11 @@ CREATE TABLE IF NOT EXISTS calendario (
 
 CREATE TABLE IF NOT EXISTS empleado (
     id SERIAL PRIMARY KEY,
-    idHotel BIGINT UNSIGNED NOT NULL REFERENCES hotel(id) ON UPDATE CASCADE ON DELETE CASCADE,
+    idHotel BIGINT UNSIGNED NOT NULL, CONSTRAINT fkEmpleadoHotel FOREIGN KEY (idHotel) REFERENCES hotel(id) ON UPDATE CASCADE ON DELETE CASCADE,
     nombre varchar(30),
     apellidos varchar(30),
-    nif varchar(30)/* CHECK((LEN(nif) = 9))*/,
-    email varchar(30),
+    nif varchar(30) UNIQUE/* CHECK((LEN(nif) = 9))*/,
+    email varchar(30) UNIQUE,
     telefono varchar(30),
     fechaNac DATE,
     nacionalidad varchar(30),
@@ -156,23 +157,18 @@ FOR EACH ROW BEGIN
 END;
 */
 
-CREATE TABLE IF NOT EXISTS reservaServicio (
-    fecha DATE,
-    idServicio BIGINT UNSIGNED NOT NULL REFERENCES servicio(id) ON UPDATE CASCADE ON DELETE CASCADE,
-<<<<<<< HEAD
-    codReserva BIGINT UNSIGNED NOT NULL REFERENCES reserva(codigo) ON UPDATE CASCADE ON DELETE CASCADE,
-    idEmpleado BIGINT UNSIGNED NOT NULL REFERENCES empleado(id) ON UPDATE CASCADE ON DELETE CASCADE,
-=======
-    idReserva BIGINT UNSIGNED NOT NULL REFERENCES reservaHist(id) ON UPDATE CASCADE ON DELETE CASCADE,
-    idEmpleado BIGINT UNSIGNED NOT NULL REFERENCES empleado(id) ON UPDATE CASCADE ON DELETE CASCADE
->>>>>>> 9c0cefd792a3ed04f3ad0f4bc4dab4ddcf86a404
-    precio decimal(6,2)
-);
-
 CREATE TABLE IF NOT EXISTS servicio (
     id SERIAL PRIMARY KEY,
-    idHotel BIGINT UNSIGNED NOT NULL REFERENCES hotel(id) ON UPDATE CASCADE ON DELETE CASCADE,
+    idHotel BIGINT UNSIGNED NOT NULL, CONSTRAINT fkHotel FOREIGN KEY (idHotel) REFERENCES hotel(id) ON UPDATE CASCADE ON DELETE CASCADE,
     nombre varchar(30),
     descripcion varchar(30),
+    precioBase decimal(6,2)
+);
+
+CREATE TABLE IF NOT EXISTS reservaServicio (
+    fecha DATE,
+    idServicio BIGINT UNSIGNED NOT NULL, CONSTRAINT fkReservaServicio FOREIGN KEY (idServicio) REFERENCES servicio(id) ON UPDATE CASCADE ON DELETE CASCADE,
+    codReserva BIGINT UNSIGNED NOT NULL, CONSTRAINT fkReserva FOREIGN KEY (codReserva) REFERENCES reserva(codigo) ON UPDATE CASCADE ON DELETE CASCADE,
+    idEmpleado BIGINT UNSIGNED, CONSTRAINT fkServicioEmpleado FOREIGN KEY (idEmpleado) REFERENCES empleado(id) ON UPDATE CASCADE ON DELETE CASCADE,
     precio decimal(6,2)
 );
