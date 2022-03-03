@@ -4168,6 +4168,13 @@
       <rise:entityName>CodigoReserva</rise:entityName>
       <rise:newEntityName>Reserva</rise:newEntityName>
     </rise:renameEntity>
+    <rise:renameAttribute>
+      <rise:sequenceNumber>304</rise:sequenceNumber>
+      <rise:timeStamp>2022-03-03T17:33:25</rise:timeStamp>
+      <rise:entityName>Servicio</rise:entityName>
+      <rise:attributeName>precio</rise:attributeName>
+      <rise:newAttributeName>precioBase</rise:newAttributeName>
+    </rise:renameAttribute>
   </rise:evolution>
   <rise:publish />
   <rise:presentation>
@@ -4386,7 +4393,7 @@
         <rise:textRef>62570004-af66-4c45-8c78-1c9d7d996362</rise:textRef>
         <rise:display>TitleAndText</rise:display>
         <rise:boundingBox>
-          <rise:x>1203</rise:x>
+          <rise:x>1204</rise:x>
           <rise:y>550</rise:y>
           <rise:sizeX>229</rise:sizeX>
           <rise:sizeY>171</rise:sizeY>
