@@ -118,7 +118,7 @@ CREATE TABLE IF NOT EXISTS reservaHist (
 CREATE TABLE IF NOT EXISTS temporada (
     nombre varchar(30),
     anyo int(10),
-    multiplicador int(10),
+    multiplicador decimal(6,3),
     CONSTRAINT pkTemporada PRIMARY KEY (nombre, anyo)
 );
 
