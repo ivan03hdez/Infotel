@@ -41,11 +41,12 @@ END porcentajeNacionalidadClientesTotal;
 /*Función para calcular porcentaje de clientes de un país entre dos fechas*/
 CREATE FUNCTION IF NOT EXISTS porcentajeNacionalidadClientesEntreFechas (pais varchar(30), fecha1 DATE, fecha2 DATE) RETURN decimal(6,2)
 BEGIN
-	DECLARE sumNacionalidad decimal(6,2), totalClientes int(10);
+	DECLARE sumNacionalidad int(10), totalClientes int(10);
 	SELECT COUNT(nif)
+	INTO sumNacionalidad
 	FROM cliente c
 	LEFT JOIN reservaHist rh ON c.id = rh.idCliente
-	LEFT JOIN reserva r ON r.codigo = rh.CodReserva 
+	LEFT JOIN reserva r ON r.codigo = rh.CodReserva
 	where c.id = rh.idCliente
 		and c.nacionalidad = nac
 		and r.fechaInicio >= fecha1
@@ -53,8 +54,11 @@ BEGIN
 
 	SELECT COUNT(DISTINCT nif)
 	INTO totalClientes
-	FROM cliente
-	where ;
+	LEFT JOIN reservaHist rh ON c.id = rh.idCliente
+	LEFT JOIN reserva r ON r.codigo = rh.CodReserva
+	where c.id = rh.idCliente
+		and r.fechaInicio >= fecha1
+		and r.fechaFin <= fecha2;
 
 	RETURN (sumNacionalidad / totalClientes) * 100
 END porcentajeNacionalidadClientesEntreFechas;
