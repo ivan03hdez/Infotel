@@ -4,7 +4,7 @@
 CREATE TABLE IF NOT EXISTS hotel (
     id SERIAL PRIMARY KEY,
     nombre varchar(30) NOT NULL,
-    dirección varchar(30) NOT NULL,
+    direccion varchar(30) NOT NULL,
     cp varchar(5) NOT NULL,
     ciudad varchar(30) NOT NULL,
     pais varchar(30) NOT NULL,
@@ -17,6 +17,7 @@ CREATE TABLE IF NOT EXISTS tipo (
     tipo varchar(30) NOT NULL,
     imagen BLOB,
     precioBase decimal(6,2),
+    nPers int(3),
     tamanyo int(3)
 );
 
@@ -108,8 +109,6 @@ CREATE TABLE IF NOT EXISTS reservaHist (
     idOferta BIGINT UNSIGNED, CONSTRAINT fkResOferta FOREIGN KEY (idOferta) REFERENCES oferta(id) ON UPDATE CASCADE ON DELETE CASCADE,
     idCliente BIGINT UNSIGNED NOT NULL, CONSTRAINT fkResCliente FOREIGN KEY (idCliente) REFERENCES cliente(id) ON UPDATE CASCADE ON DELETE CASCADE,
     idHabitacion BIGINT UNSIGNED NOT NULL, CONSTRAINT fkResHabitacion FOREIGN KEY (idHabitacion) REFERENCES habitacion(id) ON UPDATE CASCADE ON DELETE CASCADE,
-    fechaInicio DATE,
-    fechaFin DATE,
     precio decimal(6,2),
     status boolean,
     pagada boolean,
@@ -127,7 +126,6 @@ CREATE TABLE IF NOT EXISTS calendario (
     fecha DATE,
     nombreTemporada varchar(30),
     anyoTemporada int(10),
-    multiplicador int(10),
     CONSTRAINT fkTemporada FOREIGN KEY (nombreTemporada, anyoTemporada) REFERENCES temporada(nombre, anyo) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
