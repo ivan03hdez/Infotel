@@ -204,6 +204,58 @@ BEGIN
 	
 	RETURN v_porcentaje;
 END;
+#Funcion para calcular el precio de un servicio teniendo en cuenta la temporada, y las ofertas
+#Juan Vercher
+DELIMITER |
+CREATE FUNCTION calculo_precio_servicio()
+returns decimal(6,2)
+
+BEGIN
+declare ofert, pb, precioTotal decimal(6,2);
+declare tempo decimal(5,2);
 
 
+SELECT multiplicador from temporada tp, calendario c, reservaServicio rs 
+WHERE tp.anyo = c.anyoTemporada 
+AND c.nombreTemporada = tp.nombre AND rs.fecha = c.fecha into tempo;
+
+SELECT o.descuento  FROM reservaServicio rs, reserva r, reservaHist rh,oferta o
+WHERE rs.codReserva = r.codigo AND rh.CodReserva = r.codigo AND rh.idOferta = o.id into ofert;
+
+SELECT s.precio FROM servicio s, reservaServicio rs
+WHERE rs.idServicio = s.id into pb;
+
+set precioTotal := (pb*tempo)-(pb* ofert);
+return precioTotal;
+
+END;
+#Funcion para ver el porcentaje de ocupacion entre dos fechas
+#Juan Vercher
+DELIMITER |
+CREATE FUNCTION ocupacion_fechas(fi date, ff date)
+returns decimal (6,2)
+
+BEGIN
+
+declare oc int ;
+declare so int;
+declare ocupacion decimal(6,2);
+
+SELECT count(*)
+FROM habitacion h, reservaHist rh, reserva r
+WHERE h.id = rh.idHabitacion 
+AND rh.CodReserva = r.codigo
+AND h.estaOcupada = 1
+AND r.fechaInicio <= fi
+AND r.fechaFin >= ff
+into oc;
+
+SELECT count(*)
+FROM habitacion h, reservaHist rh, reserva r
+WHERE h.id = rh.idHabitacion 
+into so;
+
+set ocupacion := ((oc/so) * 100);
+RETURN ocupacion; 
+END;
 
