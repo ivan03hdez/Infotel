@@ -1,4 +1,7 @@
-/*Función para la capacidad máxima de clientes que tiene la cadena de hoteles de la empresa*/
+/*
+Función para la capacidad máxima de clientes que tiene la cadena de hoteles de la empresa
+Ivan
+*/
 DELIMITER $$
 CREATE OR REPLACE FUNCTION CapacidadMaxClientes() RETURNS INT 
 BEGIN
@@ -11,7 +14,10 @@ END;
 $$
 DELIMITER ;
 
-/*Función para calcular los ingresos en un año*/
+/*
+Función para calcular los ingresos en un año
+Ivan
+*/
 DELIMITER $$
 CREATE OR REPLACE FUNCTION obtenerIngresosAño (nac varchar(30)) RETURNS decimal(6,2)
 BEGIN
@@ -26,7 +32,10 @@ BEGIN
 END;
 $$
 DELIMITER ;
-/*Función para calcular porcentaje de clientes de un país concreto durante la vida de la empresa*/
+/*
+Función para calcular porcentaje de clientes de un país concreto durante la vida de la empresa
+Ivan
+*/
 DELIMITER $$
 CREATE OR REPLACE FUNCTION porcentajeNacionalidadClientesTotal (nac varchar(30)) RETURNS decimal(6,2)
 BEGIN
@@ -47,7 +56,10 @@ END;
 $$
 DELIMITER ;
 
-/*Función para calcular porcentaje de clientes de un país entre dos fechas*/
+/*
+Función para calcular porcentaje de clientes de un país entre dos fechas
+Ivan
+*/
 DELIMITER $$
 DELIMITER $$
 CREATE OR REPLACE FUNCTION porcentajeNacionalidadClientesEntreFechas(pais varchar(30), fecha1 DATE, fecha2 DATE) RETURNS decimal(6,2)
@@ -79,8 +91,10 @@ $$
 DELIMITER ;
 
 
-# Función para obtener la edad de un cliente en base a su DNI
-# J. PALOMAR
+/*
+Función para obtener la edad de un cliente en base a su DNI
+J. PALOMAR
+*/
 
 DROP FUNCTION IF EXISTS get_edad
 
@@ -102,18 +116,19 @@ $$
 DELIMITER ;
 
 
-# Función para obtener el precio de la habitación según fecha y oferta
-# J. PALOMAR
-
+/*
+Función para obtener el precio de la habitación según fecha y oferta
+J. PALOMAR
+*/
 DELIMITER $$
-CREATE FUNCTION get_precioHabitacion (v_id BIGINT, v_startdate DATE, v_oferta VARCHAR(30) )
+CREATE OR REPLACE FUNCTION get_precioHabitacion (v_id BIGINT, v_startdate DATE, v_oferta VARCHAR(30) )
 RETURNS DECIMAL(6,2) 
 
 BEGIN 
 
 DECLARE v_precioBase INT;
-DECLARE v_multiplicador DECIMAL(5, 2);
-DECLARE v_descuento DECIMAL(5,2);
+DECLARE v_multiplicador DECIMAL(6, 2);
+DECLARE v_descuento DECIMAL(6,2);
 DECLARE v_activa TINYINT;
 
 
@@ -132,7 +147,7 @@ FROM oferta of
 WHERE of.codigo = v_oferta;
 
 IF v_activa = 1 THEN
-	RETURN v_precioBase*v_multiplicador - (v_precioBase*v_multiplicador)*v_descuento;
+	RETURN v_precioBase*v_multiplicador * (1 - (v_descuento/100));
 ELSE
 	RETURN v_precioBase*v_multiplicador;
 END IF;
@@ -142,12 +157,12 @@ END;
 $$
 DELIMITER ;
 
-# Función para obtener la temporada de una fecha concreta en base a intervalos preestablecidos
-# J. PALOMAR
-
-
+/*
+Función para obtener la temporada de una fecha concreta en base a intervalos preestablecidos
+J. PALOMAR
+*/
 DELIMITER $$
-CREATE FUNCTION get_temporada (v_date DATE)
+CREATE OR REPLACE FUNCTION get_temporada (v_date DATE)
 RETURNS VARCHAR(10) 
 
 BEGIN 
@@ -168,4 +183,3 @@ END;
 
 $$
 DELIMITER ;
-
