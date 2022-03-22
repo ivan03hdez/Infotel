@@ -183,3 +183,93 @@ END;
 
 $$
 DELIMITER ;
+
+# Función para comprabar si una reserva está pagada o no. (Se utiliza en la vista reservas_clientes)
+# A. TARI
+
+DELIMITER |
+CREATE OR REPLACE FUNCTION reservaPagada(v_codReserva BIGINT(20))
+RETURNS bool
+BEGIN
+	DECLARE v_resultado int;
+	SELECT 1 into v_resultado FROM reservaHist rh where CodReserva = v_codReserva  and pagada = 0;
+	IF (v_resultado = 1) then
+		RETURN false;
+	ELSE
+		RETURN true;
+	END IF;
+END;
+
+#Función para obtener que porcentaje de clientes representan dentro de la cadena los que se encuentran en el intervalo de edad indicado.
+#A. TARI
+
+DELIMITER |
+CREATE  or REPLACE FUNCTION porcentaje_clientes_intervalo_edad (v_min INT, v_max INT)
+RETURNS decimal(4,2)
+BEGIN
+	DECLARE v_porcentaje DECIMAL(4,2);
+	DECLARE v_totalClientes DECIMAL(12,2);
+	DECLARE v_numeroClientesRango DECIMAL(12,2);
+	
+	SELECT COUNT(*) INTO v_totalClientes  FROM cliente;
+	SELECT COUNT(*) INTO v_numeroClientesRango  FROM cliente WHERE get_edad(nif) >= v_min AND get_edad(nif) < v_max;	
+
+	SET v_porcentaje := (v_numeroClientesRango/v_totalClientes)*100;
+	
+	RETURN v_porcentaje;
+END;
+#Funcion para calcular el precio de un servicio teniendo en cuenta la temporada, y las ofertas
+#Juan Vercher
+DELIMITER |
+CREATE FUNCTION calculo_precio_servicio()
+returns decimal(6,2)
+
+BEGIN
+declare ofert, pb, precioTotal decimal(6,2);
+declare tempo decimal(5,2);
+
+
+SELECT multiplicador from temporada tp, calendario c, reservaServicio rs 
+WHERE tp.anyo = c.anyoTemporada 
+AND c.nombreTemporada = tp.nombre AND rs.fecha = c.fecha into tempo;
+
+SELECT o.descuento  FROM reservaServicio rs, reserva r, reservaHist rh,oferta o
+WHERE rs.codReserva = r.codigo AND rh.CodReserva = r.codigo AND rh.idOferta = o.id into ofert;
+
+SELECT s.precio FROM servicio s, reservaServicio rs
+WHERE rs.idServicio = s.id into pb;
+
+set precioTotal := (pb*tempo)-(pb* ofert);
+return precioTotal;
+
+END;
+#Funcion para ver el porcentaje de ocupacion entre dos fechas
+#Juan Vercher
+DELIMITER |
+CREATE FUNCTION ocupacion_fechas(fi date, ff date)
+returns decimal (6,2)
+
+BEGIN
+
+declare oc int ;
+declare so int;
+declare ocupacion decimal(6,2);
+
+SELECT count(*)
+FROM habitacion h, reservaHist rh, reserva r
+WHERE h.id = rh.idHabitacion 
+AND rh.CodReserva = r.codigo
+AND h.estaOcupada = 1
+AND r.fechaInicio <= fi
+AND r.fechaFin >= ff
+into oc;
+
+SELECT count(*)
+FROM habitacion h, reservaHist rh, reserva r
+WHERE h.id = rh.idHabitacion 
+into so;
+
+set ocupacion := ((oc/so) * 100);
+RETURN ocupacion; 
+END;
+
