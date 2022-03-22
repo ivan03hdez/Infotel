@@ -2,11 +2,24 @@
 Procedimiento para reservar una habitacion
 */
 CREATE PROCEDURE introducirDatosReservaHabitacion(
-    codReserva SERIAL, idOferta varchar(30), idCliente varchar(30), idHabitacion varchar(30),precio decimal(6,2), pagada boolean, nPersonas int(3)
+    codReserva SERIAL,
+    idOferta varchar(30),
+    idCliente varchar(30),
+    idHabitacion varchar(30),
+    precio decimal(6,2),
+    pagada boolean,
+    nPersonas int(3)
 )
 BEGIN
-    INSERT INTO reservaHist values(codReserva, idOferta, idCliente, idHabitacion,
-    /*llamar a procedimiento para calcular el precio de la habitacion*/,'activa' , pagada, nPersonas)
+    INSERT INTO reservaHist values(
+        codReserva,
+        idOferta,
+        idCliente,
+        idHabitacion,
+        /*llamar a procedimiento para calcular el precio de la habitacion*/,
+        'activa' ,
+        pagada,
+        nPersonas)
 END
 
 /*

@@ -16,3 +16,5 @@ BEGIN
     from temporada 
     where temporada.anyo = YEAR(NOW());
 END
+
+
