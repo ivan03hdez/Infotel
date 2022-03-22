@@ -35,8 +35,8 @@ CREATE TABLE IF NOT EXISTS cliente (
     id SERIAL PRIMARY KEY,
     nombre varchar(30),
     apellidos varchar(30),
-    nif varchar(30) UNIQUE/* CHECK((LEN(nif) = 9))*/,
-    email varchar(30) UNIQUE,
+    nif varchar(30) UNIQUE NOT NULL,
+    email varchar(30) UNIQUE NOT NULL ,
     telefono varchar(30),
     fechaNac DATE,
     nacionalidad varchar(30),
@@ -47,19 +47,14 @@ CREATE TABLE IF NOT EXISTS cliente (
     estaVacunado boolean
 );
 
-/*      CALCULO DE LA EDAD DEL CLIENTE
-CREATE TRIGGER edad_insert before INSERT ON cliente
-FOR EACH ROW BEGIN
-SET NEW.edad = YEAR(NOW()) - YEAR(NEW.fechaNac);
-END;
-*/
-
 CREATE TABLE IF NOT EXISTS oferta (
     id SERIAL PRIMARY KEY,
     codigo varchar(30) NOT NULL,
     descuento decimal(6,2),
     titulo varchar(30),
-    descripcion varchar(30)
+    descripcion varchar(30),
+    fechaFin DATE,
+    activa boolean
 );
 
 CREATE TABLE IF NOT EXISTS reserva (
@@ -68,40 +63,6 @@ CREATE TABLE IF NOT EXISTS reserva (
     fechaFin DATE NOT NULL,
     precioTotal decimal(6,2)
 );
-
-/*      CALCULO DEL MULTIPLICADOR TOTAL DE LA RESERVA
-CREATE FUNCTION precio_servicioTotal after INSERT ON reservaHist
-BEGIN
-    aplicar un bucle para las fechas y que devuelva el multiplicador total que se hará
-    por ejemplo, si reservas del 26-30 y el 26 es temporada baja y los demás días son alta, sacarlo
-END;
-*/
-
-/*      CALCULO DEL SERVICIO DE LA RESERVA
-CREATE FUNCTION precio_ServicioTotal after INSERT ON reservaHist
-BEGIN
-    aplicar un procedure que devuelve el precio del servicio, uno de las habitaciones y uno del precio total
-    UPDATE FROM reservareserva reserva.precioTotal = reserva.precioTotal + new where codigo = new.cod
-END;
-*/
-
-/*      CALCULO DE LA HABITACIÓN DE LA RESERVA
-CREATE FUNCTION precio_HabitacionTotal after INSERT ON reservaHist
-BEGIN
-    aplicar un procedure que devuelve el precio del servicio, uno de las habitaciones y uno del precio total
-    UPDATE FROM reservareserva reserva.precioTotal = reserva.precioTotal + new where codigo = new.cod
-END;
-*/
-
-/*      CALCULO DEL PRECIO_TOTAL DE LA RESERVA
-CREATE TRIGGER percioTotal_insert after INSERT ON reservaHist
-BEGIN
-    aplicar un procedure que devuelve el precio del servicio, uno de las habitaciones y uno del precio total
-    Cada función relacionar el precio base con el multiplicador
-    UPDATE FROM reserva reserva.precioTotal = reserva.precioTotal + new where codigo = new.cod
-
-END;
-*/
 
 CREATE TABLE IF NOT EXISTS reservaHist (
     id SERIAL PRIMARY KEY,
@@ -134,8 +95,8 @@ CREATE TABLE IF NOT EXISTS empleado (
     idHotel BIGINT UNSIGNED NOT NULL, CONSTRAINT fkEmpleadoHotel FOREIGN KEY (idHotel) REFERENCES hotel(id) ON UPDATE CASCADE ON DELETE CASCADE,
     nombre varchar(30),
     apellidos varchar(30),
-    nif varchar(30) UNIQUE/* CHECK((LEN(nif) = 9))*/,
-    email varchar(30) UNIQUE,
+    nif varchar(30) UNIQUE NOT NULL,
+    email varchar(30) UNIQUE NOT NULL,
     telefono varchar(30),
     fechaNac DATE,
     nacionalidad varchar(30),
@@ -148,12 +109,6 @@ CREATE TABLE IF NOT EXISTS empleado (
     retIRPF decimal(6,2),
     cuotaPatronal decimal(6,2)
 );
-/*       CALCULO DE LA EDAD DEL EMPLEADO
-CREATE TRIGGER edad_insert before INSERT ON empleado
-FOR EACH ROW BEGIN
-    SET NEW.edad = YEAR(NOW()) - YEAR(NEW.fechaNac);
-END;
-*/
 
 CREATE TABLE IF NOT EXISTS servicio (
     id SERIAL PRIMARY KEY,
