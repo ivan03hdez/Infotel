@@ -17,3 +17,10 @@ FROM habitacion;
 # A. TARI
 CREATE VIEW reservas_clientes AS SELECT DISTINCT c.nif, c.nombre , c.apellidos, rh.CodReserva, IF(reservaPagada(rh.CodReserva), 'Pagada', 'Pendiente de pago') AS 'Estado de pago'
 FROM reservaHist rh, cliente c where rh.idCliente = c.id;
+# Vistas para ver las hacitaciones para minusvalidos
+# Juan Vercher
+CREATE OR REPLACE
+VIEW Adaptada AS SELECT id 
+FROM habitacion 
+WHERE esAdaptada = 1;
+
