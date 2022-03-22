@@ -46,3 +46,32 @@ SELECT * from
 
 $$
 DELIMITER ;
+
+
+/*
+Todos los días se desactivan las ofertas que finalizan en ese día.
+A.TARI
+*/
+
+CREATE OR REPLACE EVENT desactivarOfertasConFechaLimite
+ON SCHEDULE EVERY 1 DAY STARTS DATE('2022-03-23 00:00:00')
+DO
+	UPDATE gi_infotel.oferta 
+	SET activa = 0 
+	WHERE activa = 1 AND fechaFin = DATE_FORMAT(NOW(), '%Y-%m-%d');
+
+
+/*
+Dos semanas antes de San Valentín (14 de febrero) se habilitará una oferta del 15% para ser utilizada hasta ese día (inclusive)
+A.TARI
+*/
+
+CREATE OR REPLACE EVENT activarOfertaSanValentin
+ON SCHEDULE EVERY 1 YEAR STARTS DATE('2023-02-01 00:00:00')
+DO
+	INSERT INTO gi_infotel.oferta(codigo, descuento, titulo, descripcion, fechaFin, activa) 
+	VALUES(CONCAT('SV', DATE_FORMAT(NOW(), '%Y')), 15, CONCAT('San Valentín ', DATE_FORMAT(NOW(), '%Y')), 'Disfruta de un descuento especial por San Valentín' , DATE(CONCAT(DATE_FORMAT(NOW(),'%Y','-02-15'))), 1);
+
+
+
+
