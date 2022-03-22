@@ -42,3 +42,76 @@ BEGIN
         values(nif, nombre, apellidos , email, telefono,
         fechaNac, nacionalidad, cp, ciudad, paisResidencia)
 END
+
+# Procedure auxiliar de inserción de multiplicador 
+# J.PALOMAR
+
+DROP PROCEDURE IF EXISTS insert_multiplicador;
+
+DELIMITER $$
+CREATE PROCEDURE insert_multiplicador (IN v_temporada VARCHAR(30), IN v_multiplicador DECIMAL(5, 2))
+
+BEGIN 
+
+DECLARE v_currentyear INT;
+SELECT YEAR(NOW()) INTO v_currentyear;
+
+INSERT INTO temporada (nombre, anyo, multiplicador) VALUES (v_temporada, v_currentyear, v_multiplicador);
+
+END;
+
+$$
+DELIMITER ;
+
+# Procedure auxiliar de actualización de multiplicador 
+# J.PALOMAR
+
+DROP PROCEDURE IF EXISTS update_multiplicador;
+
+DELIMITER $$
+CREATE PROCEDURE update_multiplicador (IN v_temporada VARCHAR(30), IN v_multiplicador DECIMAL(5, 2))
+
+BEGIN 
+
+	DECLARE v_currentyear INT;
+	SELECT YEAR(NOW()) INTO v_currentyear;
+	
+	
+	UPDATE temporada SET multiplicador = v_multiplicador WHERE nombre = v_temporada AND anyo = v_currentyear;
+
+END;
+
+$$
+DELIMITER ;
+
+
+# Procedure de establecimiento de multiplicador utilizando los procedures previos
+# J.PALOMAR
+
+DROP PROCEDURE IF EXISTS set_multiplicador;
+
+DELIMITER $$
+CREATE PROCEDURE set_multiplicador (IN v_temporada VARCHAR(30), IN v_multiplicador DECIMAL(5, 2))
+
+BEGIN 
+
+	DECLARE v_currentyear INT;
+	DECLARE v_exists INT;
+	
+	
+	SELECT YEAR(NOW()) INTO v_currentyear;
+	SELECT -1 INTO v_exists FROM temporada WHERE NOT EXISTS (SELECT * FROM temporada temp WHERE temp.anyo = v_currentyear AND temp.nombre = v_temporada);
+	
+	IF v_exists = -1 THEN
+		CALL insert_multiplicador(v_temporada, v_multiplicador);
+	ELSE
+		CALL update_multiplicador(v_temporada, v_multiplicador);
+	END IF;
+
+END;
+
+$$
+DELIMITER ;
+
+
+CALL set_multiplicador('Media', 1.5);

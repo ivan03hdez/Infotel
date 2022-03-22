@@ -77,3 +77,95 @@ BEGIN
 END;
 $$
 DELIMITER ;
+
+
+# Función para obtener la edad de un cliente en base a su DNI
+# J. PALOMAR
+
+DROP FUNCTION IF EXISTS get_edad
+
+DELIMITER $$
+CREATE FUNCTION get_edad (v_nif VARCHAR(30) )
+RETURNS int 
+
+BEGIN 
+
+DECLARE v_age INT;
+DECLARE v_fechaNac DATE;
+
+SELECT fechaNac INTO v_fechaNac FROM cliente cli WHERE cli.nif = v_nif;
+SELECT DATE_FORMAT(FROM_DAYS(DATEDIFF(now(),v_fechaNac)), '%Y')+0 INTO v_age;
+RETURN v_age;
+END;
+
+$$
+DELIMITER ;
+
+
+# Función para obtener el precio de la habitación según fecha y oferta
+# J. PALOMAR
+
+DELIMITER $$
+CREATE FUNCTION get_precioHabitacion (v_id BIGINT, v_startdate DATE, v_oferta VARCHAR(30) )
+RETURNS DECIMAL(6,2) 
+
+BEGIN 
+
+DECLARE v_precioBase INT;
+DECLARE v_multiplicador DECIMAL(5, 2);
+DECLARE v_descuento DECIMAL(5,2);
+DECLARE v_activa TINYINT;
+
+
+SELECT precioBase INTO v_precioBase 
+FROM tipo tp 
+INNER JOIN habitacion hb ON tp.id = hb.idTipo
+WHERE hb.id = v_id;
+
+SELECT multiplicador INTO v_multiplicador
+FROM  temporada tmp
+INNER JOIN calendario cl ON tmp.nombre = cl.nombreTemporada AND tmp.anyo = cl.anyoTemporada
+WHERE cl.fecha = v_startdate;
+
+SELECT activa, descuento INTO v_activa, v_descuento 
+FROM oferta of 
+WHERE of.codigo = v_oferta;
+
+IF v_activa = 1 THEN
+	RETURN v_precioBase*v_multiplicador - (v_precioBase*v_multiplicador)*v_descuento;
+ELSE
+	RETURN v_precioBase*v_multiplicador;
+END IF;
+
+END;
+
+$$
+DELIMITER ;
+
+# Función para obtener la temporada de una fecha concreta en base a intervalos preestablecidos
+# J. PALOMAR
+
+
+DELIMITER $$
+CREATE FUNCTION get_temporada (v_date DATE)
+RETURNS VARCHAR(10) 
+
+BEGIN 
+
+	IF v_date BETWEEN DATE(CONCAT(YEAR(NOW()), '-07-01')) AND DATE(CONCAT(YEAR(NOW()), '-08-31'))
+		OR v_date BETWEEN DATE(CONCAT(YEAR(NOW()), '-12-20')) AND DATE(CONCAT(YEAR(NOW()), '-12-31'))
+		OR v_date BETWEEN DATE(CONCAT(YEAR(NOW()), '-01-01')) AND DATE(CONCAT(YEAR(NOW()), '-01-07'))
+		OR v_date BETWEEN DATE(CONCAT(YEAR(NOW()), '-04-05')) AND DATE(CONCAT(YEAR(NOW()), '-04-20')) THEN
+		RETURN 'Alta';
+	ELSEIF v_date BETWEEN DATE(CONCAT(YEAR(NOW()), '-01-20')) AND DATE(CONCAT(YEAR(NOW()), '-03-20')) 
+		OR v_date BETWEEN DATE(CONCAT(YEAR(NOW()), '-10-01')) AND DATE(CONCAT(YEAR(NOW()), '-11-30')) THEN
+		RETURN 'Baja';
+	ELSE
+		RETURN 'Media';
+	END IF;
+
+END;
+
+$$
+DELIMITER ;
+
