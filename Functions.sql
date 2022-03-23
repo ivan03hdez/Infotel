@@ -154,6 +154,32 @@ END IF;
 
 END;
 
+/*
+Función para obtener el precio del servicio según fecha
+Daniel Sentamans
+*/
+DELIMITER $$
+CREATE OR REPLACE FUNCTION get_precioServicio (v_id BIGINT, v_startdate DATE)
+RETURNS DECIMAL(6,2)
+
+BEGIN 
+
+DECLARE v_precioBase INT;
+DECLARE v_multiplicador DECIMAL(6, 2);
+ 
+SELECT serv.precio INTO v_precioBase 
+FROM servicio serv 
+WHERE serv.id = v_id;
+
+SELECT multiplicador INTO v_multiplicador
+FROM  temporada tmp
+INNER JOIN calendario cl ON tmp.nombre = cl.nombreTemporada AND tmp.anyo = cl.anyoTemporada
+WHERE cl.fecha = v_startdate;
+
+RETURN v_precioBase*v_multiplicador;
+
+END;
+
 $$
 DELIMITER ;
 

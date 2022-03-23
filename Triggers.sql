@@ -1,18 +1,38 @@
-/*Trigger que actualizará el precio total de la habitación*/
-CREATE TRIGGER PrecioTotalReservaHab(p_precio_hab DECIMAL, p_cod_reserva BIGINT) AFTER INSERT ON reservaHist 
-FOR EACH ROW
+# Trigger que actualizará el precio total de la habitación
+# Daniel Sentamans
+DELIMITER |
+CREATE OR REPLACE TRIGGER PrecioTotalReservaHab_trigger 
+AFTER INSERT ON reservaHist FOR EACH ROW
+DECLARE v_precio_hab reservaHist.precio%TYPE;
+DECLARE v_oferta oferta.codigo%TYPE;
 BEGIN
-	UPDATE reserva SET reserva.precioTotal = reserva.precioTotal + p_precio_hab WHERE reserva.codigo = p_cod_reserva;
+SELECT
+	SELECT of.codigo INTO v_oferta
+	FROM oferta of WHERE of.id = idOferta;
 	
-END PrecioTotalReservaHab;
+	v_precio_hab := get_precioHabitacion(idHabitacion, fechaInicio, v_oferta);
+	
+	UPDATE reserva 
+	SET reserva.precioTotal = reserva.precioTotal + v_precio_hab 
+	WHERE reserva.codigo = CodReserva;
+	
+END PrecioTotalReservaHab_trigger;
 
-/*Trigger que actualizará el precio total de la reserva*/
-CREATE TRIGGER PrecioTotalReservaServ(p_precio_serv DECIMAL, p_cod_reserva BIGINT) AFTER INSERT ON reservaServicio 
-FOR EACH ROW
+
+# Trigger que actualizará el precio total de la reserva
+# Daniel Sentamans
+DELIMITER |
+CREATE OR REPLACE TRIGGER PrecioTotalReservaServ_trigger 
+AFTER INSERT ON reservaServicio FOR EACH ROW
+DECLARE v_precio_serv reservaServicio.precio%TYPE;
 BEGIN
-	UPDATE reserva SET reserva.precioTotal = reserva.precioTotal + p_precio_serv WHERE reserva.codigo = p_cod_reserva;
+	v_precio_serv := get_precioServicio(idServicio, fecha);
 	
-END PrecioTotalReservaServ;
+	UPDATE reserva 
+	SET reserva.precioTotal = reserva.precioTotal + v_precio_serv 
+	WHERE reserva.codigo = codReserva;
+	
+END PrecioTotalReservaServ_trigger;
 
 
 # Trigger para asignar un empleado a un servicio contratado

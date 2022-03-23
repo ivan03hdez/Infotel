@@ -1,15 +1,18 @@
-/*View para mostrar los datos de la reserva*/
-CREATE VIEW mostrarReserva 
+# Vista para mostrar los datos de la reserva
+# Daniel Sentamans
+CREATE OR REPLACE VIEW mostrarReserva 
 AS SELECT fechaInicio, fechaFin, precioTotal 
 FROM reserva;
 
-/*View para mostrar los datos de los servicios reservados*/
-CREATE VIEW mostrarReservaServicios 
+# Vista para mostrar los datos de los servicios reservados
+# Daniel Sentamans
+CREATE OR REPLACE VIEW mostrarReservaServicios 
 AS SELECT fecha, codReserva, idEmpleado, precio
 FROM reservaServicio;
 
-/*View para mostrar los datos de la habitación*/
-CREATE VIEW mostrarDatosHabitacion
+# Vista para mostrar los datos de la habitación
+# Daniel Sentamans
+CREATE OR REPLACE VIEW mostrarDatosHabitacion
 AS SELECT numero, vistas, estaLimpia, estaOcupada
 FROM habitacion;
 
