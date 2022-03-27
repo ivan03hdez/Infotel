@@ -1,5 +1,7 @@
-# Trigger que actualizará el precio total de la habitación
-# Daniel Sentamans
+/*
+Trigger que actualizará el precio total de la habitación
+Daniel Sentamans
+*/
 DELIMITER |
 CREATE OR REPLACE TRIGGER reservaHist_after_insert AFTER INSERT ON reservaHist FOR EACH ROW 
 BEGIN
@@ -13,8 +15,10 @@ DECLARE v_oferta VARCHAR(30);
 	WHERE reserva.codigo = NEW.CodReserva;
 END;
 
-# Trigger que actualizará el precio total de la reserva
-# Daniel Sentamans
+/*
+Trigger que actualizará el precio total de la reserva
+Daniel Sentamans
+*/
 DELIMITER |
 CREATE TRIGGER reservaServicio_after_insert AFTER INSERT ON reservaServicio FOR EACH ROW 
 BEGIN
@@ -24,9 +28,10 @@ BEGIN
 END;
 
 
-# Trigger para asignar un empleado a un servicio contratado
-# A. TARI
-
+/*
+Trigger para asignar un empleado a un servicio contratado
+A. TARI
+*/
 DELIMITER |
 CREATE or REPLACE TRIGGER reservaServicio_BI_trigger
 BEFORE INSERT ON reservaServicio

@@ -28,7 +28,8 @@ CREATE TABLE IF NOT EXISTS habitacion (
     numero int(3),
     vistas varchar(30),
     estaLimpia boolean,
-    estaOcupada boolean
+    estaOcupada boolean,
+    esAdaptada boolean
 );
 
 CREATE TABLE IF NOT EXISTS cliente (
@@ -122,6 +123,7 @@ CREATE TABLE IF NOT EXISTS reservaServicio (
     fecha DATE,
     idServicio BIGINT UNSIGNED NOT NULL, CONSTRAINT fkReservaServicio FOREIGN KEY (idServicio) REFERENCES servicio(id) ON UPDATE CASCADE ON DELETE CASCADE,
     codReserva BIGINT UNSIGNED NOT NULL, CONSTRAINT fkReserva FOREIGN KEY (codReserva) REFERENCES reserva(codigo) ON UPDATE CASCADE ON DELETE CASCADE,
+    idOferta BIGINT UNSIGNED, CONSTRAINT fkServicioOferta FOREIGN KEY (idOferta) REFERENCES oferta(id) ON UPDATE CASCADE ON DELETE CASCADE,,
     idEmpleado BIGINT UNSIGNED, CONSTRAINT fkServicioEmpleado FOREIGN KEY (idEmpleado) REFERENCES empleado(id) ON UPDATE CASCADE ON DELETE CASCADE,
     precio decimal(6,2)
 );

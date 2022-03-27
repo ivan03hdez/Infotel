@@ -4710,6 +4710,140 @@
         <rise:maxID>0</rise:maxID>
       </rise:entity>
     </rise:editAttribute>
+    <rise:newAttribute>
+      <rise:sequenceNumber>347</rise:sequenceNumber>
+      <rise:timeStamp>2022-03-27T22:23:31</rise:timeStamp>
+      <rise:entity>
+        <rise:name>Tipo</rise:name>
+        <rise:attribute>
+          <rise:name>nPers</rise:name>
+          <rise:dataTypeAlias />
+          <rise:dataType>string</rise:dataType>
+          <rise:dataSize>50</rise:dataSize>
+          <rise:mustBeUnique>False</rise:mustBeUnique>
+          <rise:mustExist>False</rise:mustExist>
+        </rise:attribute>
+        <rise:maxID>0</rise:maxID>
+      </rise:entity>
+    </rise:newAttribute>
+    <rise:editAttribute>
+      <rise:sequenceNumber>348</rise:sequenceNumber>
+      <rise:timeStamp>2022-03-27T22:23:34</rise:timeStamp>
+      <rise:entity>
+        <rise:name>Tipo</rise:name>
+        <rise:attribute>
+          <rise:name>nPers</rise:name>
+          <rise:dataTypeAlias />
+          <rise:dataType>int</rise:dataType>
+          <rise:dataSize>50</rise:dataSize>
+          <rise:mustBeUnique>False</rise:mustBeUnique>
+          <rise:mustExist>False</rise:mustExist>
+        </rise:attribute>
+        <rise:maxID>0</rise:maxID>
+      </rise:entity>
+    </rise:editAttribute>
+    <rise:editAttribute>
+      <rise:sequenceNumber>349</rise:sequenceNumber>
+      <rise:timeStamp>2022-03-27T22:23:34</rise:timeStamp>
+      <rise:entity>
+        <rise:name>Tipo</rise:name>
+        <rise:attribute>
+          <rise:name>nPers</rise:name>
+          <rise:dataTypeAlias />
+          <rise:dataType>int</rise:dataType>
+          <rise:mustBeUnique>False</rise:mustBeUnique>
+          <rise:mustExist>False</rise:mustExist>
+        </rise:attribute>
+        <rise:maxID>0</rise:maxID>
+      </rise:entity>
+    </rise:editAttribute>
+    <rise:newRelation>
+      <rise:sequenceNumber>350</rise:sequenceNumber>
+      <rise:timeStamp>2022-03-27T22:23:49</rise:timeStamp>
+      <rise:relation>
+        <rise:name>ReservaServicioOferta</rise:name>
+        <rise:node>
+          <rise:name>ReservaServicio</rise:name>
+          <rise:entityName>ReservaServicio</rise:entityName>
+          <rise:cardinality>1</rise:cardinality>
+        </rise:node>
+        <rise:node>
+          <rise:name>Oferta</rise:name>
+          <rise:entityName>Oferta</rise:entityName>
+          <rise:cardinality>0or1</rise:cardinality>
+        </rise:node>
+        <rise:maxID>0</rise:maxID>
+      </rise:relation>
+    </rise:newRelation>
+    <rise:deleteRelation>
+      <rise:sequenceNumber>351</rise:sequenceNumber>
+      <rise:timeStamp>2022-03-27T22:25:50</rise:timeStamp>
+      <rise:relationName>ReservaServicioOferta</rise:relationName>
+    </rise:deleteRelation>
+    <rise:newRelation>
+      <rise:sequenceNumber>352</rise:sequenceNumber>
+      <rise:timeStamp>2022-03-27T22:25:54</rise:timeStamp>
+      <rise:relation>
+        <rise:name>ReservaServicioOferta</rise:name>
+        <rise:node>
+          <rise:name>ReservaServicio</rise:name>
+          <rise:entityName>ReservaServicio</rise:entityName>
+          <rise:cardinality>1</rise:cardinality>
+        </rise:node>
+        <rise:node>
+          <rise:name>Oferta</rise:name>
+          <rise:entityName>Oferta</rise:entityName>
+          <rise:cardinality>0toN</rise:cardinality>
+        </rise:node>
+        <rise:maxID>0</rise:maxID>
+      </rise:relation>
+    </rise:newRelation>
+    <rise:deleteRelation>
+      <rise:sequenceNumber>353</rise:sequenceNumber>
+      <rise:timeStamp>2022-03-27T22:26:02</rise:timeStamp>
+      <rise:relationName>ReservaServicioOferta</rise:relationName>
+    </rise:deleteRelation>
+    <rise:newRelation>
+      <rise:sequenceNumber>354</rise:sequenceNumber>
+      <rise:timeStamp>2022-03-27T22:26:04</rise:timeStamp>
+      <rise:relation>
+        <rise:name>OfertaReservaServicio</rise:name>
+        <rise:node>
+          <rise:name>Oferta</rise:name>
+          <rise:entityName>Oferta</rise:entityName>
+          <rise:cardinality>1</rise:cardinality>
+        </rise:node>
+        <rise:node>
+          <rise:name>ReservaServicio</rise:name>
+          <rise:entityName>ReservaServicio</rise:entityName>
+          <rise:cardinality>0toN</rise:cardinality>
+        </rise:node>
+        <rise:maxID>0</rise:maxID>
+      </rise:relation>
+    </rise:newRelation>
+    <rise:deleteRelation>
+      <rise:sequenceNumber>355</rise:sequenceNumber>
+      <rise:timeStamp>2022-03-27T22:26:26</rise:timeStamp>
+      <rise:relationName>OfertaReservaServicio</rise:relationName>
+    </rise:deleteRelation>
+    <rise:newRelation>
+      <rise:sequenceNumber>356</rise:sequenceNumber>
+      <rise:timeStamp>2022-03-27T22:26:28</rise:timeStamp>
+      <rise:relation>
+        <rise:name>OfertaReservaServicio</rise:name>
+        <rise:node>
+          <rise:name>Oferta</rise:name>
+          <rise:entityName>Oferta</rise:entityName>
+          <rise:cardinality>0or1</rise:cardinality>
+        </rise:node>
+        <rise:node>
+          <rise:name>ReservaServicio</rise:name>
+          <rise:entityName>ReservaServicio</rise:entityName>
+          <rise:cardinality>0toN</rise:cardinality>
+        </rise:node>
+        <rise:maxID>0</rise:maxID>
+      </rise:relation>
+    </rise:newRelation>
   </rise:evolution>
   <rise:publish />
   <rise:presentation>
@@ -4720,8 +4854,8 @@
         <rise:showAttributeDetails>False</rise:showAttributeDetails>
         <rise:showIndexes>False</rise:showIndexes>
         <rise:boundingBox>
-          <rise:x>973</rise:x>
-          <rise:y>39</rise:y>
+          <rise:x>998</rise:x>
+          <rise:y>0</rise:y>
           <rise:sizeX>100</rise:sizeX>
           <rise:sizeY>150</rise:sizeY>
         </rise:boundingBox>
@@ -4750,8 +4884,8 @@
         <rise:showAttributeDetails>False</rise:showAttributeDetails>
         <rise:showIndexes>False</rise:showIndexes>
         <rise:boundingBox>
-          <rise:x>835</rise:x>
-          <rise:y>291</rise:y>
+          <rise:x>670</rise:x>
+          <rise:y>248</rise:y>
           <rise:sizeX>112</rise:sizeX>
           <rise:sizeY>152</rise:sizeY>
         </rise:boundingBox>
@@ -4765,8 +4899,8 @@
         <rise:showAttributeDetails>False</rise:showAttributeDetails>
         <rise:showIndexes>False</rise:showIndexes>
         <rise:boundingBox>
-          <rise:x>1049</rise:x>
-          <rise:y>227</rise:y>
+          <rise:x>858</rise:x>
+          <rise:y>208</rise:y>
           <rise:sizeX>100</rise:sizeX>
           <rise:sizeY>150</rise:sizeY>
         </rise:boundingBox>
@@ -4780,8 +4914,8 @@
         <rise:showAttributeDetails>False</rise:showAttributeDetails>
         <rise:showIndexes>False</rise:showIndexes>
         <rise:boundingBox>
-          <rise:x>1323</rise:x>
-          <rise:y>321</rise:y>
+          <rise:x>1074</rise:x>
+          <rise:y>294</rise:y>
           <rise:sizeX>100</rise:sizeX>
           <rise:sizeY>150</rise:sizeY>
         </rise:boundingBox>
@@ -4795,8 +4929,8 @@
         <rise:showAttributeDetails>False</rise:showAttributeDetails>
         <rise:showIndexes>False</rise:showIndexes>
         <rise:boundingBox>
-          <rise:x>929</rise:x>
-          <rise:y>611</rise:y>
+          <rise:x>658</rise:x>
+          <rise:y>577</rise:y>
           <rise:sizeX>126</rise:sizeX>
           <rise:sizeY>150</rise:sizeY>
         </rise:boundingBox>
@@ -4854,8 +4988,8 @@
         <rise:textRef>cfd6047f-88f6-4960-bfb0-e2728d0e272b</rise:textRef>
         <rise:display>TitleAndText</rise:display>
         <rise:boundingBox>
-          <rise:x>1212</rise:x>
-          <rise:y>102</rise:y>
+          <rise:x>1209</rise:x>
+          <rise:y>9</rise:y>
           <rise:sizeX>209</rise:sizeX>
           <rise:sizeY>100</rise:sizeY>
         </rise:boundingBox>
@@ -4869,8 +5003,8 @@
         <rise:showAttributeDetails>False</rise:showAttributeDetails>
         <rise:showIndexes>False</rise:showIndexes>
         <rise:boundingBox>
-          <rise:x>429</rise:x>
-          <rise:y>538</rise:y>
+          <rise:x>360</rise:x>
+          <rise:y>210</rise:y>
           <rise:sizeX>158</rise:sizeX>
           <rise:sizeY>227</rise:sizeY>
         </rise:boundingBox>
@@ -4884,8 +5018,8 @@
         <rise:showAttributeDetails>False</rise:showAttributeDetails>
         <rise:showIndexes>False</rise:showIndexes>
         <rise:boundingBox>
-          <rise:x>419</rise:x>
-          <rise:y>171</rise:y>
+          <rise:x>1330</rise:x>
+          <rise:y>282</rise:y>
           <rise:sizeX>156</rise:sizeX>
           <rise:sizeY>281</rise:sizeY>
         </rise:boundingBox>
@@ -4899,8 +5033,8 @@
         <rise:showAttributeDetails>False</rise:showAttributeDetails>
         <rise:showIndexes>False</rise:showIndexes>
         <rise:boundingBox>
-          <rise:x>1031</rise:x>
-          <rise:y>402</rise:y>
+          <rise:x>366</rise:x>
+          <rise:y>556</rise:y>
           <rise:sizeX>129</rise:sizeX>
           <rise:sizeY>145</rise:sizeY>
         </rise:boundingBox>
@@ -4913,8 +5047,8 @@
         <rise:textRef>62570004-af66-4c45-8c78-1c9d7d996362</rise:textRef>
         <rise:display>TitleAndText</rise:display>
         <rise:boundingBox>
-          <rise:x>1204</rise:x>
-          <rise:y>550</rise:y>
+          <rise:x>1102</rise:x>
+          <rise:y>585</rise:y>
           <rise:sizeX>229</rise:sizeX>
           <rise:sizeY>171</rise:sizeY>
         </rise:boundingBox>

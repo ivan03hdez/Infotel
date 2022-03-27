@@ -210,9 +210,10 @@ END;
 $$
 DELIMITER ;
 
-# Función para comprabar si una reserva está pagada o no. (Se utiliza en la vista reservas_clientes)
-# A. TARI
-
+/*
+Función para comprabar si una reserva está pagada o no. (Se utiliza en la vista reservas_clientes)
+A. TARI
+*/
 DELIMITER |
 CREATE OR REPLACE FUNCTION reservaPagada(v_codReserva BIGINT(20))
 RETURNS bool
@@ -226,8 +227,10 @@ BEGIN
 	END IF;
 END;
 
-#Función para obtener que porcentaje de clientes representan dentro de la cadena los que se encuentran en el intervalo de edad indicado.
-#A. TARI
+/*
+Función para obtener que porcentaje de clientes representan dentro de la cadena los que se encuentran en el intervalo de edad indicado.
+A. TARI
+*/
 
 DELIMITER |
 CREATE  or REPLACE FUNCTION porcentaje_clientes_intervalo_edad (v_min INT, v_max INT)
@@ -244,8 +247,11 @@ BEGIN
 	
 	RETURN v_porcentaje;
 END;
-#Funcion para calcular el precio de un servicio teniendo en cuenta la temporada, y las ofertas
-#Juan Vercher
+
+/*
+Funcion para calcular el precio de un servicio teniendo en cuenta la temporada, y las ofertas
+Juan Vercher
+*/
 DELIMITER |
 CREATE FUNCTION calculo_precio_servicio()
 returns decimal(6,2)
@@ -269,8 +275,11 @@ set precioTotal := (pb*tempo)-(pb* ofert);
 return precioTotal;
 
 END;
-#Funcion para ver el porcentaje de ocupacion entre dos fechas
-#Juan Vercher
+
+/*
+Funcion para ver el porcentaje de ocupacion entre dos fechas
+Juan Vercher
+*/
 DELIMITER |
 CREATE FUNCTION ocupacion_fechas(fi date, ff date)
 returns decimal (6,2)

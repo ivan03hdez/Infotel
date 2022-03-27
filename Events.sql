@@ -1,22 +1,17 @@
-/*Evento el el que cada día se checkea la fecha de nacimiento, si las fechas coinciden aumentamos la edad en 1
-CREATE EVENT checkFechaAnyos 
-ON SCHEDULE EVERY 1 DAY
-DO 
-UPDATE cliente*/
-
-
 /*
-Cada año le aplicamos un 2% más al multiplicador por defecto, y después el administrador podrá
+Cada año le aplicamos un 2% más al multiplicador por defecto de las temporadas, y después el administrador podrá
 Modificarlo a su antojo si ve que algo no le cuadra
 */
+DELIMITER $$
 CREATE EVENT IF NOT EXISTS actualizarTemporadas ON SCHEDULE EVERY 1 YEAR STARTS DATE('2022-01-01')
-BEGIN
+DO
     INSERT INTO temporada(nombre, anyo, multiplicador)
     SELECT nombre, (anyo + 1) as anyo, (multiplicador * 1.02) as multiplicador
     from temporada 
     where temporada.anyo = YEAR(NOW());
-END
 
+$$
+DELIMITER ;
 
 /*
 Al inicio del año se crea la tabla calendario al completo, rellenada según fechas y en base a la función get_temporada
