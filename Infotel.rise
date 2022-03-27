@@ -4844,6 +4844,85 @@
         <rise:maxID>0</rise:maxID>
       </rise:relation>
     </rise:newRelation>
+    <rise:newAttribute>
+      <rise:sequenceNumber>357</rise:sequenceNumber>
+      <rise:timeStamp>2022-03-27T22:32:03</rise:timeStamp>
+      <rise:entity>
+        <rise:name>Oferta</rise:name>
+        <rise:attribute>
+          <rise:name>fechaFin</rise:name>
+          <rise:dataTypeAlias />
+          <rise:dataType>string</rise:dataType>
+          <rise:dataSize>50</rise:dataSize>
+          <rise:mustBeUnique>False</rise:mustBeUnique>
+          <rise:mustExist>False</rise:mustExist>
+        </rise:attribute>
+        <rise:maxID>0</rise:maxID>
+      </rise:entity>
+    </rise:newAttribute>
+    <rise:editAttribute>
+      <rise:sequenceNumber>358</rise:sequenceNumber>
+      <rise:timeStamp>2022-03-27T22:32:11</rise:timeStamp>
+      <rise:entity>
+        <rise:name>Oferta</rise:name>
+        <rise:attribute>
+          <rise:name>fechaFin</rise:name>
+          <rise:dataTypeAlias />
+          <rise:dataType>datetime</rise:dataType>
+          <rise:dataSize>50</rise:dataSize>
+          <rise:mustBeUnique>False</rise:mustBeUnique>
+          <rise:mustExist>False</rise:mustExist>
+        </rise:attribute>
+        <rise:maxID>0</rise:maxID>
+      </rise:entity>
+    </rise:editAttribute>
+    <rise:newAttribute>
+      <rise:sequenceNumber>359</rise:sequenceNumber>
+      <rise:timeStamp>2022-03-27T22:32:15</rise:timeStamp>
+      <rise:entity>
+        <rise:name>Oferta</rise:name>
+        <rise:attribute>
+          <rise:name>activa</rise:name>
+          <rise:dataTypeAlias />
+          <rise:dataType>string</rise:dataType>
+          <rise:dataSize>50</rise:dataSize>
+          <rise:mustBeUnique>False</rise:mustBeUnique>
+          <rise:mustExist>False</rise:mustExist>
+        </rise:attribute>
+        <rise:maxID>0</rise:maxID>
+      </rise:entity>
+    </rise:newAttribute>
+    <rise:editAttribute>
+      <rise:sequenceNumber>360</rise:sequenceNumber>
+      <rise:timeStamp>2022-03-27T22:32:18</rise:timeStamp>
+      <rise:entity>
+        <rise:name>Oferta</rise:name>
+        <rise:attribute>
+          <rise:name>activa</rise:name>
+          <rise:dataTypeAlias />
+          <rise:dataType>bool</rise:dataType>
+          <rise:dataSize>50</rise:dataSize>
+          <rise:mustBeUnique>False</rise:mustBeUnique>
+          <rise:mustExist>False</rise:mustExist>
+        </rise:attribute>
+        <rise:maxID>0</rise:maxID>
+      </rise:entity>
+    </rise:editAttribute>
+    <rise:editAttribute>
+      <rise:sequenceNumber>361</rise:sequenceNumber>
+      <rise:timeStamp>2022-03-27T22:32:18</rise:timeStamp>
+      <rise:entity>
+        <rise:name>Oferta</rise:name>
+        <rise:attribute>
+          <rise:name>activa</rise:name>
+          <rise:dataTypeAlias />
+          <rise:dataType>bool</rise:dataType>
+          <rise:mustBeUnique>False</rise:mustBeUnique>
+          <rise:mustExist>False</rise:mustExist>
+        </rise:attribute>
+        <rise:maxID>0</rise:maxID>
+      </rise:entity>
+    </rise:editAttribute>
   </rise:evolution>
   <rise:publish />
   <rise:presentation>
