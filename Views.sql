@@ -37,4 +37,10 @@ CREATE OR REPLACE
 VIEW Adaptada AS SELECT id 
 FROM habitacion 
 WHERE esAdaptada = 1;
+/* Vista para ver las habitaciones libres por planta Juan Vercher*/
+
+Create view habitaciones_libre  
+as select numero, codhotel, substring(convert(numero,varchar(4)),1,1) 
+as 'Planta' from habitacion where numero < 100>199 and esta ocupada = false
+count numero
 
