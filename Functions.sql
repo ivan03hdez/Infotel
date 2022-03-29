@@ -277,11 +277,11 @@ return precioTotal;
 END;
 
 /*
-Funcion para ver el porcentaje de ocupacion entre dos fechas
+Funcion para ver el porcentaje de ocupacion en una fecha
 Juan Vercher
 */
 DELIMITER |
-CREATE FUNCTION ocupacion_fechas(fi date, ff date)
+CREATE FUNCTION ocupacion_fecha(f date)
 returns decimal (6,2)
 
 BEGIN
@@ -290,21 +290,17 @@ declare oc int ;
 declare so int;
 declare ocupacion decimal(6,2);
 
-SELECT count(*)
+SELECT COUNT(*) into oc
 FROM habitacion h, reservaHist rh, reserva r
 WHERE h.id = rh.idHabitacion 
 AND rh.CodReserva = r.codigo
-AND h.estaOcupada = 1
-AND r.fechaInicio <= fi
-AND r.fechaFin >= ff
-into oc;
+AND r.fechaInicio <= f
+AND r.fechaFin >= f
+;
 
-SELECT count(*)
-FROM habitacion h, reservaHist rh, reserva r
-WHERE h.id = rh.idHabitacion 
-into so;
+SELECT COUNT(*) into so
+FROM habitacion ;
 
 set ocupacion := ((oc/so) * 100);
 RETURN ocupacion; 
 END;
-
