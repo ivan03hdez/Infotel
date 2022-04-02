@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="ReservasCliente.xsl" type="text/xsl"?>
+<RESERVASCLIENTE>
+        <CLIENTE nif="43287135P">
+                <RESERVAHIST>
+                        <RESERVA codigo="1445796" fechaInicio="2020-12-02" fechaFinal="2020-12-06" precioTotal="45"/>
+                        <HABITACION id="1" numero="215" vistas="true" estaLimpia="true" estaOcupado="true"/>
+                        <OFERTA id="1" descuento="15" codigo="SV2022"/>
+                </RESERVAHIST>
+                <RESERVAHIST>
+                        <RESERVA codigo="59786431" fechaInicio="2020-12-02" fechaFinal="2020-12-06" precioTotal="45"/>
+                        <HABITACION id="2" numero="215" vistas="true" estaLimpia="true" estaOcupado="true"/>
+                        <OFERTA id="2" descuento="15"/>
+                </RESERVAHIST>
+                <RESERVASERVICIO>
+                        <RESERVA codigo="37896451" fechaInicio="2020-12-02" fechaFinal="2020-12-06" precioTotal="45"/>
+                        <SERVICIO id="3" nombre="masaje" precioBase="50"/>
+                        <EMPLEADO id="3" nif="46987135X"/>
+                </RESERVASERVICIO>
+        </CLIENTE>
+</RESERVASCLIENTE>

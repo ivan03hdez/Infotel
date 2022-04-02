@@ -1,0 +1,42 @@
+<?xml=version"1.0" encoding="UTF-8"?>
+<!DOCTYPE RESERVASCLIENTE [
+<!ELEMENT RESERVASCLIENTE (CLIENTE*)
+	<!ELEMENT CLIENTE (RESERVAHIST*, RESERVASERVICIO*)>
+	        <!ELEMENT RESERVAHIST (RESERVA, HABITACION, OFERTA?)>
+	        <!ELEMENT RESERVASERVICIO (RESERVA, SERVICIO, EMPLEADO?)>
+                        <!ELEMENT RESERVA EMPTY>
+                        <!ELEMENT HABITACION EMPTY>
+                        <!ELEMENT OFERTA EMPTY>
+                        <!ELEMENT SERVICIO EMPTY>
+                        <!ELEMENT EMPLEADO EMPTY>
+
+                        <ATTLIST RESERVA
+                                codigo CDATA #REQUIRED
+                                fechaInicio CDATA
+                                fechFin CDATA
+                                precioTotal CDATA 0>
+
+                        <ATTLIST HABITACION
+                                id CDATA #REQUIRED
+                                numero CDATA
+                                vistas CDATA
+                                estaLimpia CDATA
+                                estaOcupado CDATA>
+
+                        <ATTLIST OFERTA
+                                id CDATA #REQUIRED
+                                descuento CDATA
+                                titulo CDATA
+                                descripcion CDATA
+                                codigo CDATA>
+
+                        <ATTLIST SERVICIO
+                                id CDATA #REQUIRED
+                                nombre CDATA
+                                descripcion CDATA
+                                precioBase CDATA>
+                        
+                        <ATTLIST EMPLEADO
+                                id CDATA #REQUIRED
+                                nif CDATA>
+]>
