@@ -1,7 +1,6 @@
 /*
-Procedimiento para reservar una habitacion
-Ivan
-Procedimiento de Transaction Daniel
+Procedimiento de Transaction para reservar una habitacion
+Ivan / Daniel
 */
 DELIMITER $$
 CREATE OR REPLACE PROCEDURE introducirDatosReservaHabitacion(
@@ -33,7 +32,7 @@ BEGIN
     SELECT SLEEP(5);
     
     SELECT get_precioHabitacion(v_idTipo, DATE(NOW()),codOferta) INTO precioHab;
-	 SELECT SLEEP(5);
+	SELECT SLEEP(5);
 
     SELECT id
     INTO idOferta
@@ -57,8 +56,7 @@ $$
 DELIMITER ;
 
 /*
-Procedimiento para reservar un servicio
-Procedimiento de Transaction 
+Procedimiento de Transaction para reservar un servicio
 Daniel
 */
 DELIMITER $$
