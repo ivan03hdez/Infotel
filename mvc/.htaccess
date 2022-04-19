@@ -1,2 +1,20 @@
+deny from all
+<Files ~ "^([a-zA-Z0-9]+)$">
+    Order allow,deny
+    allow from all
+</Files>
+<Files ~ "index.php$">
+    Order allow,deny
+    allow from all
+</Files>
+<Files ~ ".*html$">
+    Order allow,deny
+    allow from all
+</Files>
+<Files ~ "styles\.less$">
+    Order allow,deny
+    allow from all
+</Files>
 RewriteEngine on
 RewriteRule ^([a-zA-Z0-9]+).html$ index.php?ID=$1
+RewriteRule ^([a-zA-Z0-9]+)$ index.php?ID=$1
