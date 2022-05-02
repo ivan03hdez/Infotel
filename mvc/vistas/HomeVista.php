@@ -1,15 +1,14 @@
 <?php
     require_once "plantillas//PlantillaHtmlVista.php";
+    require_once "MenuPrincipalVista.php";
 
     class HomeVista extends PlantillaHtmlVista {
-        function render($datos_in){
+        public function render($datos_in){
+            $mainMenu = MenuPrincipalVista::getMainMenu($datos_in);
             $this->bodyPagina = <<<HTML
-            <H1>Datos de Salida</H1>
-            <table class="table table-bordered">
-                <tr><td>DATO</td><td>VALOR</td></tr>
-                <tr><td>datoX</td><td>4</td></tr>
-            </table>
-            HTML;
+                $mainMenu
+            HTML; 
+            $this->tituloPagina = "Home";
 
             echo parent::render(NULL);
         }

@@ -1,0 +1,48 @@
+.infotel {
+   .mainMenuContainer{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        flex: content;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #14274A;
+        color: white;
+        align-items: baseline;
+        padding-bottom: 8.5vh;
+
+        .infotelRectangulo{
+            height: 15vh;
+            width: 18vw;
+            border-radius: 0px 0px 70px 70px;
+            background: #E0B973;
+            text-align: center;
+        }
+
+        .mainMenuList{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            flex: content;
+            justify-content: center;
+            align-items: center;
+            & > div{
+                flex: 1 1 auto;
+                text-align: center;
+                cursor: pointer;
+                & > span {
+                    position: absolute;
+                    &:hover{
+                        filter: opacity(0.5);
+                    }
+                }
+                .underlined {
+                    position: relative;
+                    width: 100%;
+                    border-bottom: 2px solid white;
+                    display: none;
+                }
+            }
+        }
+    }
+}

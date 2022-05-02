@@ -1,4 +1,5 @@
 <?php
+    include './helpers.php';
     define("BASE_DIR","C:/xampp/htdocs/infotel/mvc");
     define("MOD_DIR",BASE_DIR."/modelos/");
     define("VIEW_DIR",BASE_DIR."/vistas/");
@@ -13,13 +14,14 @@
 
     // si no existe la pagina demandada le mandamos al Home
     $modelo="${pagina}Modelo";
-    if (!file_exists($modelo))
+    if (!file_exists_ci($modelo) || strToLower($pagina) == "menuprincipal")
         $pagina="Home";
 
     $modelo="${pagina}Modelo";
     require (MOD_DIR."$modelo.php");
     $m=new $modelo;
-    $resultado=$m->Ejecuta($datos);
+    $resultado=$m->getDatos($datos);
+
     #Carga la vista y la ejecuta
     $vista="${pagina}Vista";
     require (VIEW_DIR."$vista.php");

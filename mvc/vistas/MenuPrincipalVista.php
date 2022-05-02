@@ -1,17 +1,41 @@
 <?php
-    require_once "plantillas//PlantillaHtmlVista.php";
-
-    class MenuPrincipalVista extends PlantillaHtmlVista {
-        function render($datos_in){
-            $this->bodyPagina = <<<HTML
-            <H1>Datos de Salida</H1>
-            <table class="table table-bordered">
-                <tr><td>DATO</td><td>VALOR</td></tr>
-                <tr><td>datoX</td><td>4</td></tr>
-            </table>
+    class MenuPrincipalVista {
+        public static function getMainMenu($datos_in){
+            $menuPrincipal = <<<HTML
+                <div class="mainMenuContainer">
+                    <div class="infotelRectangulo">
+                        <div class="infotelTexto">
+                            <h1>INFOTEL</h1>
+                            <h6>HOTELES</h6>
+                        </div>
+                    </div>
+                    <div class="mainMenuList">
+                        <div>
+                            <span>Hoteles<div class="underlined"></div></span>
+                        </div>
+                        <div>
+                            <span>Servicios<div class="underlined"></div></span>
+                        </div>
+                        <div>
+                            <span>Reservas<div class="underlined"></div></span>
+                        </div>
+                        <div>
+                            <span>Mis Viajes<div class="underlined"></div></span>
+                        </div>
+                        <div>
+                            <span>Login<div class="underlined"></div></span>
+                        </div>
+                        <div>
+                            <span>Mi Cuenta<div class="underlined"></div></span>
+                        </div>
+                        <div>
+                            <span>Logout<div class="underlined"></div></span>
+                        </div>
+                    </div>
+                </div>
             HTML;
 
-            echo parent::render(NULL);
+            return $menuPrincipal;
         }
     }
 ?>
