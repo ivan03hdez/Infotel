@@ -1,5 +1,5 @@
 <?php
-    class MenuPrincipalModelo {
+    class HotelesModelo {
         public function getDatos($datos_in){
         /*Realiza todas las acciones necesarias con el array $datos_in
         ...

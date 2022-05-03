@@ -1,6 +1,6 @@
 document.querySelectorAll('.mainMenuList > div').forEach(
     elem => elem.addEventListener('click', 
-        ev =>window.location.href = "http://localhost/infotel/mvc/" + ev.target.outerText.toLowerCase()
+        ev =>window.location.href = "http://localhost/infotel/mvc/" + ev.target.outerText.toLowerCase().replace(/%20/g, '')
     )
 );
 
