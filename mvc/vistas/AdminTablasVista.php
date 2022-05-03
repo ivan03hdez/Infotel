@@ -2,7 +2,7 @@
     require_once "plantillas//PlantillaHtmlVista.php";
     require_once "MenuPrincipalVista.php";
 
-    class AdminOfertasVista extends PlantillaHtmlVista {
+    class AdminTablasVista extends PlantillaHtmlVista {
         public function render($datos_in){
             $datos = [
                 'tituloPagina' => 'Administrador'

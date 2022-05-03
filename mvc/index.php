@@ -14,7 +14,7 @@
 
     // si no existe la pagina demandada le mandamos al Home
     $modelo="${pagina}Modelo";
-    if (!file_exists_ci($modelo) || strToLower($pagina) == "menuprincipal")
+    if (!file_exists_ci($modelo))
         $pagina="Home";
 
     $modelo="${pagina}Modelo";

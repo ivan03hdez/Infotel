@@ -20,7 +20,7 @@
                             <div><span>Mis Viajes</span><div class="underlined"></div></div>
                             <div><span>Login</span><div class="underlined"></div></div>
                             <div><span>Mi Cuenta</span><div class="underlined"></div></div>
-                            <div><span>Logout</span><div class="underlined"></div></div>
+                            <div><span>Administrador</span><div class="underlined"></div></div>
                     </div>
                     <div class="tituloPagina"><h1>$tituloPagina</h1></div>
                 </div>
