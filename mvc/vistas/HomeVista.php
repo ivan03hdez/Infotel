@@ -4,10 +4,12 @@
 
     class HomeVista extends PlantillaHtmlVista {
         public function render($datos_in){
-            $mainMenu = MenuPrincipalVista::getMainMenu($datos_in);
+            $datos = [
+                'tituloPagina' => 'Bienvenido a Infotel'
+            ];
+            $mainMenu = MenuPrincipalVista::getMainMenu($datos);
             $this->bodyPagina = <<<HTML
                 $mainMenu
-                <div>CONTENIDO</div
             HTML;
             $this->tituloPagina = "Inicio";
 

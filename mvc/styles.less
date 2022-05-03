@@ -9,14 +9,21 @@
         background-color: #14274A;
         color: white;
         align-items: baseline;
-        padding-bottom: 10vh;
+        padding-bottom: 6vh;
+
+        .infotelContainer{
+            flex: 1 0 40%;
+        }
 
         .infotelRectangulo{
+            flex: 1 2 50%;
             height: 15vh;
             width: 18vw;
-            border-radius: 0px 0px 70px 70px;
+            border-radius: 0px 0px 4vw 4vw;
             background: #E0B973;
             text-align: center;
+            margin-left: 6vw;
+            color: black;
         }
 
         .mainMenuList{
@@ -24,20 +31,19 @@
             flex-direction: row;
             flex-wrap: nowrap;
             flex: content;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
-            & > div{
-                flex: 1 1 auto;
+            margin-right: 3vw;
+            & > div {
+                flex: 0 1 auto;
                 text-align: center;
                 cursor: pointer;
-                & > span {
-                    position: absolute;
-                    &:hover{
-                        filter: opacity(0.5);
-                    }
+
+                &:hover{
+                    filter: opacity(0.5);
                 }
+
                 .underlined {
-                    position: relative;
                     width: 100%;
                     border-bottom: 2px solid white;
                     display: none;
@@ -46,10 +52,9 @@
         }
 
         .tituloPagina{
-            font-size: 2.5vh;
-            font-weight: bold;
-            margin-top: -1vh;
-            margin-bottom: -1vh;
+            margin-top: 2vh;
+            flex: 1 0 100%;
+            text-align: center;
         }
     }
 }

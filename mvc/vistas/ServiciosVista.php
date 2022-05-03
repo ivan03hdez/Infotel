@@ -2,17 +2,16 @@
     require_once "plantillas//PlantillaHtmlVista.php";
     require_once "MenuPrincipalVista.php";
 
-    class HotelesVista extends PlantillaHtmlVista {
+    class ServiciosVista extends PlantillaHtmlVista {
         public function render($datos_in){
             $datos = [
-                'tituloPagina' => 'Hoteles'
+                'tituloPagina' => 'Servicios'
             ];
             $mainMenu = MenuPrincipalVista::getMainMenu($datos);
             $this->bodyPagina = <<<HTML
                 $mainMenu
-                <div>CONTENIDO</div>
-            HTML; 
-            $this->tituloPagina = "Hoteles";
+            HTML;
+            $this->tituloPagina = "Servicios";
 
             echo parent::render(NULL);
         }

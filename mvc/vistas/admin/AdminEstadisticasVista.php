@@ -4,12 +4,14 @@
 
     class AdminEstadisticasVista extends PlantillaHtmlVista {
         public function render($datos_in){
-            $mainMenu = MenuPrincipalVista::getMainMenu($datos_in);
+            $datos = [
+                'tituloPagina' => 'Administrador'
+            ];
+            $mainMenu = MenuPrincipalVista::getMainMenu($datos);
             $this->bodyPagina = <<<HTML
                 $mainMenu
-                <div>CONTENIDO</div
-            HTML; 
-            $this->tituloPagina = "Inicio";
+            HTML;
+            $this->tituloPagina = "Estadisticas Administrador";
 
             echo parent::render(NULL);
         }

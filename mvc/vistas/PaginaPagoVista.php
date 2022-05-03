@@ -2,14 +2,16 @@
     require_once "plantillas//PlantillaHtmlVista.php";
     require_once "MenuPrincipalVista.php";
 
-    class PaginaPago extends PlantillaHtmlVista {
+    class PaginaPagoVista extends PlantillaHtmlVista {
         public function render($datos_in){
-            $mainMenu = MenuPrincipalVista::getMainMenu($datos_in);
+            $datos = [
+                'tituloPagina' => 'Pagina de Pago'
+            ];
+            $mainMenu = MenuPrincipalVista::getMainMenu($datos);
             $this->bodyPagina = <<<HTML
                 $mainMenu
-                <div>CONTENIDO</div
-            HTML; 
-            $this->tituloPagina = "Inicio";
+            HTML;
+            $this->tituloPagina = "Pagina de Pago";
 
             echo parent::render(NULL);
         }

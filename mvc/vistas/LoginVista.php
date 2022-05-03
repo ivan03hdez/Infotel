@@ -1,15 +1,12 @@
 <?php
     require_once "plantillas//PlantillaHtmlVista.php";
-    require_once "MenuPrincipalVista.php";
 
     class LoginVista extends PlantillaHtmlVista {
         public function render($datos_in){
-            $mainMenu = MenuPrincipalVista::getMainMenu($datos_in);
             $this->bodyPagina = <<<HTML
-                $mainMenu
-                <div>CONTENIDO</div
-            HTML; 
-            $this->tituloPagina = "Inicio";
+
+            HTML;
+            $this->tituloPagina = "Login";
 
             echo parent::render(NULL);
         }
