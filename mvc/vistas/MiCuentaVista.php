@@ -1,5 +1,5 @@
 <?php
-    require_once "plantillas//PlantillaHtmlVista.php";
+    require_once "plantillas/PlantillaHtmlVista.php";
     require_once "MenuPrincipalVista.php";
 
     class MiCuentaVista extends PlantillaHtmlVista {

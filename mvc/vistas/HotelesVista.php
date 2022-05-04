@@ -1,5 +1,5 @@
 <?php
-    require_once "plantillas//PlantillaHtmlVista.php";
+    require_once "plantillas/PlantillaHtmlVista.php";
     require_once "MenuPrincipalVista.php";
 
     class HotelesVista extends PlantillaHtmlVista {
@@ -7,12 +7,11 @@
             $datos = [
                 'tituloPagina' => 'Hoteles'
             ];
+            $this->tituloPagina = "Hoteles";
             $mainMenu = MenuPrincipalVista::getMainMenu($datos);
             $this->bodyPagina = <<<HTML
                 $mainMenu
-                <div>CONTENIDO</div>
             HTML; 
-            $this->tituloPagina = "Hoteles";
 
             echo parent::render(NULL);
         }
