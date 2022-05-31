@@ -1,5 +1,9 @@
 <?php
     include './helpers.php';
+
+    require_once 'modelos/database_connection.php';
+    $link = new database_connection();
+
     define("BASE_DIR","C:/xampp/htdocs/infotel/mvc");
     define("MOD_DIR",BASE_DIR."/modelos/");
     define("VIEW_DIR",BASE_DIR."/vistas/");
@@ -18,7 +22,7 @@
 
     $modelo="${pagina}Modelo";
     require (MOD_DIR."$modelo.php");
-    $m=new $modelo;
+    $m=new $modelo($link->getConnection());
     $resultado=$m->getDatos($datos);
 
     #Carga la vista y la ejecuta
