@@ -1,22 +1,19 @@
 <?php
     class HomeModelo {
-
-        private $link;
-
-        public function HomeModelo($link) {
-            $this->link = $link;
-        }
-
         public function getDatos($datos_in){
-        /*Realiza todas las acciones necesarias con el array $datos_in
-        ...
-        */
-        #Recoge los resultados en un array y lo devuelve
-        $this->link->query('select * from reserva');
-        echo $this->link;
+            try {
+                $query = DatabaseConnection::query('select * from hotel');
+            } catch (Exception $e) {
+                echo $e->getMessage();
+            }
 
-        $salida=["datoX"=>"ValorX", "datosY"=>"ValorY", "datosZ"=>"ValorZ"];
-        return $salida;
+            $hotels = array();
+
+            while($row = mysqli_fetch_array($query)) 
+            {
+                $hotels[] = $row;
+            }
+            return $hotels; //Array tal que asi: [[0]=>[id,idDireccion,nombre,estrellas,imagenCiudad]]
         }
     }
 ?>

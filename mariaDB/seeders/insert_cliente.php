@@ -19,7 +19,7 @@ require_once 'vendor/autoload.php';
 $faker = Faker\Factory::create('es_ES');
 
 #Cantidad de datos a generar
-$CANTIDAD_SEEDS=1000000;
+$CANTIDAD_SEEDS=300000;
 
 ini_set('memory_limit', '2G');
 
@@ -53,10 +53,10 @@ for ($i = 1; $i <= $CANTIDAD_SEEDS/$MAX_AMOUNT_OF_REGISTERS; $i++) {
         $correo= addslashes(str_replace(' ', '', strval($nombre.$faker->randomNumber($nbDigits = 5))).$gmail);
 
         $vacunado= mt_rand(0,1);
-
+        $serial = 700000 + $id;
         $clienteInsertStatement = $j == $MAX_AMOUNT_OF_REGISTERS
-            ? "($id, '$nombre', '$apellidos', '$password', '$dni', '$correo', '$telefono', '$fecha', '$pais', '$vacunado', $id)"
-            : "($id, '$nombre', '$apellidos', '$password', '$dni', '$correo', '$telefono', '$fecha', '$pais', '$vacunado', $id)".$coma;
+            ? "($serial, '$nombre', '$apellidos', '$password', '$dni', '$correo', '$telefono', '$fecha', '$pais', '$vacunado', $serial)"
+            : "($serial, '$nombre', '$apellidos', '$password', '$dni', '$correo', '$telefono', '$fecha', '$pais', '$vacunado', $serial)".$coma;
         
         $id++;
         fwrite($fout, "$clienteInsertStatement");

@@ -1,13 +1,19 @@
 /* DROP TABLE IF EXISTS reservaServicio, reservaHist, habitacion, servicio, tipo, oferta, empleado, hotel, reserva, cliente, calendario, temporada; */
 
 /* SERIAL is the alias for BIGINT UNSIGNED NOT NULL AUTO_INCREMENT UNIQUE.*/
+
+CREATE TABLE IF NOT EXISTS direccion (
+    id SERIAL PRIMARY KEY,
+    direccion NOT NULL,
+    cp varchar(30) NOT NULL,
+    ciudad varchar(30) NOT NULL,
+    paisResidencia varchar(30) NOT NULL,
+);
+
 CREATE TABLE IF NOT EXISTS hotel (
     id SERIAL PRIMARY KEY,
+    idDireccion NOT NULL, CONSTRAINT fkHotelDireccion  FOREIGN KEY (idDireccion) REFERENCES direccion(id) ON UPDATE CASCADE ON DELETE CASCADE,
     nombre varchar(30) NOT NULL,
-    direccion varchar(30) NOT NULL,
-    cp varchar(5) NOT NULL,
-    ciudad varchar(30) NOT NULL,
-    pais varchar(30) NOT NULL,
     nEstrellas int(1),
     imagenCiudad BLOB
 );
@@ -23,8 +29,8 @@ CREATE TABLE IF NOT EXISTS tipo (
 
 CREATE TABLE IF NOT EXISTS habitacion (
     id SERIAL PRIMARY KEY,
-    idHotel BIGINT UNSIGNED NOT NULL, CONSTRAINT fkHabHotel  FOREIGN KEY (idHotel)   REFERENCES hotel(id) ON UPDATE CASCADE ON DELETE CASCADE,
-    idTipo BIGINT UNSIGNED NOT NULL, CONSTRAINT fkHabTIpo  FOREIGN KEY (idTipo)   REFERENCES tipo(id) ON UPDATE CASCADE ON DELETE CASCADE,
+    idHotel BIGINT UNSIGNED NOT NULL, CONSTRAINT fkHabHotel  FOREIGN KEY (idHotel) REFERENCES hotel(id) ON UPDATE CASCADE ON DELETE CASCADE,
+    idTipo BIGINT UNSIGNED NOT NULL, CONSTRAINT fkHabTIpo  FOREIGN KEY (idTipo) REFERENCES tipo(id) ON UPDATE CASCADE ON DELETE CASCADE,
     numero int(3),
     vistas varchar(30),
     estaLimpia boolean,
@@ -60,6 +66,7 @@ CREATE TABLE IF NOT EXISTS oferta (
 
 CREATE TABLE IF NOT EXISTS reserva (
     codigo SERIAL PRIMARY KEY,
+    identificador CHAR(6)),
     fechaInicio DATE NOT NULL,
     fechaFin DATE NOT NULL,
     precioTotal decimal(6,2)
@@ -101,10 +108,6 @@ CREATE TABLE IF NOT EXISTS empleado (
     telefono varchar(30),
     fechaNac DATE,
     nacionalidad varchar(30),
-    direccion varchar(30),
-    cp varchar(30),
-    ciudad varchar(30),
-    paisResidencia varchar(30),
     puestoTrabajo varchar(30),
     sueldoBruto decimal(6,2),
     retIRPF decimal(6,2),
