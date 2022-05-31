@@ -1,8 +1,10 @@
 <?php
     include './helpers.php';
+    require 'modelos/DatabaseConnection.php';
 
-    require_once 'modelos/database_connection.php';
-    $link = new database_connection();
+    ini_set('mbstring.substitute_character', "none");
+
+    DatabaseConnection::createConnection();
 
     define("BASE_DIR","C:/xampp/htdocs/infotel/mvc");
     define("MOD_DIR",BASE_DIR."/modelos/");
@@ -11,7 +13,7 @@
     if (array_key_exists("ID",$_GET)){
         $pagina=$_GET["ID"];
         $datos=$_POST;
-    }else{ // Clase a cargar por defecto)
+    }else{ // Clase a cargar por defecto
         $pagina="Home";
         $datos=array();
     }
@@ -22,7 +24,7 @@
 
     $modelo="${pagina}Modelo";
     require (MOD_DIR."$modelo.php");
-    $m=new $modelo($link->getConnection());
+    $m=new $modelo();
     $resultado=$m->getDatos($datos);
 
     #Carga la vista y la ejecuta
