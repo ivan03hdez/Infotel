@@ -1,5 +1,18 @@
 <?php
 
+// Find a randomDate between $start_date and $end_date
+function randomDate($start_date, $end_date)
+{
+    // Convert to timetamps
+    $min = strtotime($start_date);
+    $max = strtotime($end_date);
+
+    // Generate random number using above bounds
+    $val = rand($min, $max);
+
+    // Convert back to desired date format
+    return date('Y-m-d H:i:s', $val);
+}
 
 #Cantidad de datos a generar
 $CANTIDAD_SEEDS=150000;
@@ -22,21 +35,21 @@ $fout=fopen($ficheroTemporal,'w');
 $id = 1;
 $coma = ',';
 for ($i = 1; $i <= $CANTIDAD_SEEDS/$MAX_AMOUNT_OF_REGISTERS; $i++) {
-    fwrite($fout, "INSERT INTO reservaHist values ");
+    fwrite($fout, "INSERT INTO reservaServicio values ");
     for ($j = 1; $j <= $MAX_AMOUNT_OF_REGISTERS; $j++) {
         #Genera datos aleatorios
-        $nPersonas=rand(1,4);
-        $oferta=rand(1, $TOTAL_OFERTAS);
+        $servicio=rand(1, $TOTAL_SERVICIOS);
         $reserva=rand(1, $TOTAL_RESERVAS);
-        $cliente=rand(1, $TOTAL_CLIENTES);
-        $habitacion=rand(1, $TOTAL_HABITACIONES);
+        $empleado=rand(1, $TOTAL_EMPLEADOS);
         $v_startdate="get_startdate(".strval($reserva).")";
-        #$v_startdate = trim($v_startdate, "");
-        $precio="get_precioHabitacion(".strval($id).",".strval($v_startdate).",".strval($oferta).")";
+        # $v_enddate="get_enddate(".strval($reserva).")";
+        $fecha = $v_startdate;# randomDate($v_startdate, $v_enddate);
+        $precio="get_precioServicio(".strval($servicio).",".strval($fecha).")";
+        $oferta=rand(1, $TOTAL_OFERTAS);
 
         $clienteInsertStatement = $j == $MAX_AMOUNT_OF_REGISTERS
-            ? "($id, $reserva, $oferta, $cliente, $habitacion, $precio, '$status', '$pagada', $nPersonas)"
-            : "($id, $reserva, $oferta, $cliente, $habitacion, $precio, '$status', '$pagada', $nPersonas)".$coma;
+            ? "($fecha, $servicio, $reserva, $empleado, $precio, $oferta)"
+            : "($fecha, $servicio, $reserva, $empleado, $precio, $oferta)".$coma;
         
         $id++;
         fwrite($fout, "$clienteInsertStatement");
