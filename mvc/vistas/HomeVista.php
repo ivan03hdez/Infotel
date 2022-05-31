@@ -7,9 +7,12 @@
             $datos = [
                 'tituloPagina' => 'Bienvenido a Infotel'
             ];
+            $row = mb_convert_encoding($datos_in[11]['nombre'], "UTF-8");
+            $row = $datos_in[11]['nombre'];
             $mainMenu = MenuPrincipalVista::getMainMenu($datos);
             $this->bodyPagina = <<<HTML
                 $mainMenu
+                $row
             HTML;
             $this->tituloPagina = "Inicio";
 

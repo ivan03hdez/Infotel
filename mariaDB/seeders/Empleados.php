@@ -19,7 +19,7 @@ require_once 'vendor/autoload.php';
 $faker = Faker\Factory::create('es_ES');
 
 #Cantidad de datos a generar
-$CANTIDAD_SEEDS=300000;
+$CANTIDAD_SEEDS=20000;
 
 ini_set('memory_limit', '2G');
 
@@ -28,23 +28,30 @@ echo "El fichero temporal es $ficheroTemporal";
 $fout=fopen($ficheroTemporal,'w');
 
 $letras = ["T", "R", "W", "A", "G", "M", "Y", "F", "P", "D", "X", "B", "N", "J", "Z", "S", "Q", "V", "H", "L", "C", "K", "E"];
-$MAX_AMOUNT_OF_REGISTERS = 100000;
+$MAX_AMOUNT_OF_REGISTERS = 10000;
+$puestosTrabajo = [0 => 'Administrador', 1 => 'Cliente', 2 => 'Invitado'];
 $id = 1;
+$idHotel = 1;
+$idDireccion = 1;
 $coma = ',';
 for ($i = 1; $i <= $CANTIDAD_SEEDS/$MAX_AMOUNT_OF_REGISTERS; $i++) {
-    fwrite($fout, "INSERT INTO cliente values ");
+    fwrite($fout, "INSERT INTO empleado values ");
     for ($j = 1; $j <= $MAX_AMOUNT_OF_REGISTERS; $j++) {
+        if($idHotel >= 50){
+            $idHotel = 1;
+        }
         #Genera datos aleatorios
         $nombre=addslashes($faker->name);
         $apellidos=addslashes($faker->lastName);
-        $direccion=addslashes($faker->streetAddress);
-        $cpostal=$faker->postcode;
         $ciudad=addslashes($faker->city);
         $password=generatePassword(8);
         $telefono=addslashes($faker->phoneNumber);
         $fecha=date("Y-m-d", mt_rand(0, 500000000));
         $pais=addslashes($faker->country);
-
+        $puestosTrabajorrand = mt_rand(0, 2);
+        $sueldoBruto = mt_rand(12000,200000);
+        $retIRPF = mt_rand(15,45);
+        $cuotaPatro =  mt_rand(2,5);
         $n_dni = $faker->unique()->randomNumber($nbDigits = 8);
         $letra_dni = $letras[$n_dni%23];
         $dni = addslashes(strval($n_dni).$letra_dni);
@@ -53,12 +60,14 @@ for ($i = 1; $i <= $CANTIDAD_SEEDS/$MAX_AMOUNT_OF_REGISTERS; $i++) {
         $correo= addslashes(str_replace(' ', '', strval($nombre.$faker->randomNumber($nbDigits = 5))).$gmail);
 
         $vacunado= mt_rand(0,1);
-        $serial = 700000 + $id;
+
         $clienteInsertStatement = $j == $MAX_AMOUNT_OF_REGISTERS
-            ? "($serial, '$nombre', '$apellidos', '$password', '$dni', '$correo', '$telefono', '$fecha', '$pais', '$vacunado', $serial)"
-            : "($serial, '$nombre', '$apellidos', '$password', '$dni', '$correo', '$telefono', '$fecha', '$pais', '$vacunado', $serial)".$coma;
+            ? "($id, $idHotel, $idDireccion,'$nombre', '$apellidos', '$password', '$dni', '$correo', '$telefono', '$fecha', '$pais', '$puestosTrabajorrand', $sueldoBruto,$retIRPF,$cuotaPatro)"
+            : "($id, $idHotel,  $idDireccion','$nombre', '$apellidos', '$password', '$dni', '$correo', '$telefono', '$fecha', '$pais', '$puestosTrabajorrand', $sueldoBruto,$retIRPF, $cuotaPatro )".$coma;
         
         $id++;
+        $idHotel++;
+        $idDireccion++;
         fwrite($fout, "$clienteInsertStatement");
         if($id % 100 == 0){
             gc_collect_cycles();
