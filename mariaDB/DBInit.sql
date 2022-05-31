@@ -115,7 +115,7 @@ CREATE TABLE IF NOT EXISTS servicio (
     id SERIAL PRIMARY KEY,
     idHotel BIGINT UNSIGNED NOT NULL, CONSTRAINT fkHotel FOREIGN KEY (idHotel) REFERENCES hotel(id) ON UPDATE CASCADE ON DELETE CASCADE,
     nombre varchar(30),
-    descripcion varchar(30),
+    descripcion varchar(300),
     precioBase decimal(6,2)
 );
 
