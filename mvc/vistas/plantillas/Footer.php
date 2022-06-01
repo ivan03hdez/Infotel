@@ -13,7 +13,7 @@
                                 <img src="img/phone.png" alt="phone">
                             </div>
                             <div class="footerContactInfoText">
-                                <h6>+1 (818) 888-8888</h6>
+                                <h6>+34 987 574 147</h6>
                             </div>
                         </div>
                         <div class="footerSocialMedia">

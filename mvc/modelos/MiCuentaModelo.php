@@ -5,8 +5,22 @@
         ...
         */
         #Recoge los resultados en un array y lo devuelve
-        $salida=["datoX"=>"ValorX", "datosY"=>"ValorY", "datosZ"=>"ValorZ"];
-        return $salida;
+        try {
+            $query = DatabaseConnection::query('select * from empleado where id = {{$datos_in}}');
+        } catch (Exception $e) {
+            echo $e->getMessage();
+        }
+
+        $hotels = array();
+
+        while($row = mysqli_fetch_array($query)) 
+        {
+            $hotels[] = $row;
+        }
+        return $hotels; //Array tal que asi: [[0]=>[id,idDireccion,nombre,estrellas,imagenCiudad]]
+    
+        $salida=["nombre"=>"nombre","correo"=>"correo","dni"=>"dni","direccion"=>"direccion","fnac"=>"fnac","pais"=>"pais","cuidad"=>"cuidad","cp"=>"cp"];
+            return $salida;
         }
     }
 ?>

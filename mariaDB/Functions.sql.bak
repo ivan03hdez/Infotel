@@ -207,26 +207,6 @@ BEGIN
 
 END;
 
-/*
-Obtiene la fecha de fin de una reserva
-J. PALOMAR
-*/
-$$
-DELIMITER ;
-
-DELIMITER $$
-CREATE OR REPLACE FUNCTION get_enddate(v_codReserva INT)
-RETURNS DATE
-
-BEGIN 
-
-DECLARE v_enddate DATE;
-
-SELECT fechaFin INTO v_enddate FROM reserva rv WHERE rv.codigo = v_codReserva;
-
-RETURN v_enddate;
-END;
-
 $$
 DELIMITER ;
 
