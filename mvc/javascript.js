@@ -24,3 +24,13 @@ window.onload = () => {
         }
     });
 }
+
+$(document).ready(function () {
+    $('div #trash').click(function() {
+      var row=$(this).parents('tr');
+      var id=row.data('id');
+      var urlClass = window.location.pathname.split('/')[1];/////funciona en admin porque cojo la clase dinamicamente
+      if(confirm("¿Are you sure you want to delete this object?"))
+        window.location.replace("http://localhost/infotel/mvc/admin/" + urlClass +"/delete/"+id);
+    })
+  });

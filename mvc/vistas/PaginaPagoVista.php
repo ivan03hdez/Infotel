@@ -1,6 +1,6 @@
 <?php
     require_once "plantillas/PlantillaHtmlVista.php";
-    require_once "MenuPrincipalVista.php";
+    require_once "plantillas/MenuPrincipalVista.php";
 
     class PaginaPagoVista extends PlantillaHtmlVista {
         public function render($datos_in){

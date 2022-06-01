@@ -2,9 +2,10 @@
     class HomeModelo {
         public function getDatos($datos_in){
             try {
-                $query = DatabaseConnection::query('select * from hotel');
+                $query = DatabaseConnection::query('select * from hotel where');
             } catch (Exception $e) {
                 echo $e->getMessage();
+                exit();
             }
 
             $hotels = array();
