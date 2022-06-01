@@ -6,7 +6,7 @@
         */
         #Recoge los resultados en un array y lo devuelve
         try {
-            $query = DatabaseConnection::query('select * from hotel');
+            $query = DatabaseConnection::query('select * from empleado where id = {{$datos_in}}');
         } catch (Exception $e) {
             echo $e->getMessage();
         }
