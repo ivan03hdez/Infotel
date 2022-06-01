@@ -1,12 +1,26 @@
 <?php
     class LoginModelo {
         public function getDatos($datos_in){
-        /*Realiza todas las acciones necesarias con el array $datos_in
-        ...
-        */
-        #Recoge los resultados en un array y lo devuelve
-        $salida=["datoX"=>"ValorX", "datosY"=>"ValorY", "datosZ"=>"ValorZ"];
-        return $salida;
+            if (isset($datos_in['usuario']) && isset($datos_in['password'])) {
+                $usuario = $datos_in['usuario'];
+                $password = $datos_in['password'];
+                try {
+                    $query = DatabaseConnection::query('select * from cliente where email = "'.$usuario.'" and password = "'.$password.'"');
+                } catch (Exception $e) {
+                    echo $e->getMessage();
+                    exit();
+                }
+    
+                $client = array();
+    
+                while($row = mysqli_fetch_array($query)) 
+                {
+                    $client[] = $row;
+                }
+                return $client;
+            } else {
+                return false;
+            }
         }
     }
 ?>
