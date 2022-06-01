@@ -11,7 +11,7 @@ function generarCodigo($length)
     return $key;
 }
 
-function fecha_aleatoria($formato = "Y-m-d", $limiteInferior = "1970-01-01", $limiteSuperior = "2024-01-01"){
+function fecha_aleatoria($formato = "Y-m-d", $limiteInferior = "2019-01-01", $limiteSuperior = "2024-01-01"){
 	// Convertimos la fecha como cadena a milisegundos
 	$milisegundosLimiteInferior = strtotime($limiteInferior);
 	$milisegundosLimiteSuperior = strtotime($limiteSuperior);
