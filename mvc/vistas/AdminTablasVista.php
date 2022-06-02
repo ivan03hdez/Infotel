@@ -6,6 +6,12 @@
 
     class AdminTablasVista extends PlantillaHtmlVista {
         public function render($datos_in){
+            /*$user = implode(" ", $_SESSION['user']);
+            exit();*/
+            if( $_SESSION['user']['puestoTrabajo'] != 'Administrador' ){
+                return header("Location: index.php");
+            }
+        
             $datos = [
                 'tituloPagina' => 'Administrador'
             ];

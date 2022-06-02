@@ -1,11 +1,12 @@
 <?php
     class LoginModelo {
         public function getDatos($datos_in){
-            if (isset($datos_in['usuario']) && isset($datos_in['password'])) {
+            if (isset($datos_in['usuario']) && isset($datos_in['contrasenya'])) {
                 $usuario = $datos_in['usuario'];
-                $password = $datos_in['password'];
+                $password = $datos_in['contrasenya'];
                 try {
-                    $query = DatabaseConnection::query('select * from cliente where email = "'.$usuario.'" and password = "'.$password.'"');
+                    // empleado administrador --> correo: ivan@gmail.com contraseña: ivan
+                    $query = DatabaseConnection::query('select * from empleado where email = "'.$usuario.'" and contrasenya = "'.$password.'"');
                 } catch (Exception $e) {
                     echo $e->getMessage();
                     exit();
@@ -17,9 +18,11 @@
                 {
                     $client[] = $row;
                 }
-                return $client;
+                session_start();
+                $_SESSION['user'] = $client[0];
+                return $client[0];
             } else {
-                return false;
+                return null;
             }
         }
     }

@@ -29,27 +29,13 @@ function postLoginForm() {
     const aTag = document.querySelector('a#iniciarSesion')
     aTag.addEventListener(
         'click',
-        () => {
-            const usuario =  document.querySelector('#usuario').value;
-            const contrasena =  document.querySelector('#contraseña').value;
-            const Http = new XMLHttpRequest();
-            const url=this.href;
-            Http.open("POST", url);
-            Http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-            Http.send(`usuario=${usuario}&contrasena=${contrasena}`);
-            Http.onreadystatechange = (e) => {
-                //if (this.readyState == 4 && this.status == 200)
-                    document.querySelector('body').append('status: ' + status + ', data: ' + data);
-                /*else
-                    document.querySelector('body').append('status: ' + status + ', data: ' + data);*/
-            }
-        }
+        () => document.querySelector('#loginForm').submit()
     )
 };
 
 window.onload = () => {
     showUnderlined();
-    postLoginForm()
+    postLoginForm();
 }
 
 /*$(document).ready(function () {
