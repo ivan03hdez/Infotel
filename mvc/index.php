@@ -31,6 +31,6 @@
     $vista="${pagina}Vista";
     require (VIEW_DIR."$vista.php");
     $v=new $vista;
-    $v->render($resultado);
+    @$v->render($resultado);
     //echo phpinfo()
 ?>

@@ -12,9 +12,7 @@
 
             $mainMenu = MenuPrincipalVista::getMainMenu($datos);
 
-            //check if we get the user session to display a success message or the login
             session_start();
-            //echo implode($_SESSION['user']);
             if(array_key_exists('user', $_SESSION)){
                 $userName = $_SESSION['user']['nombre'];
                 $this->bodyPagina = <<<HTML
@@ -34,9 +32,19 @@
                     </div>
                 HTML;
             }else{
+                $loginErorMessage = json_encode($datos_in) == 'false' ? <<<HTML
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div style="margin-top:1vh;" class="alert alert-danger" role="alert">
+                                <strong>Error!</strong> Correo o contraseña incorrectos.
+                            </div>
+                        </div>
+                    </div>
+                HTML : ''; 
                 $this->bodyPagina = <<<HTML
                     <div class="RegisterContainer">
                         $mainMenu
+                        $loginErorMessage
                         <div style="width:35%;margin-top:4%;margin-left:1%" class="login-box">
                             <form id="loginForm" method="POST">
                                 <div class="user-box">

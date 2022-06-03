@@ -18,9 +18,16 @@
                 {
                     $client[] = $row;
                 }
-                session_start();
-                $_SESSION['user'] = count($client) > 0 ? $client[0] : null;
-                return $client[0];
+
+                $isQueryOk = count($client) > 0;
+                if ($isQueryOk) {
+                    session_start();
+                    $user = $client[0];
+                    $_SESSION['user'] = $user;
+                    return $user;
+                }
+
+                return false;
             } else {
                 return null;
             }
