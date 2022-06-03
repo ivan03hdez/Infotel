@@ -25,7 +25,7 @@ for ($i = 1; $i <= 1; $i++) {
         $imagenCiudadBLOB = base64_encode($imagenCiudadUrl);
         
         $hotelesInsertStatement = $j == $CANTIDAD_SEEDS
-            ? "($id, $id, '$nombre', $estrellas, '$imagenCiudadBLOB')"
+            ? "($id, $id, 'hotel $nombre', $estrellas, '$imagenCiudadBLOB')"
             : "($id, $id, '$nombre', $estrellas, '$imagenCiudadBLOB')".$coma;
             
         $id++;

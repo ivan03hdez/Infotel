@@ -1,9 +1,13 @@
 <?php
     require_once "plantillas/PlantillaHtmlVista.php";
-    require_once "MenuPrincipalVista.php";
+    require_once "plantillas/MenuPrincipalVista.php";
 
     class AdminEstadisticasVista extends PlantillaHtmlVista {
         public function render($datos_in){
+            if(!isAdminUser()){
+                return header("Location: login");
+            }
+
             $datos = [
                 'tituloPagina' => 'Administrador'
             ];

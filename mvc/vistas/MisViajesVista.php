@@ -1,9 +1,11 @@
 <?php
     require_once "plantillas/PlantillaHtmlVista.php";
-    require_once "MenuPrincipalVista.php";
+    require_once "plantillas/MenuPrincipalVista.php";
 
     class MisViajesVista extends PlantillaHtmlVista {
-        public function render($datos_in){
+        public function render($datos_in) {
+            /*session_start(); 
+            $user = $_SESSION['user'];*/
             $datos = [
                 'tituloPagina' => 'Mis Viajes'
             ];

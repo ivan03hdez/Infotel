@@ -1,52 +1,69 @@
 <?php
     require_once "plantillas/PlantillaHtmlVista.php";
-    require_once "MenuPrincipalVista.php";
+    require_once "plantillas/MenuPrincipalVista.php";
+    require_once "plantillas/AdminNavBar.php";
+    require_once "plantillas/Footer.php";
 
     class AdminTablasVista extends PlantillaHtmlVista {
         public function render($datos_in){
+            if(!isAdminUser()){
+                return header("Location: home");
+            }
+        
             $datos = [
                 'tituloPagina' => 'Administrador'
             ];
-            $mainMenu = MenuPrincipalVista::getMainMenu($datos);
+            $row = [];
+            $hotel = [];
+            $hotelAttribute = '';
+            $hotelValue = '';
+            $tableHeaders= '';
+            $tableRows = '';
+            $mainMenu = MenuPrincipalVista::getMainMenu(null);
+            $adminNavBar = AdminNavBar::getNavBar(null);
+            $footer = Footer::getFooter(null);
+            $i = 0;
+            foreach ($datos_in as $row=>$hotel) {
+                echo "$row";
+                foreach ($datos_in as $hotelAttribute=>$hotelValue) {
+                    // create the table headers for the table
+                    if ($i == 0) {
+                        $tableHeaders .= '<tr>';
+                            $tableHeaders .= '<th>'.$hotelAttribute.'</th>';
+                        $tableHeaders .= '</tr>';
+                    }
+                    // create the table rows for the table
+                    $tableRows .= '<tr>';
+                        $tableRows .= '<td>'.$hotelValue.'</td>';
+                    $tableRows .= '</tr>';
+                }
+                $i++;
+            }
             $this->bodyPagina = <<<HTML
                 $mainMenu
-                <nav class="navbar navbar-expand-lg navbar-light bg-dark">
-                  <div class = "container">
-                    
-                        <a href = "/" class="text-white bg-dark" > Clientes   </a>
-                        <a href = "/" class="text-white bg-dark" > Reservas </a>
-                        <a href = "/" class="text-white bg-dark" > Servicios </a>
-                        <a href = "/" class="text-white bg-dark" > Hoteles </a>
-                        <a href = "/" class="text-white bg-dark" > Habitaciones </a>
-                        <a href = "/" class="text-white bg-dark" > Tipo </a>
-                        <a href = "/" class="text-white bg-dark" > Empleados </a>
-                    </div>
-                  </nav>
+                $adminNavBar
                 <table>
-                <tr><td>Nombre</td><td>Apellidos</td><td>Email</td><td>NIF</td><td>Codigo Postal</td><td>Eliminar</td><td>Editar</td></tr>
+                    $tableHeaders
+                    $tableRows
                 </table>
-                <table>
-                <tr><td>Codigo</td><td>Identificador</td><td>Fecha de inicio</td><td>Fecha de fin</td><td>Precio Total</td><td>Eliminar</td><td>Editar</td></tr>
-                </table>
-                <table>
-                <tr><td>ID</td><td>Id del Hotel</td><td>Nombre</td><td>Descripcion</td><td>Precio</td><td>Eliminar</td><td>Editar</td></tr>
-                </table>
-                <table>
-                <tr><td>ID</td><td>Id direccion</td><td>Nombre</td><td>Estrellas</td><td>Imagen</td><td>Eliminar</td><td>Editar</td></tr>
-                </table>
-                <table>
-                <tr><td>ID</td><td>Id Hotel</td><td>Id Tipo</td><td>Numero</td><td>Vistas</td><td>Esta Limpia</td><td>Esta Ocupada</td><td>Es Adaptada</td><td>Eliminar</td><td>Editar</td></tr>
-                </table>
-                <table>
-                <tr><td>ID</td><td>Tipo</td><td>Imagen</td><td>Precio Base</td><td>Tamanyo</td><td>Personas</td><td>Eliminar</td><td>Editar</td></tr>
-                </table>
-                <table>
-                <tr><td>ID</td><td>Id hotel</td><td>Id direccion</td><td>Nombre</td><td>Apellidos</td><td>NIF</td><td>Email</td><td>Telefono</td><td>Fecha Nacimiento</td><td>Puesto</td><td>Sueldo</td><td>IRPF</td><td>Cuota Patronal</td><td>Eliminar</td><td>Editar</td></tr>
-                </table>
-
+                $footer
             HTML;
             $this->tituloPagina = "Tablas Administrador";
-
+            /*  TRASH ICON:
+            <svg id="trash"  version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+            width="25px" height="35px" viewBox="0 0 485 485" style="enable-background:new 0 0 485 485;" xml:space="preserve">
+            <g class="icon-trash">
+              <rect x="67.224" width="350.535" height="71.81"/>
+              <path d="M417.776,92.829H67.237V485h350.537V92.829H417.776z M165.402,431.447h-28.362V146.383h28.362V431.447z M256.689,431.447
+                h-28.363V146.383h28.363V431.447z M347.97,431.447h-28.361V146.383h28.361V431.447z"/>
+            </g>
+          </svg>
+          PENCIL ICON:
+          <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="30px" height="40x" viewBox="0 0 100 100">
+            <path d="M77.926,94.924H8.217C6.441,94.924,5,93.484,5,91.706V21.997c0-1.777,1.441-3.217,3.217-3.217h34.854 c1.777,0,3.217,1.441,3.217,3.217s-1.441,3.217-3.217,3.217H11.435v63.275h63.274V56.851c0-1.777,1.441-3.217,3.217-3.217 c1.777,0,3.217,1.441,3.217,3.217v34.855C81.144,93.484,79.703,94.924,77.926,94.924z"/>
+            <path d="M94.059,16.034L84.032,6.017c-1.255-1.255-3.292-1.255-4.547,0l-9.062,9.073L35.396,50.116 c-0.29,0.29-0.525,0.633-0.686,1.008l-7.496,17.513c-0.526,1.212-0.247,2.617,0.676,3.539c0.622,0.622,1.437,0.944,2.274,0.944 c0.429,0,0.858-0.086,1.276-0.257l17.513-7.496c0.375-0.161,0.719-0.397,1.008-0.686l35.026-35.026l9.073-9.062 C95.314,19.326,95.314,17.289,94.059,16.034z M36.286,63.79l2.928-6.821l3.893,3.893L36.286,63.79z M46.925,58.621l-5.469-5.469 L73.007,21.6l5.47,5.469L46.925,58.621z M81.511,24.034l-5.469-5.469l5.716-5.716l5.469,5.459L81.511,24.034z"/>
+           </svg>
+          */
             echo parent::render(NULL);
         }
     }

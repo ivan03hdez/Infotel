@@ -1,18 +1,20 @@
 <?php
     require_once "plantillas/PlantillaHtmlVista.php";
-    require_once "MenuPrincipalVista.php";
+    require_once "plantillas/MenuPrincipalVista.php";
 
     class HomeVista extends PlantillaHtmlVista {
         public function render($datos_in){
+            /*session_start();
+            $user = $_SESSION['user'];*/
+
             $datos = [
                 'tituloPagina' => 'Bienvenido a Infotel'
             ];
-            $row = mb_convert_encoding($datos_in[11]['nombre'], "UTF-8");
-            $row = $datos_in[11]['nombre'];
             $mainMenu = MenuPrincipalVista::getMainMenu($datos);
+
+            // mb_convert_encoding(data, "UTF-8") convierte texto a UTF-8;
             $this->bodyPagina = <<<HTML
                 $mainMenu
-                $row
             HTML;
             $this->tituloPagina = "Inicio";
 
