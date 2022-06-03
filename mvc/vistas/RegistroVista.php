@@ -20,12 +20,12 @@
                 HTML;
             }
  
-            if (json_encode($datos_in)== 'false' ) {
+            if (json_encode($datos_in) == 'false' ) {
                 $registerMessage = <<<HTML
                     <div class="row">
                         <div class="col-md-12">
                             <div class="alert alert-danger" role="alert">
-                                <strong>Error!</strong> No se ha poddio registrar. Por favor, introduce los datos correctamente.
+                                <strong>Error!</strong> No se ha podido registrar. Por favor, introduce los datos correctamente.
                             </div>
                         </div>
                     </div>

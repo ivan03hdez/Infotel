@@ -7,7 +7,7 @@
     class AdminTablasVista extends PlantillaHtmlVista {
         public function render($datos_in){
             if(!isAdminUser()){
-                return header("Location: home");
+                return header("Location: login");
             }
         
             $datos = [

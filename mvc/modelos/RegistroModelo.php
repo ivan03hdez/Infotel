@@ -21,7 +21,7 @@
             $telefono = $datos_in['telefono'];
             try {
                 //create a query to DB inserting all user data if form is valid
-                $insertQuery = DatabaseConnection::query('INSERT INTO empleado (nombre, apellidos, email, contrasenya, dni, fecha_nacimiento, nacionalidad, telefono) values ("'.$nombre.'", "'.$apellidos.'", "'.$email.'", "'.$contrasenya.'", "'.$dni.'", "'.$fecha_nacimiento.'", "'.$nacionalidad.'", "'.$telefono.'")');
+                $insertQuery = DatabaseConnection::query('INSERT INTO cliente (nombre, apellidos, email, contrasenya, dni, fecha_nacimiento, nacionalidad, telefono) values ("'.$nombre.'", "'.$apellidos.'", "'.$email.'", "'.$contrasenya.'", "'.$dni.'", "'.$fecha_nacimiento.'", "'.$nacionalidad.'", "'.$telefono.'")');
                 return true;
             } catch (Exception $e) {
                 echo $e->getMessage();
