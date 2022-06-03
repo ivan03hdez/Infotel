@@ -49,12 +49,11 @@ for ($i = 1; $i <= $CANTIDAD_SEEDS/$MAX_AMOUNT_OF_REGISTERS; $i++) {
         $codigo=generarCodigo(6);
         $fechaInicio=fecha_aleatoria();
         $fechaFin=fecha_aleatoria("Y-m-d", $fechaInicio, date("Y-m-d", strtotime($fechaInicio."+ ".mt_rand(0,16)." days")));
-        $precioTotal= mt_rand(100, 15000);
         #poner fecha inicio y fecha fin con días mt_rand(1-15)
 
         $reservaInsertStatement = $j == $MAX_AMOUNT_OF_REGISTERS
-            ? "($id, '$codigo', '$fechaInicio', '$fechaFin', '$precioTotal')"
-            : "($id, '$codigo', '$fechaInicio', '$fechaFin', '$precioTotal')".$coma;
+            ? "($id, '$codigo', '$fechaInicio', '$fechaFin', 'null')"
+            : "($id, '$codigo', '$fechaInicio', '$fechaFin', 'null')".$coma;
         
         $id++;
         fwrite($fout, "$reservaInsertStatement");
