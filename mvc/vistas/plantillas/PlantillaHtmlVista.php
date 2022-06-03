@@ -24,11 +24,6 @@
                         <script src="https://cdn.jsdelivr.net/npm/less@4" ></script> 
                         <script src="javascript.js"></script>
                     </body>
-                    <!-- <style>
-                        th, td{
-                            padding: 40px;
-                        }
-                    </style> -->
                 </html>
             HTML;
 

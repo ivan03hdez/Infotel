@@ -4,6 +4,10 @@
 
     class AdminOfertasVista extends PlantillaHtmlVista {
         public function render($datos_in){
+            if(!isAdminUser()){
+                return header("Location: home");
+            }
+
             $datos = [
                 'tituloPagina' => 'Administrador'
             ];

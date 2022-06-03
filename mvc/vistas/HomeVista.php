@@ -4,11 +4,15 @@
 
     class HomeVista extends PlantillaHtmlVista {
         public function render($datos_in){
+            /*session_start();
+            $user = $_SESSION['user'];*/
+
             $datos = [
                 'tituloPagina' => 'Bienvenido a Infotel'
             ];
-            // mb_convert_encoding(data, "UTF-8");
             $mainMenu = MenuPrincipalVista::getMainMenu($datos);
+
+            // mb_convert_encoding(data, "UTF-8") convierte texto a UTF-8;
             $this->bodyPagina = <<<HTML
                 $mainMenu
             HTML;

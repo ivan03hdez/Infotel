@@ -26,16 +26,27 @@ function showUnderlined() {
 }
 
 function postLoginForm() {
-    const aTag = document.querySelector('a#iniciarSesion')
+    const aTag = document.querySelector('a#iniciarSesion');
+    if (!aTag) return;
     aTag.addEventListener(
         'click',
         () => document.querySelector('#loginForm').submit()
     )
 };
 
+function postRegisterForm() {
+    const aTag = document.querySelector('a#crearCuenta')
+    if (!aTag) return;
+    aTag.addEventListener(
+        'click',
+        () => document.querySelector('#registerForm').submit()
+    )
+};
+
 window.onload = () => {
     showUnderlined();
     postLoginForm();
+    postRegisterForm();
 }
 
 /*$(document).ready(function () {

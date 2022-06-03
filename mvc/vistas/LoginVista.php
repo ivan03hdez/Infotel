@@ -9,21 +9,31 @@
             ];
 
             $this->tituloPagina = "Login";
-            $loginOrChangeAccount = isSet($_SESSION['id']) ? 'Cambiar de Cuenta' : 'Iniciar Sesion';
 
             $mainMenu = MenuPrincipalVista::getMainMenu($datos);
 
             //check if we get the user session to display a success message or the login
-            if(isset($_SESSION['user'])){
+            session_start();
+            //echo implode($_SESSION['user']);
+            if(array_key_exists('user', $_SESSION)){
                 $userName = $_SESSION['user']['nombre'];
                 $this->bodyPagina = <<<HTML
                     $mainMenu
                     <div style="text-align:center" class="alert alert-success" role="alert">
                         <strong >Bienvenido $userName!</strong>
                     </div>
+                    <div class="container">
+                        <div style="justify-content:space-around;" class="row">
+                            <div style="width:auto;" class="col-md-12">
+                                <a href="?controller=Login&action=logout" class="btn btn-primary">Cambiar Cuenta</a>
+                            </div>
+                            <div style="width:auto;" class="col-md-12">
+                                <a href="http://localhost/infotel/mvc/logout" class="btn btn-primary">Cerrar Sesion</a>
+                            </div>
+                        </div>
+                    </div>
                 HTML;
             }else{
-                $s = isSet($datos_in) ? implode($datos_in) : '';
                 $this->bodyPagina = <<<HTML
                     <div class="RegisterContainer">
                         $mainMenu
@@ -44,7 +54,7 @@
                                         <a id="iniciarSesion">
                                             <span></span>
                                             <span></span>
-                                            $loginOrChangeAccount
+                                            Iniciar Sesion
                                         </a>
                                     </td>
                                     <td style="margin-left:3%;">
@@ -57,7 +67,6 @@
                                 </table>
                             </form>
                         </div>
-                        $s
                     </div>
                 HTML; 
             }

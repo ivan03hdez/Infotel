@@ -4,6 +4,8 @@
 
     class ServiciosVista extends PlantillaHtmlVista {
         public function render($datos_in){
+            /*session_start();
+            $user = $_SESSION['user'];*/
             $datos = [
                 'tituloPagina' => 'Servicios'
             ];
