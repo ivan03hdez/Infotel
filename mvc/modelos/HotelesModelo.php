@@ -5,8 +5,22 @@
         ...
         */
         #Recoge los resultados en un array y lo devuelve
-        $salida=["datoX"=>"ValorX", "datosY"=>"ValorY", "datosZ"=>"ValorZ"];
-        return $salida;
+        try {
+            $query = DatabaseConnection::query('select * from tipo');
+        } catch (Exception $e) {
+            echo $e->getMessage();
+            exit();
+        }
+
+        $tipos = array();
+
+        while($row = mysqli_fetch_array($query)) 
+        {
+            $tipos[] = $row;
+        }
+
+        #$salida=["datoX"=>"ValorX", "datosY"=>"ValorY", "datosZ"=>"ValorZ"];
+        return $tipos;
         }
     }
 ?>
