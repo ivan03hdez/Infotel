@@ -12,9 +12,7 @@
 
             $mainMenu = MenuPrincipalVista::getMainMenu($datos);
 
-            //check if we get the user session to display a success message or the login
             session_start();
-            //echo implode($_SESSION['user']);
             if(array_key_exists('user', $_SESSION)){
                 $userName = $_SESSION['user']['nombre'];
                 $this->bodyPagina = <<<HTML
