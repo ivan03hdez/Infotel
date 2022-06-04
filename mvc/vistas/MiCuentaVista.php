@@ -9,10 +9,6 @@
                 return header("Location: login");
             }
 
-            // if (!isSet($_SESSION['direccion'])) {
-            //     return header("Location: Micuenta");
-            // }
-
             $user = $_SESSION['user'];
             $direccion = $_SESSION['direccion'];
             $datos = [
@@ -37,13 +33,13 @@
                                     <div class="col-lg-6">
                                     <div class="form-group focused">
                                         <label class="form-control-label" for="input-username">Nombre</label>
-                                        <input type="text" id="input-username" class="form-control form-control-alternative" placeholder="Username" value="Ivan">
+                                        <input type="text" id="input-username" class="form-control form-control-alternative" placeholder="Username" value="{$user["nombre"]}">
                                     </div>
                                     </div>
                                     <div class="col-lg-6">
                                     <div class="form-group focused">
                                         <label class="form-control-label" for="input-first-name">Apellidos</label>
-                                        <input type="text" id="input-first-name" class="form-control form-control-alternative" placeholder="First name" value="Hernández">
+                                        <input type="text" id="input-first-name" class="form-control form-control-alternative" placeholder="First name" value="{$user["apellidos"]}">
                                     </div>
                                     </div>
                                 </div>
@@ -78,7 +74,7 @@
                                     <div class="col-md-12">
                                     <div class="form-group focused">
                                         <label class="form-control-label" for="input-address">Dirección</label>
-                                        <input id="input-address" class="form-control form-control-alternative" placeholder="Home Address" value="Calle Alicante" type="text">
+                                        <input id="input-address" class="form-control form-control-alternative" placeholder="Home Address" value="{$direccion["direccion"]}">
                                     </div>
                                     </div>
                                 </div>
@@ -86,7 +82,7 @@
                                     <div class="col-lg-4">
                                     <div class="form-group focused">
                                         <label class="form-control-label" for="input-city">Ciudad</label>
-                                        <input type="text" id="input-city" class="form-control form-control-alternative" placeholder="City" value="Alicante">
+                                        <input type="text" id="input-city" class="form-control form-control-alternative" placeholder="City" value="{$direccion["ciudad"]}">
                                     </div>
                                     </div>
                                     <div class="col-lg-4">

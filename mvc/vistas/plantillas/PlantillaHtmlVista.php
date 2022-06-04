@@ -10,7 +10,7 @@
                 <!DOCTYPE html>
                 <html lang="es" class="infotel">
                     <head>
-                        <meta charset="utf-8"/>
+                        <meta charset="utf-8"  collation name="utf8_spanish_ci"/>
                         <meta name="viewport" content="width=device-width, initial-scale=1" />
                         <!-- own CSS styles -->
                         <link rel="stylesheet/less" type="text/css" href="styles.less" />

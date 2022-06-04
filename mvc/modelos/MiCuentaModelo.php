@@ -1,11 +1,15 @@
 <?php
     class MiCuentaModelo {
         public function getDatos($datos_in){
-                if (isset($datos_in['direccion'])) {
-                    $direccion = $datos_in['direccion'];
                     try {
+                        session_start();
+                        if (!isSet($_SESSION['user'])) {
+                            return header("Location: login");
+                        }
+                        $user = $_SESSION['user'];
                         //Consulta a partir del id de la dirección de un usuario
-                        $query = DatabaseConnection::query('select * from direccion where id = "'.$direccion.'"');
+                        $query = DatabaseConnection::query('select * from direccion where id = "'."{$user["idDireccion"]}".'"');
+                        // $query->query("SET NAMES 'utf8'");
                     } catch (Exception $e) {
                         echo $e->getMessage();
                         exit();
@@ -17,12 +21,16 @@
                 {
                     $dire[] = $row;
                 }
-                session_start();
-                $_SESSION['direccion'] = count($dire) > 0 ? $dire[0] : null;
-                return $dire[0];
-            } else {
-                return null;
-            }
+
+                $isQueryOk = count($dire) > 0;
+                if ($isQueryOk) {
+                    //session_start();
+                    $direccion = $dire[0];
+                    $_SESSION['direccion'] = $direccion;
+                    return $direccion;
+                }
+
+                return false;
         }
         }
     
