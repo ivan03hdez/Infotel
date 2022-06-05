@@ -20,7 +20,7 @@
                     <div class="main-content">
                     <div class="container mt-7">
                     <!-- Table -->
-                    <h2 class="mb-5">Reserva Histórico</h2>
+                    <h2 class="mb-5">Reserva Histórico Desglosado</h2>
                     $reshabitacion
                     $resservicio
                     </div>
@@ -51,7 +51,7 @@
                 $codHTML .= <<< HTML
                   <div class="row">
                                     <div class="col">
-                                        <label class="form-control-label" for="input-prehab">Precio del {$reserva["nombre"]}</label>
+                                        <label class="form-control-label" for="input-prehab">Precio de la {$reserva["nombre"]}</label>
                                         <input type="text" id="input-preser" class="form-control form-control-alternative"  value="{$reserva["precio"]}">
                                     </div>               
                  </div>

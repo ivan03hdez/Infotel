@@ -18,10 +18,13 @@
                 <body>
                    
                       <div class="main-content">
+                      
                         <div class="container mt-7">
+                        <div class="card-body">
                             <!-- Table -->
-                         <h2 class="mb-5">Reserva Histórico</h2>
+                            <h2 class="mb-5">Reserva Histórico</h2>
                           $tipos_habitaciones
+                          </div>
                          </div>
                         </div>
                 
@@ -35,11 +38,12 @@
             $codHTML = "";
             foreach($datos_in as $reserva){
                 $codHTML .= <<< HTML
+                <div class="card-body">
                   <div class="row" data-id = "{$reserva["Codigo"]}">
-                    <div class="col">
-                    <div class="form-group focused">
-                        <label class="form-control-label" for="input-Codigoreserva">Código reserva</label>
-                        <input type="text" id="input-Codigoreserva" class="form-control form-control-alternative" placeholder="codigo" value="{$reserva["Identificador"]}">
+                         <div class="col">
+                            <div class="form-group focused">
+                            <label class="form-control-label" for="input-Codigoreserva">Código reserva</label>
+                            <input type="text" id="input-Codigoreserva" class="form-control form-control-alternative" placeholder="codigo" value="{$reserva["Identificador"]}">
                         </div>
                         </div>
                         <div class="col">
@@ -62,15 +66,16 @@
                         </div>
                  </div>
                  <div class = "row">
-                 <div class="col">
-                    <form action = "serviciohabitaciones" method = "POST">
-                    <div class="form-group focused">
+                    <div class="col">
+                        <form action = "serviciohabitaciones" method = "POST">
+                         <div class="form-group focused">
                         <hr class="my-4">
                         <input type="hidden" name = "reservaCodigo" class="btn btn-primary"  value = "{$reserva["Codigo"]}">  
                         <input type="submit" class="btn btn-primary" value="Mostrar Reserva">    
                         </div>
-                    </div>
+                         </div>
                      </form>
+                 </div>
                  </div>
                  </div>
 
