@@ -95,7 +95,7 @@
                 <br>
                 <br>
 
-                $footer
+                
             HTML;
             $this->tituloPagina = "Tablas Administrador";
 

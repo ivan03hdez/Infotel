@@ -84,7 +84,7 @@
                     $tableHeadersHTML
                     $tableRows
                 </table>
-                $footer
+                
             HTML;
             $this->tituloPagina = "Tablas Administrador";
 
