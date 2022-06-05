@@ -61,7 +61,7 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label class="form-control-label" for="input-email">Correo Electrónico</label>
-                                        <input type="email" id="input-email" class="form-control form-control-alternative" placeholder="{$user["email"]}">
+                                        <input type="email" id="input-email" class="form-control form-control-alternative" placeholder="Correo" value="{$user["email"]}">
                                     </div>
                                     </div>
                                 </div>
@@ -94,7 +94,7 @@
                                     <div class="col-lg-4">
                                     <div class="form-group">
                                         <label class="form-control-label" for="input-country">Código Postal</label>
-                                        <input type="number" id="input-postal-code" class="form-control form-control-alternative" placeholder="{$direccion["cp"]}">
+                                        <input type="number" id="input-postal-code" class="form-control form-control-alternative" placeholder="CP" value="{$direccion["cp"]}">
                                     </div>
                                     </div>
                                 </div>

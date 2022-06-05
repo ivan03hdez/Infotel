@@ -2,6 +2,7 @@
     class ReservasModelo {
         public function getDatos($datos_in){
             try {
+                DatabaseConnection::query("SET NAMES 'utf8'");
                 $query_tipo = DatabaseConnection::query('select * from tipo');
                 $query_hotel = DatabaseConnection::query('select * from hotel');
                 $query_servicio = DatabaseConnection::query('select * from servicio');

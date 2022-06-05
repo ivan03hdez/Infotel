@@ -40,13 +40,13 @@
                                         <div class="col-lg-6">
                                         <div class="form-group focused">
                                             <label class="form-control-label" for="fecha-llegada">Fecha de llegada</label>
-                                            <input type="date" id="fecha-llegada" name="fecha-llegada">
+                                            <input type="date" id="fecha-llegada" name="fecha-llegada" required>
                                         </div>
                                         </div>
                                         <div class="col-lg-6">
                                         <div class="form-group focused">
                                             <label class="form-control-label" for="fecha-salida">Fecha de salida</label>
-                                            <input type="date" id="fecha-salida" name="fecha-salida">
+                                            <input type="date" id="fecha-salida" name="fecha-salida" required>
                                         </div>
                                         </div>
                                     </div>
@@ -150,7 +150,7 @@
         public function generarHTMLservicios($datos_in){
             $codHTML = "";
             $contador = 0;
-            while($contador != 4){
+            while($contador != 3){
                 foreach($datos_in as $row){
                         $codHTML .= <<< HTML
                             <option value={$row[$contador][2]}>{$row[$contador][2]}</option>

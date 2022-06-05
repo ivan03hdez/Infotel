@@ -7,6 +7,7 @@
                         return header("Location: login");
                     }
                     $user = $_SESSION['user'];
+                    DatabaseConnection::query("SET NAMES 'utf8'");
                     //Consulta a partir del id de la dirección de un usuario
                     $query = DatabaseConnection::query('select * from direccion where id = "'."{$user["idDireccion"]}".'"');
                     // $query->query("SET NAMES 'utf8'");
