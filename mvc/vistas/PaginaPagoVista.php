@@ -4,8 +4,9 @@
 
     class PaginaPagoVista extends PlantillaHtmlVista {
         public function render($datos_in){
-            /*session_start();
-            $user = $_SESSION['user'];*/
+            session_start();
+            
+            $user = $_SESSION['user'];
             $datos = [
                 'tituloPagina' => 'Pagina de Pago'
             ];
@@ -23,14 +24,8 @@
                                     <div class="row box-right">
                                         <div class="col-md-8 ps-0 ">
                                             <p class="ps-3 textmuted fw-bold h6 mb-0">Total de la Reserva</p>
-                                            <p class="h1 fw-bold d-flex"> <span class=" fas fa-dollar-sign textmuted pe-1 h6 align-text-top mt-1"></span>524€ </p>
-                                            <p class="ms-3 px-2 bg-green">-10% por la oferta</p>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <p class="p-blue"> <span class="fas fa-circle pe-2"></span>Pendiente de pago </p>
-                                            <p class="fw-bold mb-3"><span class="fas fa-dollar-sign pe-1"></span>524€ </p>
-                                            <p class="p-org"><span class="fas fa-circle pe-2"></span>Sin Oferta</p>
-                                            <p class="fw-bold"><span class="fas fa-dollar-sign pe-1"></span>576,4€</p>
+                                            <p class="h1 fw-bold d-flex"> <span class=" fas fa-dollar-sign textmuted pe-1 h6 align-text-top mt-1"></span>$datos_in[8]€ </p>
+                                            <!-- <p class="ms-3 px-2 bg-green">-10% por la oferta</p> -->
                                         </div>
                                     </div>
                                     </div>
@@ -41,9 +36,9 @@
                                             <p class="ms-auto p-blue"><span class=" bg btn btn-primary fas fa-pencil-alt me-3"></span> <span class=" bg btn btn-primary far fa-clone"></span> </p>
                                         </div>
                                         <div class="bg-blue p-2">
-                                            <p class="h8 textmuted">Entrada: 17/05/2022</p>
-                                            <p class="h8 textmuted">Salida: 25/05/2022</p>
-                                            <p class="h8 textmuted">Duración total de la estancia: 9 días</p>
+                                            <p class="h8 textmuted">Entrada: $datos_in[6]</p>
+                                            <p class="h8 textmuted">Salida: $datos_in[7]</p>
+                                            <p class="h8 textmuted">Duración total de la estancia: {$datos_in[4][0][0][5]} días</p>
                                         </div>
                                     </div>
                                     </div>
@@ -55,8 +50,8 @@
                                         </div>
                                         <div class="bg-blue p-2">
                                             <p class="h8 textmuted">Cancelación gratis</p>
-                                            <p class="h8 textmuted">hasta las 23:59 del 10/05/2022.</p>
-                                            <p class="h8 textmuted">A partir de las 00:00 del 16/05/2022 se le cargará un importe de 100€ por la cancelación.</p>
+                                            <p class="h8 textmuted">hasta las 23:59 del $datos_in[6].</p>
+                                            <p class="h8 textmuted">A partir de las 00:00 del $datos_in[7] se le cargará un importe de 100€ por la cancelación.</p>
                                         </div>
                                     </div>
                                     </div>
@@ -65,39 +60,44 @@
                             <div class="col-md-5 col-12 ps-md-5 p-0 ">
                                 <div class="box-left">
                                     <p class="textmuted h8">Información de la reserva</p>
-                                    <p class="fw-bold h7">Juan Palomo</p>
-                                    <p class="textmuted h8">Calle Alicante, 82</p>
-                                    <p class="textmuted h8 mb-2">San Vicente del Raspeig, Alicante 03690</p>
+                                    <p class="fw-bold h7">{$user["nombre"]} {$user["apellidos"]}</p>
+                                    <p class="textmuted h8">{$datos_in[1][0][0][2]}</p>
+                                    <p class="textmuted h8 mb-2">{$datos_in[3][0][0][1]}, {$datos_in[3][0][0][3]} {$datos_in[3][0][0][2]}</p>
                                     <div class="h8">
                                     <div class="row m-0 border mb-3">
                                         <div class="col-6 h8 pe-0 ps-2">
                                             <p class="textmuted py-2">Items</p>
-                                            <span class="d-block py-2 border-bottom">Habitación doble</span> 
-                                            <span class="d-block py-2">Masaje</span> 
+                                            <span class="d-block py-2 border-bottom">{$datos_in[0][0][0][2]}</span> 
+                                            <span class="d-block py-2">{$datos_in[2][0][0][2]}</span> 
                                         </div>
-                                        <div class="col-2 text-center p-0">
+                                        <div class="col-2 p-0 text-center h8 border-end">
                                             <p class="textmuted p-2">Cant.</p>
-                                            <span class="d-block p-2 border-bottom">2</span> <span class="d-block p-2">1</span> 
+                                            <span class="d-block border-bottom py-2">
+                                                <span class="fas fa-dollar-sign"></span>1</span> 
+                                                <span class="d-block py-2 ">
+                                                    <span class="fas fa-dollar-sign">
+                                                    </span>1</span> 
                                         </div>
+                                    
                                         <div class="col-2 p-0 text-center h8 border-end">
                                             <p class="textmuted p-2">Precio</p>
                                             <span class="d-block border-bottom py-2">
-                                                <span class="fas fa-dollar-sign"></span>200</span> 
+                                                <span class="fas fa-dollar-sign"></span>{$datos_in[5][0][0][2]}</span> 
                                                 <span class="d-block py-2 ">
                                                     <span class="fas fa-dollar-sign">
-                                                    </span>124</span> 
+                                                    </span>{$datos_in[5][0][1][2]}</span> 
                                         </div>
                                         <div class="col-2 p-0 text-center">
                                             <p class="textmuted p-2">Total</p>
                                             <span class="d-block py-2 border-bottom"><span class="fas fa-dollar-sign">
-                                            </span>400</span> <span class="d-block py-2">
+                                            </span>{$datos_in[5][0][0][2]}</span> <span class="d-block py-2">
                                                 <span class="fas fa-dollar-sign">
-                                                </span>124</span> 
+                                                </span>{$datos_in[5][0][1][2]}</span> 
                                         </div>
                                     </div>
                                     <div class="d-flex h7 mb-2">
                                         <p class="">Total por pagar</p>
-                                        <p class="ms-auto"><span class="fas fa-dollar-sign"></span>524</p>
+                                        <p class="ms-auto"><span class="fas fa-dollar-sign"></span>$datos_in[8]€</p>
                                     </div>
                                     <div class="h8 mb-5">
                                         <p class="textmuted">Se podrán añadir cargos adicionales por destrozos. </p>
@@ -122,7 +122,7 @@
                                             <div class="col-6"> <input class="form-control my-3" type="text" placeholder="CVV"> </div>
                                             <p class="p-blue h8 fw-bold mb-3">Más métodos de pago</p>
                                         </div>
-                                        <div class="btn btn-primary d-block h8">Pagar reserva -> <span class="fas fa-dollar-sign ms-2"></span>524€<span class="ms-3 fas fa-arrow-right"></span></div>
+                                        <a href="http://localhost/infotel/mvc/reservas" class="btn btn-primary d-block h8">Pagar reserva -> <span class="fas fa-dollar-sign ms-2"></span>$datos_in[8]€<span class="ms-3 fas fa-arrow-right"></span></a>
                                     </div>
                                     </div>
                                 </div>

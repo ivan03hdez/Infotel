@@ -9,10 +9,6 @@
                 return header("Location: login");
             }
 
-            // if (!isSet($_SESSION['direccion'])) {
-            //     return header("Location: Micuenta");
-            // }
-
             $user = $_SESSION['user'];
             $direccion = $_SESSION['direccion'];
             $datos = [
@@ -37,13 +33,13 @@
                                     <div class="col-lg-6">
                                     <div class="form-group focused">
                                         <label class="form-control-label" for="input-username">Nombre</label>
-                                        <input type="text" id="input-username" class="form-control form-control-alternative" placeholder="Username" value="Ivan">
+                                        <input type="text" id="input-username" class="form-control form-control-alternative" placeholder="Nombre" value="{$user["nombre"]}">
                                     </div>
                                     </div>
                                     <div class="col-lg-6">
                                     <div class="form-group focused">
                                         <label class="form-control-label" for="input-first-name">Apellidos</label>
-                                        <input type="text" id="input-first-name" class="form-control form-control-alternative" placeholder="First name" value="Hernández">
+                                        <input type="text" id="input-first-name" class="form-control form-control-alternative" placeholder="Apellidos" value="{$user["apellidos"]}">
                                     </div>
                                     </div>
                                 </div>
@@ -57,7 +53,7 @@
                                     <div class="col-lg-6">
                                     <div class="form-group focused">
                                         <label class="form-control-label" for="input-last-name">Fecha de nacimiento</label>
-                                        <input type="text" id="input-last-name" class="form-control form-control-alternative" placeholder="Last name" value="{$user["fechaNac"]}">
+                                        <input type="text" id="input-last-name" class="form-control form-control-alternative" placeholder="Fecha de Naciemiento" value="{$user["fechaNac"]}">
                                     </div>
                                     </div>
                                 </div>
@@ -65,7 +61,7 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label class="form-control-label" for="input-email">Correo Electrónico</label>
-                                        <input type="email" id="input-email" class="form-control form-control-alternative" placeholder="{$user["email"]}">
+                                        <input type="email" id="input-email" class="form-control form-control-alternative" placeholder="Correo" value="{$user["email"]}">
                                     </div>
                                     </div>
                                 </div>
@@ -78,7 +74,7 @@
                                     <div class="col-md-12">
                                     <div class="form-group focused">
                                         <label class="form-control-label" for="input-address">Dirección</label>
-                                        <input id="input-address" class="form-control form-control-alternative" placeholder="Home Address" value="Calle Alicante" type="text">
+                                        <input id="input-address" class="form-control form-control-alternative" placeholder="Dirección" value="{$direccion["direccion"]}">
                                     </div>
                                     </div>
                                 </div>
@@ -86,19 +82,19 @@
                                     <div class="col-lg-4">
                                     <div class="form-group focused">
                                         <label class="form-control-label" for="input-city">Ciudad</label>
-                                        <input type="text" id="input-city" class="form-control form-control-alternative" placeholder="City" value="Alicante">
+                                        <input type="text" id="input-city" class="form-control form-control-alternative" placeholder="Ciudad" value="{$direccion["ciudad"]}">
                                     </div>
                                     </div>
                                     <div class="col-lg-4">
                                     <div class="form-group focused">
                                         <label class="form-control-label" for="input-country">País</label>
-                                        <input type="text" id="input-country" class="form-control form-control-alternative" placeholder="Country" value="{$user["nacionalidad"]}">
+                                        <input type="text" id="input-country" class="form-control form-control-alternative" placeholder="País" value="{$user["nacionalidad"]}">
                                     </div>
                                     </div>
                                     <div class="col-lg-4">
                                     <div class="form-group">
                                         <label class="form-control-label" for="input-country">Código Postal</label>
-                                        <input type="number" id="input-postal-code" class="form-control form-control-alternative" placeholder="{$direccion["cp"]}">
+                                        <input type="number" id="input-postal-code" class="form-control form-control-alternative" placeholder="CP" value="{$direccion["cp"]}">
                                     </div>
                                     </div>
                                 </div>
