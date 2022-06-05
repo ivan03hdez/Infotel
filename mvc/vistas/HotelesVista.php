@@ -40,17 +40,17 @@
                 $codHTML .= <<< HTML
                 <div style="margin-top: 10px" >
                     <div class="col-md-12 md-margin-bottom-40">
-                        <img class="img-responsive" style="width:100%" src= $row[2] alt>
+                        <img class="img-responsive" style="width:100%" src="{$row['imagen']}" alt>
                     </div>
                     <div class="col-md-12 md-margin-bottom-40" style="background-color: #14274a; height: 60px">
                         <div style=" height:100%; width:50%; float:left; background-color: #14274a; text-align: center;">
-                            <span style="color: white; font-size:large"> Tipo $row[1] </span>
+                            <span style="color: white; font-size:large"> Tipo {$row['tipo']} </span>
                             <br>
-                            <span style="color:white; font-size:large"> Nº de personas: $row[5] </span>
+                            <span style="color:white; font-size:large"> Nº de personas: {$row['nPers']} </span>
                         </div>
                         <div style="height:100%; width:50%; float:right; background-color: #14274a; text-align: center;">
                             <div style="height:100%; width: 100%;">
-                                <span style="color: white; font-size: xx-large;">Precio: $row[3]€/noche</span>
+                                <span style="color: white; font-size: xx-large;">Precio: {$row['precioBase']}€/noche</span>
                             </div>
                         </div>
                     </div>
