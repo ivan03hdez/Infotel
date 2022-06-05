@@ -5,6 +5,11 @@ document.querySelectorAll('.mainMenuList > div').forEach(
                 window.location.href = "http://localhost/infotel/mvc/" + "AdminTablas";
                 return;
             }
+
+            if(ev.target.outerText === 'Mantenimiento') {
+                window.location.href = "http://localhost/infotel/mvc/" + "AdminEstadisticas";
+                return;
+            }
             
             window.location.href = "http://localhost/infotel/mvc/" + ev.target.outerText.toLowerCase().replace(/\s/g, '')
         }
@@ -18,7 +23,8 @@ function showUnderlined() {
         const elementUnderlined = elem.parentElement.textContent.replace(/\s/g, '').toLowerCase();
         if(
             lastUrlWord === elementUnderlined
-            || [lastUrlWord, elementUnderlined].every(elem => elem.startsWith('admin'))
+            || (elementUnderlined == 'administrador' && lastUrlWord == 'admintablas')
+            || (elementUnderlined == 'mantenimiento' && lastUrlWord == 'adminestadisticas')
         ) {
             elem.style.display = "block";
         }}

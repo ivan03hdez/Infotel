@@ -44,12 +44,12 @@ for ($i = 1; $i <= $CANTIDAD_SEEDS/$MAX_AMOUNT_OF_REGISTERS; $i++) {
         $v_startdate="get_startdate(".strval($reserva).")";
         # $v_enddate="get_enddate(".strval($reserva).")";
         $fecha = $v_startdate;# randomDate($v_startdate, $v_enddate);
-        $precio="get_precioServicio(".strval($servicio).",".strval($fecha).")";
+        $precio= 0.0; #"get_precioServicio(".strval($servicio).",".strval($fecha).")";
         $oferta=rand(1, $TOTAL_OFERTAS);
 
         $clienteInsertStatement = $j == $MAX_AMOUNT_OF_REGISTERS
-            ? "($fecha, $servicio, $reserva, $empleado, $precio, $oferta)"
-            : "($fecha, $servicio, $reserva, $empleado, $precio, $oferta)".$coma;
+            ? "('', $servicio, $reserva, $empleado, $precio, $oferta)"
+            : "('', $servicio, $reserva, $empleado, $precio, $oferta)".$coma;
         
         $id++;
         fwrite($fout, "$clienteInsertStatement");

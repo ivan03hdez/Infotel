@@ -10,6 +10,7 @@
                 <div><span>Login</span><div class="underlined"></div></div>
                 <div><span>Mi Cuenta</span><div class="underlined"></div></div>
                 <div><span>Administrador</span><div class="underlined"></div></div>
+                <div><span>Mantenimiento</span><div class="underlined"></div></div>
             </div>
             HTML;
 

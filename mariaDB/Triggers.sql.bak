@@ -11,7 +11,7 @@ DECLARE v_oferta VARCHAR(30);
 	FROM oferta of WHERE of.id = NEW.idOferta;
 	
 	UPDATE reserva 
-	SET reserva.precioTotal = reserva.precioTotal + get_precioHabitacion(NEW.idHabitacion, get_startdate(NEW.CodReserva), v_oferta) 
+	SET reserva.precioTotal = reserva.precioTotal + get_precioHabitacion(NEW.idHabitacion, NEW.fechaInicio, v_oferta) 
 	WHERE reserva.codigo = NEW.CodReserva;
 END;
 

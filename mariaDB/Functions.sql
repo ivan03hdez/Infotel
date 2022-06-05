@@ -117,6 +117,33 @@ DELIMITER ;
 
 
 /*
+Obtener el código de oferta
+J. PALOMAR
+*/
+
+DROP FUNCTION IF EXISTS get_codigo
+
+DELIMITER $$
+CREATE FUNCTION get_codigo (v_id BIGINT )
+RETURNS VARCHAR(30) 
+
+BEGIN 
+
+DECLARE v_codigo VARCHAR(30) ;
+
+SELECT of.codigo INTO v_codigo
+	FROM oferta of WHERE of.id = v_id;
+
+
+RETURN v_codigo;
+END;
+
+$$
+DELIMITER ;
+
+
+
+/*
 Función para obtener el precio de la habitación según fecha y oferta
 J. PALOMAR
 */
@@ -153,6 +180,38 @@ ELSE
 END IF;
 
 END;
+
+
+/*
+Función para obtener el precio de la habitación según fecha y oferta
+J. PALOMAR
+*/
+DELIMITER $$
+CREATE OR REPLACE FUNCTION get_precioHabitacionSinOferta (v_id BIGINT, v_startdate DATE)
+RETURNS DECIMAL(6,2) 
+
+BEGIN 
+
+DECLARE v_precioBase INT;
+DECLARE v_multiplicador DECIMAL(6, 2);
+
+SELECT precioBase INTO v_precioBase 
+FROM tipo tp 
+INNER JOIN habitacion hb ON tp.id = hb.idTipo
+WHERE hb.id = v_id;
+
+SELECT multiplicador INTO v_multiplicador
+FROM  temporada tmp
+INNER JOIN calendario cl ON tmp.nombre = cl.nombreTemporada AND tmp.anyo = cl.anyoTemporada
+WHERE cl.fecha = v_startdate;
+
+RETURN v_precioBase*v_multiplicador;
+
+
+END;
+
+$$
+DELIMITER ;
 
 /*
 Función para obtener el precio del servicio según fecha
@@ -268,33 +327,6 @@ BEGIN
 	RETURN v_porcentaje;
 END;
 
-/*
-Funcion para calcular el precio de un servicio teniendo en cuenta la temporada, y las ofertas
-Juan Vercher
-*/
-DELIMITER |
-CREATE FUNCTION calculo_precio_servicio()
-returns decimal(6,2)
-
-BEGIN
-declare ofert, pb, precioTotal decimal(6,2);
-declare tempo decimal(5,2);
-
-
-SELECT multiplicador from temporada tp, calendario c, reservaServicio rs 
-WHERE tp.anyo = c.anyoTemporada 
-AND c.nombreTemporada = tp.nombre AND rs.fecha = c.fecha into tempo;
-
-SELECT o.descuento  FROM reservaServicio rs, reserva r, reservaHist rh,oferta o
-WHERE rs.codReserva = r.codigo AND rh.CodReserva = r.codigo AND rh.idOferta = o.id into ofert;
-
-SELECT s.precio FROM servicio s, reservaServicio rs
-WHERE rs.idServicio = s.id into pb;
-
-set precioTotal := (pb*tempo)-(pb* ofert);
-return precioTotal;
-
-END;
 
 /*
 Funcion para ver el porcentaje de ocupacion en una fecha
