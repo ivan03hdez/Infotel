@@ -28,6 +28,7 @@ class DatabaseConnection{
     }
 
     static function query($query) {
+         self::$link->query("SET NAMES 'UTF8'");
         return self::$link->query($query);
     }
 }

@@ -3,4 +3,4 @@ Sistema de gestión de reservas hecho en la asignatura Gestión de la informaci�
 
 Diagrama Crow's Feet
 
-![image](https://user-images.githubusercontent.com/58994866/160299881-1bd4accb-6f67-45c5-80d0-630834659787.png)
+![image](https://user-images.githubusercontent.com/58994866/172066550-7aea0fc0-adbf-4b2c-8e58-8985d24f6084.png)

@@ -4,7 +4,7 @@
     require_once "plantillas/AdminNavBar.php";
     require_once "plantillas/Footer.php";
 
-    class AdminOfertasVista extends PlantillaHtmlVista {
+    class AdminServiciosVista extends PlantillaHtmlVista {
         public function render($datos_in){
             if(!isAdminUser()){
                 return header("Location: login");
@@ -30,15 +30,14 @@
                             <a type="button" class="btn btn-primary" href="AdminTipos"> Tipo </a>
                             <a type="button" class="btn btn-primary" href="AdminEmpleados"> Empleado </a>
                             <a type="button" class="btn btn-primary" href="AdminOfertas"> Ofertas </a>
-                        </div>
                     </div>
-                </div> 
+                </div>
             HTML;
 
             $footer = Footer::getFooter(null);
 
             #Definimos los headers de la tabla
-            $tableHeaders= array("Código","Titulo","Descripcion","Descuento","Fecha fin", "Estado");
+            $tableHeaders= array("ID","Hotel","Nombre del servicio","Precio");
             
             // Crea el HTML de los headers
             $tableHeadersHTML .= '<tr>';
@@ -58,9 +57,9 @@
                         <button type="button" class="btn btn-warning"> Editar </button>
                     </td>
                     <td>
-                        <form method="post" action="AdminOfertas">
-                            <input type="hidden" name="codigo" value={$row[0]}>
-                            <button type="submit" class="btn btn-danger"> Borrar </button>
+                        <form method="post" action="AdminServicios">
+                            <input type="hidden" name="id" value={$row[0]}>
+                            <button type="submit" class="btn btn-danger" id="BotonBorrar"> Borrar </button>
                         </form>
                     <td>
                 HTML;
@@ -74,9 +73,10 @@
                 <br>
                 $adminNavBar
                 <br>
-                <form action="AdminOfertas" method="post">
-                    <p> Busqueda de oferta
-                        <input type="search" id="titulo" name="titulo" placeholder="Titulo de la oferta">
+                <form action="AdminServicios" method="post">
+                    <p> Busqueda de servicio
+                        <input type="search" id="hotel" name="hotel" placeholder="Nombre del hotel">
+                        <input type="search" id="servicio" name="servicio" placeholder="Nombre del servicio">
                         <input type="submit" value="Buscar">
                     </p>
                 </form>
