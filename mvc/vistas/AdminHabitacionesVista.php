@@ -4,7 +4,7 @@
     require_once "plantillas/AdminNavBar.php";
     require_once "plantillas/Footer.php";
 
-    class AdminOfertasVista extends PlantillaHtmlVista {
+    class AdminHabitacionesVista extends PlantillaHtmlVista {
         public function render($datos_in){
             if(!isAdminUser()){
                 return header("Location: login");
@@ -38,7 +38,7 @@
             $footer = Footer::getFooter(null);
 
             #Definimos los headers de la tabla
-            $tableHeaders= array("Código","Titulo","Descripcion","Descuento","Fecha fin", "Estado");
+            $tableHeaders= array("ID","Hotel","Numero de Habitacion","Tipo","Vistas", "Limpia", "Ocupada", "Adaptada");
             
             // Crea el HTML de los headers
             $tableHeadersHTML .= '<tr>';
@@ -58,8 +58,8 @@
                         <button type="button" class="btn btn-warning"> Editar </button>
                     </td>
                     <td>
-                        <form method="post" action="AdminOfertas">
-                            <input type="hidden" name="codigo" value={$row[0]}>
+                        <form method="post" action="AdminHabitaciones">
+                            <input type="hidden" name="id" value={$row[0]}>
                             <button type="submit" class="btn btn-danger"> Borrar </button>
                         </form>
                     <td>
@@ -74,9 +74,10 @@
                 <br>
                 $adminNavBar
                 <br>
-                <form action="AdminOfertas" method="post">
-                    <p> Busqueda de oferta
-                        <input type="search" id="titulo" name="titulo" placeholder="Titulo de la oferta">
+                <form action="AdminHabitaciones" method="post">
+                    <p> Busqueda de habitacion
+                        <input type="search" id="hotel" name="hotel" placeholder="ID del hotel (Buscar en HOTELES)">
+                        <input type="search" id="numero" name="numero" placeholder="Número de la habitacion">
                         <input type="submit" value="Buscar">
                     </p>
                 </form>

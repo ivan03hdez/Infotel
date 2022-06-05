@@ -4,7 +4,7 @@
     require_once "plantillas/AdminNavBar.php";
     require_once "plantillas/Footer.php";
 
-    class AdminOfertasVista extends PlantillaHtmlVista {
+    class AdminHotelesVista extends PlantillaHtmlVista {
         public function render($datos_in){
             if(!isAdminUser()){
                 return header("Location: login");
@@ -38,7 +38,7 @@
             $footer = Footer::getFooter(null);
 
             #Definimos los headers de la tabla
-            $tableHeaders= array("Código","Titulo","Descripcion","Descuento","Fecha fin", "Estado");
+            $tableHeaders= array("ID","Nombre","Direccion","Ciudad","Nº de estrellas");
             
             // Crea el HTML de los headers
             $tableHeadersHTML .= '<tr>';
@@ -55,11 +55,14 @@
                 }
                 $tableRows .= <<< HTML
                     <td>
-                        <button type="button" class="btn btn-warning"> Editar </button>
+                        <form method="post" action="HotelesForm">
+                            <input type="hidden" name="id" value={$row[0]}>
+                            <button type="submit" class="btn btn-warning"> Editar </button>
+                        </form>
                     </td>
                     <td>
-                        <form method="post" action="AdminOfertas">
-                            <input type="hidden" name="codigo" value={$row[0]}>
+                        <form method="post" action="AdminHoteles">
+                            <input type="hidden" name="id" value={$row[0]}>
                             <button type="submit" class="btn btn-danger"> Borrar </button>
                         </form>
                     <td>
@@ -74,9 +77,9 @@
                 <br>
                 $adminNavBar
                 <br>
-                <form action="AdminOfertas" method="post">
-                    <p> Busqueda de oferta
-                        <input type="search" id="titulo" name="titulo" placeholder="Titulo de la oferta">
+                <form action="AdminHoteles" method="post">
+                    <p> Busqueda de hotel
+                        <input type="search" id="nombre" name="nombre" placeholder="Nombre del hotel">
                         <input type="submit" value="Buscar">
                     </p>
                 </form>

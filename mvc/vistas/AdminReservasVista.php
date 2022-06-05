@@ -4,7 +4,7 @@
     require_once "plantillas/AdminNavBar.php";
     require_once "plantillas/Footer.php";
 
-    class AdminOfertasVista extends PlantillaHtmlVista {
+    class AdminReservasVista extends PlantillaHtmlVista {
         public function render($datos_in){
             if(!isAdminUser()){
                 return header("Location: login");
@@ -14,8 +14,9 @@
                 'tituloPagina' => 'Administrador'
             ];
 
-            $tableHeadersHTML='';
-            $tableRows = '';
+            #Posicion 0 para las habitaciones y 1 para los servicios
+            $tableHeadersHTML=array('','');
+            $tableRows = array('','');
             
             $mainMenu = MenuPrincipalVista::getMainMenu(null);
 
@@ -38,33 +39,48 @@
             $footer = Footer::getFooter(null);
 
             #Definimos los headers de la tabla
-            $tableHeaders= array("Código","Titulo","Descripcion","Descuento","Fecha fin", "Estado");
+            $tableHeaders= array(array("ID Reserva","Fecha Inicio","Fecha Fin","Hotel","Nº habitacion","Precio"),array("ID Reserva","Fecha Servicio","Hotel","Nombre","Precio"));
             
-            // Crea el HTML de los headers
-            $tableHeadersHTML .= '<tr>';
-            foreach($tableHeaders as $header){
-                $tableHeadersHTML .= '<th>'.$header.'</th>';
-            }
-            $tableHeadersHTML .= '</tr>';
-
-            //Crea las filas de la tabla a partir de la consulta del Modelo
-            foreach ($datos_in as $row) {
-                $tableRows .= '<tr>';
-                for($i=0;$i < count($row); $i++){
-                    $tableRows .= '<td>'.$row[$i].'</td>';
+            for($i = 0; $i < 2; $i++){
+                // Crea el HTML de los headers
+                $tableHeadersHTML[$i] .= '<tr>';
+                foreach($tableHeaders[$i] as $header){
+                    $tableHeadersHTML[$i] .= '<th>'.$header.'</th>';
                 }
-                $tableRows .= <<< HTML
-                    <td>
-                        <button type="button" class="btn btn-warning"> Editar </button>
-                    </td>
-                    <td>
-                        <form method="post" action="AdminOfertas">
-                            <input type="hidden" name="codigo" value={$row[0]}>
-                            <button type="submit" class="btn btn-danger"> Borrar </button>
-                        </form>
-                    <td>
-                HTML;
-                $tableRows .= '</tr>';
+                $tableHeadersHTML[$i] .= '</tr>';
+
+                //Crea las filas de la tabla a partir de la consulta del Modelo
+                foreach ($datos_in[$i] as $row) {
+                    $tableRows[$i] .= '<tr>';
+                    for($j=2;$j < count($row); $j++){
+                        $tableRows[$i] .= '<td>'.$row[$j].'</td>';
+                    }
+                    $tableRows[$i] .= <<< HTML
+                        <td>
+                            <button type="button" class="btn btn-warning"> Editar </button>
+                        </td>
+                        <td>
+                            <form method="post" action="AdminReservas">
+                    HTML;
+                    if($i == 0){
+                        $tableRows[$i] .= <<< HTML
+                                    <input type="hidden" name="habitacion" value={$row[0]}>
+                                    <input type="hidden" name="reserva" value={$row[1]}>
+                                    HTML;
+                    }
+                    else{
+                        $tableRows[$i] .= <<< HTML
+                                    <input type="hidden" name="servicio" value={$row[0]}>
+                                    <input type="hidden" name="reserva" value={$row[1]}>
+                                    HTML;
+                    }
+                    $tableRows[$i] .= <<< HTML
+                                <button type="submit" class="btn btn-danger"> Borrar </button>
+                            </form>
+                        <td>
+                    HTML;
+                    $tableRows[$i] .= '</tr>';
+                }
             }
             
 
@@ -74,16 +90,22 @@
                 <br>
                 $adminNavBar
                 <br>
-                <form action="AdminOfertas" method="post">
-                    <p> Busqueda de oferta
-                        <input type="search" id="titulo" name="titulo" placeholder="Titulo de la oferta">
+                <form action="AdminReservas" method="post">
+                    <p> Busqueda de reserva
+                        <input type="search" id="codigo" name="codigo" placeholder="Identificador de reserva">
                         <input type="submit" value="Buscar">
                     </p>
                 </form>
 
                 <table style="width:100%">
-                    $tableHeadersHTML
-                    $tableRows
+                    $tableHeadersHTML[0]
+                    $tableRows[0]
+                </table>
+                <br>
+                <br>
+                <table style="width:100%">
+                    $tableHeadersHTML[1]
+                    $tableRows[1]
                 </table>
                 $footer
             HTML;
