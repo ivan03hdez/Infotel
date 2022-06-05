@@ -4,7 +4,7 @@
 
 CREATE TABLE IF NOT EXISTS direccion (
     id SERIAL PRIMARY KEY,
-    direccion NOT NULL,
+    direccion varchar(30) NOT NULL,
     cp varchar(30) NOT NULL,
     ciudad varchar(30) NOT NULL,
     paisResidencia varchar(30) NOT NULL,
