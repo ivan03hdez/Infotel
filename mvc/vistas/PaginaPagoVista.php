@@ -66,14 +66,14 @@
                                 <div class="box-left">
                                     <p class="textmuted h8">Información de la reserva</p>
                                     <p class="fw-bold h7">Juan Palomo</p>
-                                    <p class="textmuted h8">Calle Alicante, 82</p>
+                                    <p class="textmuted h8">{$datos_in["input-hotel"]}</p>
                                     <p class="textmuted h8 mb-2">San Vicente del Raspeig, Alicante 03690</p>
                                     <div class="h8">
                                     <div class="row m-0 border mb-3">
                                         <div class="col-6 h8 pe-0 ps-2">
                                             <p class="textmuted py-2">Items</p>
-                                            <span class="d-block py-2 border-bottom">Habitación doble</span> 
-                                            <span class="d-block py-2">Masaje</span> 
+                                            <span class="d-block py-2 border-bottom">Habitación {$datos_in[0][0][0][2]}</span> 
+                                            <span class="d-block py-2">Servicio {$datos_in[2][0]}</span> 
                                         </div>
                                         <div class="col-2 text-center p-0">
                                             <p class="textmuted p-2">Cant.</p>
