@@ -10,6 +10,28 @@
                     exit();
                 }
             }
+            elseif(array_key_exists('update',$datos_in)){
+                try{
+                    $query = DatabaseConnection::query('UPDATE hotel SET nombre = \''.$datos_in['nombre'].'\', nEstrellas = \''.$datos_in['estrellas'].'\' where id = \''.$datos_in['update'].'\';');
+                    $query = DatabaseConnection::query('UPDATE direccion SET direccion = \''.$datos_in['direccion'].'\', cp = \''.$datos_in['cp'].'\', ciudad = \''.$datos_in['ciudad'].'\', paisResidencia = \''.$datos_in['pais'].'\' where id = \''.$datos_in['idDireccion'].'\';');
+                    $query = DatabaseConnection::query('SELECT hotel.id AS \'ID\', nombre AS \'Nombre\', direccion.direccion AS \'Direccion\', direccion.ciudad AS \'Ciudad\' , nEstrellas AS \'Nº de Estrellas\' FROM hotel, direccion WHERE idDireccion=direccion.id LIMIT 10;');
+                }catch (Exception $e){
+                    echo $e->getMessage();
+                    exit();
+                }
+            }
+            elseif(array_key_exists('insert',$datos_in)){
+                try{
+                    $query = DatabaseConnection::query('INSERT INTO direccion (direccion,cp,ciudad,paisResidencia) values (\''.$datos_in['direccion'].'\', \''.$datos_in['cp'].'\', \''.$datos_in['ciudad'].'\', \''.$datos_in['pais'].'\');');
+                    $idDir = mysqli_fetch_array(DatabaseConnection::query('select LAST_INSERT_ID();'))[0];
+                    $query = DatabaseConnection::query('INSERT INTO hotel (idDireccion,nombre,nEstrellas,imagenCiudad) values (\''.$idDir.'\',\''.$datos_in['nombre'].'\',\''.$datos_in['estrellas'].'\',LOAD_FILE(\''.$datos_in['imagen'].'\'));');
+                    
+                    $query = DatabaseConnection::query('SELECT hotel.id AS \'ID\', nombre AS \'Nombre\', direccion.direccion AS \'Direccion\', direccion.ciudad AS \'Ciudad\' , nEstrellas AS \'Nº de Estrellas\' FROM hotel, direccion WHERE idDireccion=direccion.id LIMIT 10;');
+                }catch (Exception $e){
+                    echo $e->getMessage();
+                    exit();
+                }
+            }
             elseif(array_key_exists('id',$datos_in)){
                 try{
                     $query = DatabaseConnection::query('DELETE from hotel where id ='.$datos_in['id'].';');
@@ -38,4 +60,3 @@
             return $hotels;
         }
     }
-?>

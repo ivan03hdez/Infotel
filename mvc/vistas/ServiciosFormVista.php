@@ -4,7 +4,7 @@
     require_once "plantillas/AdminNavBar.php";
     require_once "plantillas/Footer.php";
 
-    class HotelesFormVista extends PlantillaHtmlVista {
+    class ServiciosFormVista extends PlantillaHtmlVista {
         public function render($datos_in){
             if(!isAdminUser()){
                 return header("Location: login");
@@ -20,25 +20,20 @@
             $mainMenu = MenuPrincipalVista::getMainMenu(null);
             if(count($datos_in) == 0){
                 $form = <<< HTML
-                <form action="AdminHoteles" method="POST">
+                <form action="AdminServicios" method="POST">
                     <section>
                         <div class="container">
                             <div class="row">
                                 <input name="insert" value ="0" hidden>
                                 <div class="col-md-12">
-                                <p>Nombre del hotel: <input type ="text" name="nombre" placeholder= "Nombre del hotel"></p>
+                                <p>Nombre del servicio: <input type ="text" name="nombre" placeholder= "Nombre del servicio"></p>
                                 <br>
-                                <p>Dirección: <input type ="text" name="direccion" placeholder= "Direccion del hotel"></p>
+                                <p>Hotel del servicio: <input type ="text" name="hotel" placeholder= "Hotel donde se imparte"></p>
                                 <br>
-                                <p>Código postal: <input type ="text" name="cp" placeholder= "Código postal del hotel"></p>
+                                <p>Descripcion: <input type ="text" name="descripcion" placeholder= "Descripcion"></p>
                                 <br>
-                                <p>Ciudad: <input type ="text" name="ciudad" placeholder= "Ciudad"></p>
+                                <p>Precio: <input type ="number" name="precio" placeholder= "Precio"></p>
                                 <br>
-                                <p>País: <input type ="text" name="pais" placeholder= "País"></p>
-                                <br>
-                                <p>Nº de estrellas: <input type ="number" name="estrellas" placeholder= "Nº de estrellas"></p>
-                                <br>
-                                <p>Imagen de la ciudad: <input type ="file" name="imagen"></p>
                                 <button type="submit" class="btn btn-primary">Aceptar</button>
                                 </div>
                             </div>
@@ -49,26 +44,20 @@
             }
             else{
                 $form = <<< HTML
-                <form action="AdminHoteles" method="POST">
+                <form action="AdminServicios" method="POST">
                     <section>
                         <div class="container">
                             <div class="row">
                                 <input name="update" value ="{$datos_in[0][0]}" hidden>
-                                <input name="idDireccion" value ="{$datos_in[0][1]}" hidden>
                                 <div class="col-md-12">
-                                <p>Nombre del hotel: <input type ="text" name="nombre" value="{$datos_in[0][2]}" placeholder= "Nombre del hotel"></p>
+                                <p>Nombre del servicio: <input type ="text" name="nombre" value="{$datos_in[0][1]}" placeholder= "Nombre del hotel"></p>
                                 <br>
-                                <p>Dirección: <input type ="text" name="direccion" value="{$datos_in[0][3]}" placeholder= "Direccion del hotel"></p>
+                                <p>Hotel del servicio: <input type ="text" name="hotel" value="{$datos_in[0][2]}" placeholder= "Direccion del hotel"></p>
                                 <br>
-                                <p>Código postal: <input type ="text" name="cp" value="{$datos_in[0][4]}" placeholder= "Código postal del hotel"></p>
+                                <p>Descripcion: <input type ="text" name="descripcion" value="{$datos_in[0][3]}" placeholder= "Código postal del hotel"></p>
                                 <br>
-                                <p>Ciudad: <input type ="text" name="ciudad" value="{$datos_in[0][5]}" placeholder= "Ciudad"></p>
+                                <p>Precio: <input type ="text" name="precio" value="{$datos_in[0][4]}" placeholder= "Ciudad"></p>
                                 <br>
-                                <p>País: <input type ="text" name="pais" value="{$datos_in[0][6]}" placeholder= "País"></p>
-                                <br>
-                                <p>Nº de estrellas: <input type ="text" value="{$datos_in[0][7]}" name="estrellas"></p>
-                                <br>
-                                <p>Imagen de la ciudad: <input type ="file" name="imagen"></p>
                                 <button type="submit" class="btn btn-primary">Aceptar</button>
                                 </div>
                             </div>

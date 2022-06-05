@@ -53,8 +53,11 @@
                     $tableRows .= '<td>'.$row[$i].'</td>';
                 }
                 $tableRows .= <<< HTML
-                    <td>
-                        <button type="button" class="btn btn-warning"> Editar </button>
+                   <td>
+                        <form method="post" action="ServiciosForm">
+                            <input type="hidden" name="edit" value={$row[0]}>
+                            <button type="submit" class="btn btn-warning"> Editar </button>
+                        </form>
                     </td>
                     <td>
                         <form method="post" action="AdminServicios">
@@ -85,6 +88,14 @@
                     $tableHeadersHTML
                     $tableRows
                 </table>
+
+                <form action="ServiciosForm" method="post">
+                        <button type="submit" clas ="btn btn-success"> Crear un nuevo servicio </button>
+                </form>
+
+                <br>
+                <br>
+
                 $footer
             HTML;
             $this->tituloPagina = "Tablas Administrador";

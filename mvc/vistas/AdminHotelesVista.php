@@ -56,7 +56,7 @@
                 $tableRows .= <<< HTML
                     <td>
                         <form method="post" action="HotelesForm">
-                            <input type="hidden" name="id" value={$row[0]}>
+                            <input type="hidden" name="edit" value={$row[0]}>
                             <button type="submit" class="btn btn-warning"> Editar </button>
                         </form>
                     </td>
@@ -88,6 +88,15 @@
                     $tableHeadersHTML
                     $tableRows
                 </table>
+
+                
+                <form action="HotelesForm" method="post">
+                        <button type="submit" clas ="btn btn-success"> Crear un nuevo hotel </button>
+                </form>
+
+                <br>
+                <br>
+
                 $footer
             HTML;
             $this->tituloPagina = "Tablas Administrador";

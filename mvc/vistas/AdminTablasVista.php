@@ -13,42 +13,70 @@
             $datos = [
                 'tituloPagina' => 'Administrador'
             ];
-            $row = [];
-            $hotel = [];
-            $hotelAttribute = '';
-            $hotelValue = '';
-            $tableHeaders= '';
+
+            $tableHeadersHTML='';
             $tableRows = '';
+            
             $mainMenu = MenuPrincipalVista::getMainMenu(null);
-            $adminNavBar = AdminNavBar::getNavBar(null);
+
+            $adminNavBar = <<< HTML
+                <div class="col-md-12" style="text-align:center">
+                    <div class="btn-toolbar" style="width:100%">
+                        <div class="btn-group">
+                            <a type="button" class="btn btn-primary" href="AdminHoteles"> Hoteles </a>
+                            <a type="button" class="btn btn-primary" href="AdminServicios"> Servicios </a>
+                            <a type="button" class="btn btn-primary" href="AdminReservas"> Reserva </a>
+                            <a type="button" class="btn btn-primary" href="AdminHabitaciones"> Habitación </a>
+                            <a type="button" class="btn btn-primary" href="AdminTipos"> Tipo </a>
+                            <a type="button" class="btn btn-primary" href="AdminEmpleados"> Empleado </a>
+                    </div>
+                </div>
+            HTML;
+
             $footer = Footer::getFooter(null);
-            $i = 0;
-            foreach ($datos_in as $row=>$hotel) {
-                echo "$row";
-                foreach ($datos_in as $hotelAttribute=>$hotelValue) {
-                    // create the table headers for the table
-                    if ($i == 0) {
-                        $tableHeaders .= '<tr>';
-                            $tableHeaders .= '<th>'.$hotelAttribute.'</th>';
-                        $tableHeaders .= '</tr>';
-                    }
-                    // create the table rows for the table
-                    $tableRows .= '<tr>';
-                        $tableRows .= '<td>'.$hotelValue.'</td>';
-                    $tableRows .= '</tr>';
-                }
-                $i++;
+
+            /*
+            #Definimos los headers de la tabla
+            $tableHeaders= array("ID","Nombre","Direccion","Ciudad","Nº de estrellas");
+            
+            // Creael HTML de los headers
+            $tableHeadersHTML .= '<tr>';
+            foreach($tableHeaders as $header){
+                $tableHeadersHTML .= '<th>'.$header.'</th>';
             }
+            $tableHeadersHTML .= '</tr>';
+
+            //Crea las filas de la tabla a partir de la consulta del Modelo
+            foreach ($datos_in as $row) {
+                $tableRows .= '<tr>';
+                for($i=0;$i < count($row); $i++){
+                    $tableRows .= '<td>'.$row[$i].'</td>';
+                }
+                $tableRows .= <<< HTML
+                    <td>
+                        <button type="button" class="btn btn-warning"> Editar </button>
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-danger"> Borrar </button>
+                    <td>
+                HTML;
+                $tableRows .= '</tr>';
+            }
+            */
+            #Construye el BODY de la página HTML
             $this->bodyPagina = <<<HTML
                 $mainMenu
+                <br>
                 $adminNavBar
-                <table>
-                    $tableHeaders
+                <br>
+                <table style="width:100%">
+                    $tableHeadersHTML
                     $tableRows
                 </table>
                 $footer
             HTML;
             $this->tituloPagina = "Tablas Administrador";
+
             /*  TRASH ICON:
             <svg id="trash"  version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
             width="25px" height="35px" viewBox="0 0 485 485" style="enable-background:new 0 0 485 485;" xml:space="preserve">

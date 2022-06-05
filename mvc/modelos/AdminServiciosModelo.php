@@ -10,6 +10,27 @@
                     exit();
                 }
             }
+            elseif(array_key_exists('update',$datos_in)){
+                try{
+                    $idHotel = mysqli_fetch_array(DatabaseConnection::query('select id from hotel where nombre = \''.$datos_in['hotel'].'\''))[0];
+                    $query = DatabaseConnection::query('UPDATE servicio SET nombre = \''.$datos_in['nombre'].'\', idHotel = \''.$idHotel.'\', descripcion = \''.$datos_in['descripcion'].'\', precio = \''.$datos_in['precio'].'\' where id = \''.$datos_in['update'].'\';');
+                    $query = DatabaseConnection::query('SELECT servicio.id, hotel.nombre, servicio.nombre, servicio.precio FROM hotel, servicio WHERE hotel.id = servicio.idHotel LIMIT 50;');
+                }catch (Exception $e){
+                    echo $e->getMessage();
+                    exit();
+                }
+            }
+            elseif(array_key_exists('insert',$datos_in)){
+                try{
+                    $idHotel = mysqli_fetch_array(DatabaseConnection::query('select id from hotel where nombre = \''.$datos_in['hotel'].'\''))[0];
+                    $query = DatabaseConnection::query('INSERT INTO servicio (idHotel,nombre,descripcion,precio) values (\''.$idHotel.'\', \''.$datos_in['nombre'].'\', \''.$datos_in['descripcion'].'\', \''.$datos_in['precio'].'\');');
+                    
+                    $query = DatabaseConnection::query('SELECT servicio.id, hotel.nombre, servicio.nombre, servicio.precio FROM hotel, servicio WHERE hotel.id = servicio.idHotel LIMIT 50;');
+                }catch (Exception $e){
+                    echo $e->getMessage();
+                    exit();
+                }
+            }
             elseif(array_key_exists('id',$datos_in)){
                 try{
                     $query = DatabaseConnection::query('DELETE from servicio where id ='.$datos_in['id'].';');
