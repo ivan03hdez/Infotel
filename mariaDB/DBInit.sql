@@ -45,7 +45,7 @@ CREATE TABLE IF NOT EXISTS cliente (
     apellidos varchar(30),
     contrasenya BLOB,
     nif varchar(30) UNIQUE NOT NULL,
-    email varchar(30) UNIQUE NOT NULL ,
+    email varchar(30) UNIQUE NOT NULL,
     telefono varchar(30),
     fechaNac DATE,
     nacionalidad varchar(30),
