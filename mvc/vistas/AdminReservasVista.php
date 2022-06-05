@@ -29,7 +29,6 @@
                             <a type="button" class="btn btn-primary" href="AdminReservas"> Reserva </a>
                             <a type="button" class="btn btn-primary" href="AdminHabitaciones"> Habitación </a>
                             <a type="button" class="btn btn-primary" href="AdminTipos"> Tipo </a>
-                            <a type="button" class="btn btn-primary" href="AdminEmpleados"> Empleado </a>
                             <a type="button" class="btn btn-primary" href="AdminOfertas"> Ofertas </a>
                         </div>
                     </div>
