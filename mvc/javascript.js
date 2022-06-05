@@ -43,6 +43,27 @@ function postRegisterForm() {
     )
 };
 
+/*function createDeletePopUp() {
+    document.querySelectorAll('#BotonBorrar').forEach( elem => {
+        elem.addEventListener(
+            'click',
+            () => {
+                var input=$(this).parents('input').firstElementChild;
+                var data=input.value;
+                var urlSplitted = window.location.pathname.split('/');
+                if(confirm("¿Are you sure you want to delete this object?")) {
+                    // create a post request to the same url and send the dat
+                    const http = new XMLHttpRequest();
+                    http.open();
+                    http.setRequestHeader();
+                    http.send(data);
+                    window.location.replace("http://localhost/Infotel/mvc/admin" + urlSplitted[urlSplitted.length - 1].replace('modelo',''));
+                }
+            }
+        )
+    });
+}*/
+
 window.onload = () => {
     showUnderlined();
     postLoginForm();
