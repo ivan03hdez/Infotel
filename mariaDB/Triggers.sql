@@ -47,3 +47,19 @@ BEGIN
 		SET NEW.idEmpleado = @id;
 	}
 END;
+
+
+/*
+Crea un id alternativo único para las reservaServicio
+J. Palomar
+*/
+DELIMITER ;;
+CREATE OR REPLACE TRIGGER before_insert_reserva
+BEFORE INSERT ON reserva
+FOR EACH ROW
+BEGIN
+  IF new.uuid IS NULL THEN
+    SET new.uuid = uuid();
+  END IF;
+END
+;;
