@@ -243,6 +243,35 @@ $$
 DELIMITER ;
 
 /*
+Asigna una habitación libre
+J. PALOMAR
+*/
+DELIMITER $$
+CREATE OR REPLACE FUNCTION get_HabitacionLibre (v_hotel BIGINT, v_startdate DATE, v_enddate DATE, v_tipo BIGINT)
+RETURNS BIGINT
+
+BEGIN 
+
+DECLARE v_idhabitacion BIGINT;
+ 
+SELECT hab.id INTO v_idhabitacion
+FROM habitacion hab
+INNER JOIN tipo tip
+ON idTipo=tip.id
+INNER JOIN ( SELECT idHabitacion, fechaInicio, fechaFin FROM reservaHist rvh INNER JOIN reserva rv ON rvh.CodReserva = rv.Codigo) rvc
+ON rvc.idHabitacion = hab.id
+WHERE idHotel=v_hotel AND tip.id=v_tipo AND (fechaInicio NOT BETWEEN v_startdate AND v_enddate) AND (fechaFin NOT BETWEEN v_startdate AND v_enddate) LIMIT 1;
+
+RETURN v_idhabitacion;
+
+END;
+
+
+
+$$
+DELIMITER ;
+
+/*
 Función para obtener la temporada de una fecha concreta en base a intervalos preestablecidos
 J. PALOMAR
 */

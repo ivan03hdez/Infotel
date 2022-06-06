@@ -1,6 +1,6 @@
 /*
 Procedimiento de Transaction para reservar una habitacion
-Jorge Palomar/Daniel
+Jorge Palomar
 */
 DELIMITER $$
 CREATE OR REPLACE PROCEDURE introducirDatosReservaHabitacion(
@@ -56,7 +56,7 @@ $$
 DELIMITER ;
 /*
 Procedimiento de Transaction para reservar un servicio
-Daniel
+Jorge Palomar
 */
 DELIMITER $$
 CREATE OR REPLACE PROCEDURE introducirDatosReservaServicio(
