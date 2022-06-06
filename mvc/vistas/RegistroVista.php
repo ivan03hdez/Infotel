@@ -37,48 +37,48 @@
                     <div class="user-box">
                         <span></span>
                         <span></span>
-                        <input type="text" name="nombre" required="">
+                        <input type="text" name="nombre" required>
                         <label>Nombre:</label>
                     </div>
                     <div class="user-box">
                         <span></span>
                         <span></span>
-                        <input type="text" name="apellidos" required="">
+                        <input type="text" name="apellidos" required>
                         <label>Apellidos:</label>
                     </div>
                     <div class="user-box">
                         <span></span>
                         <span></span>
-                        <input type="text" name="dni" required="">
+                        <input type="text" name="dni" required>
                         <label>DNI:</label>
                     </div>
                     <div class="user-box">
                         <span></span>
                         <span></span>
-                        <input type="text" name="telefono" required="">
+                        <input type="email" name="email" required>
+                        <label>Correo:</label>
+                    </div>
+                    <div class="user-box">
+                        <input type="password" name="contrasenya" required>
+                        <label>Contraseña:</label>
+                    </div>
+                    <div class="user-box">
+                        <span></span>
+                        <span></span>
+                        <input type="text" name="telefono" required>
                         <label>Teléfono:</label>
                     </div>
                     <div class="user-box">
                         <span></span>
                         <span></span>
-                        <input type="text" name="fechaNac" required="">
+                        <input type="text" name="fechaNac" required>
                         <label>Fecha Nacimiento (YY-MM-DD):</label>
                     </div>
                     <div class="user-box">
                         <span></span>
                         <span></span>
-                        <input type="text" name="nacionalidad" required="">
+                        <input type="text" name="nacionalidad" required>
                         <label>Nacionalidad:</label>
-                    </div>
-                    <div class="user-box">
-                        <span></span>
-                        <span></span>
-                        <input type="email" name="correo" required="">
-                        <label>Correo:</label>
-                    </div>
-                    <div class="user-box">
-                        <input type="text" name="contrasenya" required="">
-                        <label>Contraseña:</label>
                     </div>
                     <div class="user-box">
                         <a style="left:8%;width: 90%;text-align: center;cursor:pointer;" id="crearCuenta">

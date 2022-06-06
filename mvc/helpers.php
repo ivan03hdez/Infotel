@@ -19,7 +19,7 @@
     function isAdminUser() {
         $isAdmin = false;
         session_start();
-        if (array_key_exists('user', $_SESSION)) {
+        if (array_key_exists('user', $_SESSION) && array_key_exists('puestoTrabajo', $_SESSION['user'])) {
             $user = $_SESSION['user'];
             if ($user['puestoTrabajo'] == 'Administrador')
                 $isAdmin = true;
