@@ -3,7 +3,6 @@
         public function getDatos($datos_in){
             
             try {
-                DatabaseConnection::query("SET NAMES 'utf8'");
                 $query = DatabaseConnection::query("select DISTINCT paisResidencia from direccion;");
             } catch (Exception $e) {
                 echo $e->getMessage();

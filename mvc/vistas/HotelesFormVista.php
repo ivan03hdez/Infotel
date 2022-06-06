@@ -17,7 +17,7 @@
             $tableHeadersHTML='';
             $tableRows = '';
             
-            $mainMenu = MenuPrincipalVista::getMainMenu(null);
+            $mainMenu = MenuPrincipalVista::getMainMenu($datos);
             if(count($datos_in) == 0){
                 $form = <<< HTML
                 <form action="AdminHoteles" method="POST">

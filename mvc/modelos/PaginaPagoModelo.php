@@ -29,7 +29,6 @@
                     }
                 $user = $_SESSION['user'];
                 //create a query to DB inserting all user data if form is valid
-                DatabaseConnection::query("SET NAMES 'utf8'");
                 $comprobarDisponibilidad = DatabaseConnection::query('select get_HabitacionLibre('.$idHotel.',"'.$fechaInicio.'", "'.$fechaSalida.'", '.$idTipo.')');
                 $habitacion = mysqli_fetch_array($comprobarDisponibilidad);
 

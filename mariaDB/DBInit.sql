@@ -65,7 +65,7 @@ CREATE TABLE IF NOT EXISTS oferta (
 
 CREATE TABLE IF NOT EXISTS reserva (
     codigo SERIAL PRIMARY KEY,
-    identificador CHAR(6)),
+    identificador CHAR(6)) NOT NULL,
     fechaInicio DATE NOT NULL,
     fechaFin DATE NOT NULL,
     precioTotal decimal(6,2),
