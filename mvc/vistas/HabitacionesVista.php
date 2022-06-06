@@ -2,14 +2,14 @@
     require_once "plantillas/PlantillaHtmlVista.php";
     require_once "plantillas/MenuPrincipalVista.php";
 
-    class HotelesVista extends PlantillaHtmlVista {
+    class HabitacionesVista extends PlantillaHtmlVista {
         public function render($datos_in){
             $datos = [
                 'tituloPagina' => 'Habitaciones'
             ];
             $this->tituloPagina = "Habitaciones";
             $mainMenu = MenuPrincipalVista::getMainMenu($datos);
-            $tipos_habitaciones = HotelesVista::generarHTMLtiposhabitaciones($datos_in);
+            $tipos_habitaciones = HabitacionesVista::generarHTMLtiposhabitaciones($datos_in);
             $this->bodyPagina = <<<HTML
                 $mainMenu
                 <div>
@@ -18,7 +18,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="aligncenter">
-                                        <h2 class="aligncenter">Tipos de habitaciones</h2>
+                                        <h2 style="margin-bottom:2vh;"class="aligncenter">Tipos de habitaciones</h2>
                                         En todos los hoteles de Infotel, pueden disfrutar de los tipos de habitaciones que a continuación les mostramos
                                         <br>
                                     </div>
@@ -44,7 +44,7 @@
                     </div>
                     <div class="col-md-12 md-margin-bottom-40" style="background-color: #14274a; height: 60px">
                         <div style=" height:100%; width:50%; float:left; background-color: #14274a; text-align: center;">
-                            <span style="color: white; font-size:large"> Tipo {$row['tipo']} </span>
+                            <span style="color: white; font-size:large">{$row['Descripcion']}</span>
                             <br>
                             <span style="color:white; font-size:large"> Nº de personas: {$row['nPers']} </span>
                         </div>

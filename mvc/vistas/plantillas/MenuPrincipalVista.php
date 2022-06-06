@@ -14,7 +14,7 @@
                         </div>
                     </div>
                     <div class="mainMenuList">
-                            <div><span>Hoteles</span><div class="underlined"></div></div>
+                            <div><span>Habitaciones</span><div class="underlined"></div></div>
                             <div><span>Servicios</span><div class="underlined"></div></div>
                             <div><span>Reservas</span><div class="underlined"></div></div>
                             <div><span>Mis Viajes</span><div class="underlined"></div></div>

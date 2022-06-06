@@ -17,7 +17,7 @@
             $tableHeadersHTML='';
             $tableRows = '';
             
-            $mainMenu = MenuPrincipalVista::getMainMenu(null);
+            $mainMenu = MenuPrincipalVista::getMainMenu($datos);
 
             $adminNavBar = <<< HTML
                 <div class="col-md-12" style="text-align:center">
