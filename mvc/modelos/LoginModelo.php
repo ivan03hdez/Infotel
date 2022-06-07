@@ -8,7 +8,8 @@
                 $encryptObject = new Encrypt();
                 $password = $encryptObject->encryptData($password);
                 try {
-                    // cliente --> correo: ivanPrueba@gmail.com contraseña: ivanPrueba
+                    // cliente de prueba sin seeders --> correo: ivanPrueba@gmail.com contraseña: ivanPrueba
+                    // cliente con seeeders --> correo: yeray@gmail.com contraseña: yerayPrueba
                     $query = DatabaseConnection::query('select * from cliente where email = "'.$usuario.'" and contrasenya = "'.$password.'"');
                 } catch (Exception $e) {
                     echo $e->getMessage();

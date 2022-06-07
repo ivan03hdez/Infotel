@@ -25,6 +25,7 @@ function showUnderlined() {
             lastUrlWord === elementUnderlined
             || (elementUnderlined == 'administrador' && lastUrlWord == 'adminhoteles')
             || (elementUnderlined == 'mantenimiento' && lastUrlWord == 'adminestadisticas')
+            || (elementUnderlined == 'administrador' && lastUrlWord.endsWith('form'))
         ) {
             elem.style.display = "block";
         }}

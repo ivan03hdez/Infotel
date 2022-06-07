@@ -2,18 +2,24 @@
     class ServicioHabitacionesModelo {
        // Con esta saco el precio de las habitaciones
     public function getDatos($datos_in){
-        if (isset($datos_in['reservaCodigo'])) {
+        if (isset($datos_in['reservaCodigo']) && isset($datos_in['idCliente'])) {
             $codReserva = $datos_in['reservaCodigo'];
-            $codReserva = 3;
+            $idCliente = $datos_in['idCliente'];
             try {
-                $queryhoteles = DatabaseConnection::query('select rh.precio, h.numero from reservaHist rh, reserva r, habitacion h where r.Codigo = rh.CodReserva AND rh.idHabitacion = h.id AND rh.CodReserva = "'.$codReserva.'"');
+                $queryhoteles = DatabaseConnection::query('
+                    select rh.precio, h.numero, t.descripcion
+                    from reservaHist rh, habitacion h, tipo t
+                    where t.id = h.idTipo AND rh.idCliente = '.$idCliente.' AND rh.idHabitacion = h.id AND rh.CodReserva = "'.$codReserva.'"');
                
             } catch (Exception $e) {
                 echo $e->getMessage();
                 exit();
             }
             try {
-                $queryservicios = DatabaseConnection::query('select rs.precio, s.nombre from reserva r, reservaServicio rs, servicio s where r.Codigo = rs.CodReserva AND s.id = rs.idServicio AND rs.CodReserva = "'.$codReserva.'"');
+                $queryservicios = DatabaseConnection::query('
+                    select rs.precio, s.nombre
+                    from reservaServicio rs, servicio s
+                    where s.id = rs.idServicio AND rs.CodReserva = "'.$codReserva.'"');
             } catch (Exception $e) {
                 echo $e->getMessage();
                 exit();

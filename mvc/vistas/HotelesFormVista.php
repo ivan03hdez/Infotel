@@ -85,7 +85,6 @@
             $this->bodyPagina = <<<HTML
                 $mainMenu
                 $form
-                $footer
             HTML;
             $this->tituloPagina = "Tablas Administrador";
 

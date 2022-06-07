@@ -34,12 +34,12 @@
             $codHTML = "";
             foreach($datos_in['hoteles'] as $reserva){
                 $codHTML .= <<< HTML
-                  <div class="row">
-                                    <div class="col">
-                                        <label class="form-control-label" for="input-prehab">Precio de la habitación número {$reserva["numero"]}</label>
-                                        <input type="text" id="input-prehab" class="form-control form-control-alternative"  value="{$reserva["precio"]}">
-                                    </div>               
-                 </div>
+                    <div class="row">
+                        <div class="col-md">
+                            <label class="form-control-label" for="input-prehab">Precio de la habitación {$reserva['descripcion']} número {$reserva['numero']}</label>
+                            <input type="text" id="input-prehab" class="form-control form-control-alternative"  value="{$reserva['precio']} euros">
+                        </div>               
+                    </div>
                 HTML; 
               
             }
@@ -49,12 +49,12 @@
             $codHTML = "";
             foreach($datos_in['servicios'] as $reserva){
                 $codHTML .= <<< HTML
-                  <div class="row">
-                                    <div class="col">
-                                        <label class="form-control-label" for="input-prehab">Precio de la {$reserva["nombre"]}</label>
-                                        <input type="text" id="input-preser" class="form-control form-control-alternative"  value="{$reserva["precio"]}">
-                                    </div>               
-                 </div>
+                <div class="row">
+                    <div class="col-md">
+                        <label class="form-control-label" for="input-prehab">Precio del Servicio {$reserva['nombre']}</label>
+                        <input type="text" id="input-preser" class="form-control form-control-alternative"  value="{$reserva['precio']} euros">
+                    </div>             
+                </div>
                 HTML; 
               
             }
