@@ -9,9 +9,14 @@
             try{
                 //Consulta a partir del id de la dirección de un usuario
                 $query = DatabaseConnection::query('
-                    select DISTINCT Codigo, Identificador, fechaInicio, fechaFin, precioTotal, idCliente
-                    from reserva r, reservaHist rh
-                    where r.Codigo = rh.CodReserva AND rh.idCliente = '.$userid);
+                select DISTINCT r.Codigo, Identificador, fechaInicio, fechaFin, mrat.Precio AS precioTotal, idCliente
+                from reserva r 
+                      INNER JOIN reservaHist rh
+                      ON r.Codigo = rh.CodReserva 
+                      INNER JOIN 
+                      (SELECT codigo, SUM(Precio) AS "Precio" FROM mostrarReservaAgrupadoPorTipo GROUP BY codigo) mrat
+                      ON mrat.codigo = r.Codigo
+                      WHERE rh.idCliente = '.$userid);
             } catch (Exception $e) {
                 echo $e->getMessage();
                 exit();
