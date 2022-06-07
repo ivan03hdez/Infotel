@@ -3,19 +3,53 @@
 <RESERVASCLIENTE>
         <CLIENTE nif="43287135P">
                 <RESERVAHIST>
-                        <RESERVA codigo="1445796" fechaInicio="2020-12-02" fechaFinal="2020-12-06" precioTotal="45"/>
+                        <RESERVA codigo="PEQUYA" fechaInicio="2020-12-02" fechaFinal="2020-12-06" precioTotal="45"/>
                         <HABITACION id="1" numero="215" vistas="true" estaLimpia="true" estaOcupado="true"/>
                         <OFERTA id="1" descuento="15" codigo="SV2022"/>
                 </RESERVAHIST>
                 <RESERVAHIST>
-                        <RESERVA codigo="59786431" fechaInicio="2020-12-02" fechaFinal="2020-12-06" precioTotal="45"/>
+                        <RESERVA codigo="PEQUYA" fechaInicio="2020-12-02" fechaFinal="2020-12-06" precioTotal="45"/>
                         <HABITACION id="2" numero="215" vistas="true" estaLimpia="true" estaOcupado="true"/>
                         <OFERTA id="2" descuento="15"/>
                 </RESERVAHIST>
                 <RESERVASERVICIO>
-                        <RESERVA codigo="37896451" fechaInicio="2020-12-02" fechaFinal="2020-12-06" precioTotal="45"/>
+                        <RESERVA codigo="PEQUYA" fechaInicio="2020-12-02" fechaFinal="2020-12-06" precioTotal="45"/>
                         <SERVICIO id="3" nombre="masaje" precioBase="50"/>
                         <EMPLEADO id="3" nif="46987135X"/>
+                </RESERVASERVICIO>
+        </CLIENTE>
+        <CLIENTE nif="48766154J">
+                <RESERVAHIST>
+                        <RESERVA codigo="POIKLA" fechaInicio="2020-12-02" fechaFinal="2020-12-06" precioTotal="15"/>
+                        <HABITACION id="4" numero="21" vistas="true" estaLimpia="false" estaOcupado="false"/>
+                        <OFERTA id="4" descuento="18" codigo="SUMM2022"/>
+                </RESERVAHIST>
+                <RESERVAHIST>
+                        <RESERVA codigo="POIKLA" fechaInicio="2020-12-02" fechaFinal="2020-12-06" precioTotal="20"/>
+                        <HABITACION id="5" numero="22" vistas="false" estaLimpia="false" estaOcupado="true"/>
+                        <OFERTA id="5" descuento="17"/>
+                </RESERVAHIST>
+                <RESERVASERVICIO>
+                        <RESERVA codigo="POIKLA" fechaInicio="2020-12-02" fechaFinal="2020-12-06" precioTotal="30"/>
+                        <SERVICIO id="6" nombre="masaje" precioBase="100"/>
+                        <EMPLEADO id="6" nif="46987135X"/>
+                </RESERVASERVICIO>
+        </CLIENTE>
+         <CLIENTE nif="14785921F">
+                <RESERVAHIST>
+                        <RESERVA codigo="HRGTFR" fechaInicio="2020-12-02" fechaFinal="2020-12-06" precioTotal="15"/>
+                        <HABITACION id="4" numero="21" vistas="true" estaLimpia="false" estaOcupado="false"/>
+                        <OFERTA id="4" descuento="18" codigo="SUMM2022"/>
+                </RESERVAHIST>
+                <RESERVAHIST>
+                        <RESERVA codigo="HRGTFR" fechaInicio="2020-12-02" fechaFinal="2020-12-06" precioTotal="20"/>
+                        <HABITACION id="5" numero="22" vistas="false" estaLimpia="false" estaOcupado="true"/>
+                        <OFERTA id="5" descuento="17"/>
+                </RESERVAHIST>
+                <RESERVASERVICIO>
+                        <RESERVA codigo="HRGTFR" fechaInicio="2020-12-02" fechaFinal="2020-12-06" precioTotal="30"/>
+                        <SERVICIO id="6" nombre="masaje" precioBase="100"/>
+                        <EMPLEADO id="6" nif="46987135X"/>
                 </RESERVASERVICIO>
         </CLIENTE>
 </RESERVASCLIENTE>
