@@ -37,15 +37,14 @@ CREATE or REPLACE TRIGGER reservaServicio_BI_trigger
 BEFORE INSERT ON reservaServicio
 FOR EACH ROW
 BEGIN
-	IFNULL(NEW.idEmpleado) {
+	IF(NEW.idEmpleado IS NULL) THEN
 		SELECT e.id into @id FROM empleado e
 		where idHotel = (SELECT idHotel from servicio s where id = NEW.idServicio)
 		AND e.id NOT IN (SELECT idEmpleado from reservaServicio rs where fecha = NEW.fecha) LIMIT 1;
 			
 		/* FALTA DEVOLVER UN ERROR SI NO HAY EMPLEADO DISPONIBLE */
-	
 		SET NEW.idEmpleado = @id;
-	}
+	END IF;
 END;
 
 
