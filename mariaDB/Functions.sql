@@ -8,7 +8,7 @@ BEGIN
 	DECLARE total_clientes INT;
 		SELECT sum(nPers)
 		INTO total_clientes
-		FROM habitacion h LEFT JOIN tipo t ON h.idTipo = t.id;
+		FROM habitacion h JOIN tipo t ON h.idTipo = t.id;
 	RETURN total_clientes;
 END;
 $$
@@ -71,8 +71,7 @@ BEGIN
 	FROM cliente c
 	LEFT JOIN reservaHist rh ON c.id = rh.idCliente
 	LEFT JOIN reserva r ON r.codigo = rh.CodReserva
-	where c.id = rh.idCliente
-		and c.nacionalidad = nac
+	where c.nacionalidad = nac
 		and r.fechaInicio >= fecha1
 		and r.fechaFin <= fecha2;
 
@@ -81,8 +80,7 @@ BEGIN
 	FROM cliente c
 	LEFT JOIN reservaHist rh ON c.id = rh.idCliente
 	LEFT JOIN reserva r ON r.codigo = rh.CodReserva
-	where c.id = rh.idCliente
-		and r.fechaInicio >= fecha1
+	where r.fechaInicio >= fecha1
 		and r.fechaFin <= fecha2;
 
 	RETURN (sumNacionalidad / totalClientes) * 100;
