@@ -1,5 +1,5 @@
 # Infotel
-Sistema de gestión de reservas hecho en la asignatura Gestión de la información
+Sistema de gestión de reservas para una cadena hotelera hecho en la asignatura Gestión de la información del grado de ingeniería informática
 
 Diagrama Crow's Feet
 
